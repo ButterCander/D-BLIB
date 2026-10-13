@@ -1,0 +1,21 @@
+== E12  CASCADE 1.0 (21 pairs, 4 observed synergies; paper reports ROC AUC 0.97, PR AUC 0.91), link-only 50 runs
+  bliss: 21 pairs, 4 positives | calibrated excess higher=syn: AUC 0.01 PR 0.13 | lower=syn: AUC 0.99 PR 0.95 | rule rand-ss higher=syn: AUC 0.97 PR 0.92 | ss-rand higher=syn: AUC 0.03 PR 0.13 | vote fraction: AUC 0.83 PR 0.80 | rank-mean(rule, vote): AUC 0.96 PR 0.85
+  hsa: 21 pairs, 4 positives | calibrated excess higher=syn: AUC 0.07 PR 0.13 | lower=syn: AUC 0.93 PR 0.79 | rule rand-ss higher=syn: AUC 0.99 PR 0.95 | ss-rand higher=syn: AUC 0.01 PR 0.13 | vote fraction: AUC 0.83 PR 0.80 | rank-mean(rule, vote): AUC 0.98 PR 0.89
+
+== E13  Family-wise permutation test: is the best of all label-free scores tried better than chance after accounting for the search?
+  15 candidate scores tried (all label-free).
+  rank-mean paper rule 3 + vote 3          AUC 0.917   single-test p=0.0000   family-wise p=0.0003
+  rank-mean vote, 3 strategies             AUC 0.832   single-test p=0.0020   family-wise p=0.0172
+  vote fraction, link-only                 AUC 0.831   single-test p=0.0009   family-wise p=0.0180
+  rank-mean vote 3 + raw excess 3          AUC 0.826   single-test p=0.0019   family-wise p=0.0206
+  paper rule rand-ss, topo-and-link        AUC 0.823   single-test p=0.0019   family-wise p=0.0227
+  mean vote, 3 strategies                  AUC 0.819   single-test p=0.0031   family-wise p=0.0258
+  vote fraction, topo-and-link             AUC 0.804   single-test p=0.0038   family-wise p=0.0393
+  rank-mean paper rule, 3 strategies       AUC 0.782   single-test p=0.0076   family-wise p=0.0701
+  rank-mean(vote, excess), link-only       AUC 0.778   single-test p=0.0093   family-wise p=0.0781
+  vote fraction, topology-only             AUC 0.757   single-test p=0.0144   family-wise p=0.1192
+  paper rule rand-ss, topology-only        AUC 0.734   single-test p=0.0246   family-wise p=0.1896
+  calibrated excess raw, topology-only     AUC 0.696   single-test p=0.0539   family-wise p=0.3458
+  calibrated excess raw, link-only         AUC 0.686   single-test p=0.0634   family-wise p=0.3958
+  paper rule rand-ss, link-only            AUC 0.686   single-test p=0.0632   family-wise p=0.3958
+  calibrated excess raw, topo-and-link     AUC 0.575   single-test p=0.2746   family-wise p=0.9077

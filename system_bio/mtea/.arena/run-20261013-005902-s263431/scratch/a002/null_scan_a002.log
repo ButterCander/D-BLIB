@@ -1,0 +1,6 @@
+genes in count file: 23373; DE-tested: 16932
+model genes tested 2443 (nonzero 1238), non-model tested 14489
+N=2443                             N=  2443 nonzero frac 0.507 | authors' scores under this null: p<.025  44 (authors' own p: 78) BH   3 (authors 59) | Spearman(p_authors, p_here) 0.95 | RMSE(-log10 p) 0.53 | 35s
+N=5000                             N=  5000 nonzero frac 0.248 | authors' scores under this null: p<.025  78 (authors' own p: 78) BH  53 (authors 59) | Spearman(p_authors, p_here) 0.99 | RMSE(-log10 p) 0.19 | 27s
+N=16932                            N= 16932 nonzero frac 0.073 | authors' scores under this null: p<.025 106 (authors' own p: 78) BH  94 (authors 59) | Spearman(p_authors, p_here) 0.98 | RMSE(-log10 p) 0.75 | 40s
+done

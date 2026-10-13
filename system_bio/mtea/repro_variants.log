@@ -1,0 +1,4 @@
+genes 2443; |shrunk|>0 after mask 1238
+shrunk, mask padj<.05 (baseline)   nonzero  1238 | r_vs_authors 0.95 | p<.025  34 BH   2 | implied null sd 0.264 (authors 0.192) | 56s
+unshrunk, mask padj<.05            nonzero  1238 | r_vs_authors 0.95 | p<.025  31 BH   2 | implied null sd 0.272 (authors 0.192) | 53s
+shrunk, no mask                    nonzero  2443 | r_vs_authors 0.95 | p<.025  39 BH   2 | implied null sd 0.278 (authors 0.192) | 71s

@@ -1,0 +1,9 @@
+== E32  Calibration-free baseline (votes of the random proliferative models only) vs the paper's calibrated rule
+  random-model votes, 3 strategies rank-mean: AUC 0.830; per strategy: link-only 0.799, topology-only 0.787, topo-and-link 0.796
+  paper rule link-only      AUC 0.686  minus calibration-free baseline: -0.144 [-0.51,+0.18]
+  paper rule topology-only  AUC 0.734  minus calibration-free baseline: -0.096 [-0.40,+0.16]
+  paper rule topo-and-link  AUC 0.823  minus calibration-free baseline: -0.007 [-0.29,+0.19]
+
+== E33  Same comparison on CASCADE 1.0 (21 pairs, 4 positives; link-only, 50 runs)
+  bliss: paper rule 0.97 | calibrated votes 0.83 | random-model votes (no calibration) 0.63 | consensus rule+votes 0.96
+  hsa: paper rule 0.99 | calibrated votes 0.83 | random-model votes (no calibration) 0.63 | consensus rule+votes 0.98

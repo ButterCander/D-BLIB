@@ -1,0 +1,462 @@
+sed exclusively by the corresponding gene product(s) to zero.
+In the context of FBA, this is implemented by modifying the flux bounds of the affected reactions: for each reaction i associated with the knocked-out gene, we set α i = β i = 0, effectively removing the reaction from the feasible flux space.
+The modified model is then solved using FBA ( 6 ) to determine how the gene deletion affects the optimal objective value, i.e.
+the biomass production.
+A significant reduction or complete loss of biomass flux indicates that the deleted gene is essential under the given environmental conditions.
+This approach allows for the systematic prediction of gene essentiality and the identification of potential drug targets or synthetic lethal gene pairs in silico.
+To predict the set of essential genes of a metabolic task, we just tested for the feasibility of the problem after inactivating the reaction related to the gene being knocked; if the problem is infeasible, the tested gene is defined as essential for the task.
+Flux variability analysis Flux variability analysis (FVA) was used to identify the minimum and maximum flux values each reaction can carry while satisfying the constraints of the FBA problem (Eq.
+( 6 )).
+For each reaction in the model, FVA solves two linear programmes, one minimising and one maximising the flux, under the same conditions 53 .
+We applied FVA individually for each metabolic task to assess the flexibility of the network in supporting specific functions.
+Tasks inferred from differential expression To investigate changes in metabolic pathway activity, we applied the tasks inferred from differential expression (TIDE) algorithm 35 .
+We used the manually curated list of 187 metabolic tasks and their reference flux distributions.
+Log-fold change (log-FC) values from differential gene expression analysis were mapped onto the flux-carrying reactions associated with each task via their gene–protein-reaction (GPR) rules.
+In this mapping, each gene was substituted with its corresponding log-FC value.
+GPR rules were evaluated by interpreting logical AND and OR operators as the min and absmax functions, respectively, and resolving the resulting expression recursively.
+Genes with non-significant adjusted p -values were masked by setting their log-FC values to zero before evaluation.
+The statistical significance of the resulting task scores was assessed through 10,000 permutations.
+A task was considered significantly altered if its associated p -value was below 0.025, reflecting a two-sided testing strategy.
+TIDE essential genes To extend and complement the original TIDE framework, we developed an approach focused on the identification of essential genes required for the execution of curated metabolic tasks.
+For each task t , we performed an in silico gene knockout screening across all genes in the metabolic model.
+Specifically, for each gene g , the procedure consisted of the following steps: (1) identifying the set of reactions deactivated by the knockout of g ; (2) constraining the flux of these reactions to zero; and (3) computing the flux distribution for task t using parsimonious flux balance analysis (see Eq.
+( 7 )).
+If the optimisation problem became infeasible, gene g was classified as essential for task t .
+This procedure was repeated for all genes and tasks, resulting in a gene-task matrix representing the essential genes for each metabolic task.
+The metabolic score of a task t was computed as the average log-fold change (log-FC) of the essential genes associated with that task.
+As in the original TIDE framework, log-FC values with non-significant adjusted p -values were masked to zero before evaluation, and statistical significance was assessed using 10,000 permutations.
+A two-sided testing approach was applied, with a significance threshold of p &lt; 0.025.
+Genome scale-metabolic model We retrieved the genome-scale metabolic model Human-GEM version 1.18 from the official repository ( https://github.com/SysBioChalmers/Human-GEM ).
+The model accounts for 2897 genes, 11,364 metabolic reactions, 1721 exchange fluxes, and 8499 metabolites and is the most comprehensive description of human metabolism 19 .
+We used the list of selected metabolic tasks previously published by Richelle et al.
+2021 36 , which includes 195 metabolic tasks associated with 7 metabolic systems (energy, nucleotide, carbohydrate, amino acid, lipid, vitamin &amp; cofactor, and glycan metabolism).
+Although this list of tasks was defined for the Recon 2.2 model 18 , the Human-GEM repository already includes a translated version of these metabolic tasks.
+A preliminary analysis showed that 9 tasks were inconsistently defined due to incorrect mapping of metabolite identifiers between metabolic Recon2.2 and the Human-GEM.
+Additionally, we identified 18 tasks that resulted in infeasible problems due to issues with the bounds of the inputs and/or outputs.
+Inconsistent tasks were manually curated by correcting metabolite identifiers.
+To curate infeasible tasks, we manually adjusted upper and lower bounds for the input and/or output metabolites, or by updating the compartments of some metabolites.
+After the curation process, 19 metabolic tasks were reconciled to the Human-GEM model, whereas 8 tasks remained either inconsistent (1) or infeasible (7).
+A summary of the curation processes and the curated list of tasks are provided in Supplementary Data 2 .
+Computational tools All statistical analyses were conducted using R (version 4.4.1).
+Figures were generated using the following R libraries: tidyplots (version 0.1.2), ggcorrplot (version 0.1.4.1), ggVennDiagram (version 1.5.2), and pheatmap (version 1.0.12).
+TIDE and TIDE-essential algorithms were implemented in an open-source Python package and command-line tool, MTEApy, built on top of the COBRAPY 54 library.
+The source code is available at: https://github.com/bsc-life/mteapy .
+Supplementary information Supplementary Information Supplementary Data 1 Supplementary Data 2 Supplementary Data 3 Supplementary Data 4 Supplementary Data 5 Supplementary Data 6 Acknowledgements This work was supported by the HEALED project (PID2022-141809OB-I00), funded by MICIU/AEI/10.13039/501100011033 and by ERDF/EU; by the Horizon 2020 project CREXDATA (grant agreement No.
+101092749); and by the Research Council of Norway (RCN) under the framework of the European Research Area (ERA) PerMed program, ONCOLOGICS (grant agreement No.
+329059).
+Author contributions Conceptualisation: X.B., M.P., Å.F., and A.V.; methodology: X.B., Å.F., and M.P.; experimental analysis: Å.F.; software: X.B.
+and M.P.; in-silico experiments: X.B.; results analysis: X.B.
+and M.P.; writing—original draft preparation: X.B.
+and M.P.; writing—review and editing: X.B., M.P., Å.F., and A.V.; visualisation: X.B.; supervision: M.P.
+and A.V.
+All authors have read and agreed to the published version of the manuscript.
+Data availability The raw RNA sequencing data from AGS cells used in this study have been deposited in the GEO repository under accession number https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285616 .
+Competing interests The authors declare no competing interests.
+Footnotes Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Supplementary information The online version contains supplementary material available at 10.1038/s41540-025-00586-y.
+References 1.
+Bray, F.
+et al.
+Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries.
+CA: Cancer J.
+Clin.
+74 , 229–263 (2024).
+2.
+Hanahan, D.
+&amp; Weinberg, R.
+A.
+Hallmarks of cancer: the next generation.
+Cell 144 , 646–674 (2011).
+3.
+Vander Heiden, M.
+G., Cantley, L.
+C.
+&amp; Thompson, C.
+B.
+Understanding the Warburg effect: the metabolic requirements of cell proliferation.
+Science 324 , 1029–1033 (2009).
+4.
+Vander Heiden, M.
+G.
+&amp; DeBerardinis, R.
+J.
+Understanding the intersections between metabolism and cancer biology.
+Cell 168 , 657–669 (2017).
+5.
+Hoxhaj, G.
+&amp; Manning, B.
+D.
+The PI3K-AKT network at the interface of oncogenic signalling and cancer metabolism.
+Nat., Rev.
+Cancer 20 , 74–88 (2020).
+6.
+Pavlova, N.
+N., Zhu, J.
+&amp; Thompson, C.
+B.
+The hallmarks of cancer metabolism: still emerging.
+Cell Metab.
+34 , 355–377 (2022).
+7.
+Collins, F.
+S.
+&amp; Varmus, H.
+A new initiative on precision medicine.
+N.
+Engl.
+J.
+Med.
+372 , 793–795 (2015).
+8.
+Slonim, D.
+K.
+From patterns to pathways: gene expression data analysis comes of age.
+Nat.
+Genet.
+32 , 502–508 (2002).
+9.
+Geistlinger, L.
+et al.
+Toward a gold standard for benchmarking gene set enrichment analysis.
+Brief.
+Bioinforma.
+22 , 545–556 (2021).
+10.
+Niarakis, A.
+&amp; Helikar, T.
+A practical guide to mechanistic systems modeling in biology using a logic-based approach.
+Brief.
+Bioinform.
+22 , bbaa236 (2021).
+11.
+Gherman, I.
+M.
+et al.
+Bridging the gap between mechanistic biological models and machine learning surrogates.
+PLoS Comput.
+Biol.
+19 , e1010988 (2023).
+12.
+Calzone, L.
+et al.
+Mathematical modelling of cell-fate decision in response to death receptor engagement.
+PLoS Comput.
+Biol.
+6 , e1000702 (2010).
+13.
+Montagud, A.
+et al.
+Conceptual and computational framework for logical modelling of biological networks deregulated in diseases.
+Brief.
+Bioinform.
+20 , 1238–1249 (2017).
+14.
+Montagud, A.
+et al.
+Patient-specific Boolean models of signalling networks guide personalised treatments.
+eLife 11 , e72626 (2022).
+15.
+Flobak, Å et al.
+Discovery of drug synergies in gastric cancer cells predicted by logical modeling.
+PLoS Comput.
+Biol.
+11 , e1004426 (2015).
+16.
+Taoma, K., Ruengjitchatchawalya, M., Liangruksa, M.
+&amp; Laomettachit, T.
+Boolean modeling of breast cancer signaling pathways uncovers mechanisms of drug synergy.
+PLoS ONE 19 , e0298788 (2024).
+17.
+Thiele, I.
+et al.
+A community-driven global reconstruction of human metabolism.
+Nat.
+Biotechnol.
+31 , 419–425 (2013).
+18.
+Swainston, N.
+et al.
+Recon 2.2: from reconstruction to model of human metabolism.
+Metabolomics 12 , 109 (2016).
+19.
+Robinson, J.
+L.
+et al.
+An atlas of human metabolism.
+Sci.
+Signal.
+13 , eaaz1482 (2020).
+20.
+Blais, E.
+M.
+et al.
+Reconciled rat and human metabolic networks for comparative toxicogenomics and biomarker predictions.
+Nat.
+Commun.
+8 , 14250 (2017).
+21.
+Becker, S.
+A.
+et al.
+Quantitative prediction of cellular metabolism with constraint-based models: the cobra toolbox.
+Nat.
+Protoc.
+2 , 727–738 (2007).
+22.
+Shlomi, T., Cabili, M.
+N., Herrgård, M.
+J., Palsson, B.
+Ø.
+&amp; Ruppin, E.
+Network-based prediction of human tissue-specific metabolism.
+Nat.
+Biotechnol.
+26 , 1003–1010 (2008).
+23.
+Wang, Y., Eddy, J.
+A.
+&amp; Price, N.
+D.
+Reconstruction of genome-scale metabolic models for 126 human tissues using mcadre.
+BMC Syst.
+Biol.
+6 , 1–16 (2012).
+24.
+Richelle, A., Chiang, A.
+W., Kuo, C.-C.
+&amp; Lewis, N.
+E.
+Increasing consensus of context-specific metabolic models by integrating data-inferred cell functions.
+PLoS Comput.
+Biol.
+15 , e1006867 (2019).
+25.
+Granata, I., Manipur, I., Giordano, M., Maddalena, L.
+&amp; Guarracino, M.
+R.
+Tumormet: a repository of tumor metabolic networks derived from context-specific genome-scale metabolic models.
+Sci.
+Data 9 , 607 (2022).
+26.
+Cho, J.
+S., Gu, C., Han, T.
+H., Ryu, J.
+Y.
+&amp; Lee, S.
+Y.
+Reconstruction of context-specific genome-scale metabolic models using multiomics data to study metabolic rewiring.
+Curr.
+Opin.
+Syst.
+Biol.
+15 , 1–11 (2019).
+27.
+Yizhak, K., Gabay, O., Cohen, H.
+&amp; Ruppin, E.
+Model-based identification of drug targets that revert disrupted metabolism and its application to ageing.
+Nat.
+Commun.
+4 , 2632 (2013).
+28.
+Robinson, J.
+L.
+&amp; Nielsen, J.
+Anticancer drug discovery through genome-scale metabolic modeling.
+Curr.
+Opin.
+Syst.
+Biol.
+4 , 1–8 (2017).
+29.
+Agren, R.
+et al.
+Identification of anticancer drugs for hepatocellular carcinoma through personalized genome-scale metabolic modeling.
+Mol.
+Syst.
+Biol.
+10 , 721 (2014).
+30.
+Ponce-de León, M., Apaolaza, I., Valencia, A.
+&amp; Planes, F.
+J.
+On the inconsistent treatment of gene–protein-reaction rules in context-specific metabolic models.
+Bioinformatics 36 , 1986–1988 (2019).
+31.
+Opdam, S.
+et al.
+A systematic evaluation of methods for tailoring genome-scale metabolic models.
+Cell Syst.
+4 , 318–329 (2017).
+32.
+Apaolaza, I.
+et al.
+An in-silico approach to predict and exploit synthetic lethality in cancer metabolism.
+Nat.
+Commun.
+8 , 459 (2017).
+33.
+Valcárcel, L.
+V.
+et al.
+An automated network-based tool to search for metabolic vulnerabilities in cancer.
+Nat.
+Commun.
+15 , 8685 (2024).
+34.
+Barrena, N., Valcárcel, L.
+V., Olaverri-Mendizabal, D., Apaolaza, I.
+&amp; Planes, F.
+J.
+Synthetic lethality in large-scale integrated metabolic and regulatory network models of human cells.
+npj Syst.
+Biol.
+Appl.
+9 , 32 (2023).
+35.
+Dougherty, B.
+V.
+et al.
+Identifying functional metabolic shifts in heart failure with the integration of omics data and a heart-specific, genome-scale model.
+Cell Rep.
+34 , 108836 (2021).
+36.
+Richelle, A.
+et al.
+Model-based assessment of mammalian cell metabolic functionalities using omics data.
+Cell Rep.
+Methods 1 , 100040 (2021).
+37.
+Tsirvouli, E.
+et al.
+Deciphering molecular mechanisms of synergistic growth reduction in kinase inhibitor combinations 10.1101/2024.03.12.584561 (2024).
+38.
+Love, M.
+I., Huber, W.
+&amp; Anders, S.
+Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.
+Genome Biol.
+15 , 550 (2014).
+39.
+Shen, X.
+et al.
+Asparagine, colorectal cancer, and the role of sex, genes, microbes, and diet: A narrative review.
+Front.
+Mol.
+Biosci.
+9 , https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2022.958666/full (2022).
+40.
+Pegg, A.
+E.
+Functions of polyamines in mammals.
+J.
+Biol.
+Chem.
+291 , 14904–14912 (2016).
+41.
+Jang, W.-J.
+et al.
+Multi-omics analysis reveals that ornithine decarboxylase contributes to erlotinib resistance in pancreatic cancer cells.
+Oncotarget 8 , 92727–92742 (2017).
+42.
+Chai, X.
+et al.
+The rational discovery of multipurpose inhibitors of the ornithine decarboxylase.
+FASEB J.
+34 , 10907–12921 (2020).
+43.
+Zhang, J.
+et al.
+Ornithine and breast cancer: a matched case-control study.
+Sci.
+Rep.
+10 , 15502 (2020).
+44.
+King, R.
+J., Qiu, F., Yu, F.
+&amp; Singh, P.
+K.
+Metabolic and immunological subtypes of esophageal cancer reveal potential therapeutic opportunities.
+Front.
+Cell Dev.
+Biol.
+9 , https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2021.667852/full (2021).
+45.
+Karlenius, T.
+C.
+&amp; Tonissen, K.
+F.
+Thioredoxin and cancer: a role for thioredoxin in all states of tumor oxygenation.
+Cancers 2 , 209 (2010).
+46.
+Prasad, C.
+B.
+et al.
+The thioredoxin system determines CHK1 inhibitor sensitivity via redox-mediated regulation of ribonucleotide reductase activity.
+Nat.
+Commun.
+15 , 4667 (2024).
+47.
+Venkateswaran, N.
+et al.
+MYC promotes tryptophan uptake and metabolism by the kynurenine pathway in colon cancer.
+Genes Dev.
+33 , 1236 (2019).
+48.
+Zhu, A., Ibrahim, J.
+G.
+&amp; Love, M.
+I.
+Heavy-tailed prior distributions for sequence count data: removing the noise and preserving large differences.
+Bioinformatics 35 , 2084–2092 (2019).
+49.
+Varma, A.
+&amp; Palsson, B.
+O.
+Metabolic flux balancing: basic concepts, scientific and practical use.
+Nat.
+Biotechnol.
+12 , 994–998 (1994).
+50.
+Ponce-de-Leon, M.
+et al.
+Solving gap metabolites and blocked reactions in genome-scale models: application to the metabolic network of Blattabacterium cuenoti .
+BMC Syst.
+Biol.
+7 , 114 (2013).
+51.
+Orth, J.
+D., Thiele, I.
+&amp; Palsson, B.
+O.
+What is flux balance analysis? Nat.
+Biotechnol.
+28 , 245–248 (2010).
+52.
+Lewis, N.
+E.
+et al.
+Omic data from evolved E.
+coli are consistent with computed optimal growth from genome-scale models.
+Mol.
+Syst.
+Biol.
+6 , 390 (2010).
+53.
+Mahadevan, R.
+&amp; Schilling, C.
+H.
+The effects of alternate optimal solutions in constraint-based genome-scale metabolic models.
+Metab.
+Eng.
+5 , 264–276 (2003).
+54.
+Ebrahim, A., Lerman, J.
+A., Palsson, B.
+O.
+&amp; Hyduke, D.
+R.
+COBRApy: constraints-based reconstruction and analysis for python.
+BMC Syst.
+Biol.
+7 , 74 (2013).
+Associated Data Supplementary Materials Supplementary Information Supplementary Data 1 Supplementary Data 2 Supplementary Data 3 Supplementary Data 4 Supplementary Data 5 Supplementary Data 6 Data Availability Statement The raw RNA sequencing data from AGS cells used in this study have been deposited in the GEO repository under accession number https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285616 .

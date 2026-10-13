@@ -1,0 +1,8 @@
+== E16  63 subsets of the six component scores (rank-mean)
+  rule scores only                         n= 7  AUC median 0.761  min 0.686  max 0.823   share with AUC >= 0.85: 0%
+  vote scores only                         n= 7  AUC median 0.830  min 0.757  max 0.833   share with AUC >= 0.85: 0%
+  at least one rule AND one vote score     n=49  AUC median 0.880  min 0.795  max 0.940   share with AUC >= 0.85: 73%
+  full six-score consensus: AUC 0.917
+  weakest mixed subset: rule:topology-only, vote:topology-only  AUC 0.795
+  weakest mixed subset: rule:link-only, vote:topo-and-link  AUC 0.799
+  weakest mixed subset: rule:topology-only, vote:topo-and-link  AUC 0.817

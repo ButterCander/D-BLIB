@@ -1,0 +1,4 @@
+Published-table link-only ensemble, subsets of GA runs (3 models per run): vote-fraction AUC mean +/- sd (95% range)
+   12 runs =  36 models: 0.601 +/- 0.083  (0.44 - 0.75)
+   36 runs = 108 models: 0.708 +/- 0.075  (0.56 - 0.85)
+  150 runs = 450 models: 0.831 +/- 0.000  (0.83 - 0.83)

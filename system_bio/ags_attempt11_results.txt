@@ -1,0 +1,9 @@
+== E23  Selection among 16 label-free scores with leave-one-positive-out
+  held-out 5Z~PI : selected 'consensus Bliss rules + HSA votes' -> held-out positive beats 90% of negatives
+  held-out AK~BI : selected 'consensus Bliss' -> held-out positive beats 94% of negatives
+  held-out BI~D1 : selected 'consensus Bliss' -> held-out positive beats 73% of negatives
+  held-out PD~PI : selected 'consensus Bliss' -> held-out positive beats 96% of negatives
+  held-out D1~PI : selected 'consensus Bliss' -> held-out positive beats 99% of negatives
+  held-out G2~PI : selected 'consensus Bliss' -> held-out positive beats 97% of negatives
+  mean held-out percentile (= LOPO AUC of the selection procedure): 0.915
+  for comparison, median AUC of all 16 candidates: 0.808; best 0.917 (consensus Bliss); worst 0.298

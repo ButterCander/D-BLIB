@@ -1,0 +1,20 @@
+== E9  Paper rule (random-model minus calibrated ensemble excess; higher = synergy) vs number of evolution runs
+  link-only      50 runs: no random-model file   150 runs: AUC 0.686 PR 0.219
+  topology-only  50 runs: AUC 0.678 PR 0.413   150 runs: AUC 0.734 PR 0.499
+  topo-and-link  50 runs: AUC 0.652 PR 0.081   150 runs: AUC 0.823 PR 0.252
+  link-only calibrated-only excess, 50 runs: AUC 0.683  (random-model file available for 50 and 150 only)
+  link-only calibrated-only excess, 100 runs: AUC 0.683  (random-model file available for 50 and 150 only)
+  link-only calibrated-only excess, 150 runs: AUC 0.686  (random-model file available for 50 and 150 only)
+  link-only calibrated-only excess, 200 runs: AUC 0.683  (random-model file available for 50 and 150 only)
+
+== E10  Model-wise weighted rule (1-w)*p_calibrated + w*p_random, AUC (higher = synergy)
+  link-only      w=0: 0.831  w=0.5: 0.805  w=1: 0.799   min 0.799 max 0.831
+  topology-only  w=0: 0.757  w=0.5: 0.791  w=1: 0.787   min 0.757 max 0.798
+  topo-and-link  w=0: 0.804  w=0.5: 0.812  w=1: 0.796   min 0.796 max 0.820
+
+== E11  Label-free consensus of the three calibration strategies under the paper rule (rank-mean of random-minus-calibrated excess)
+  link-only alone                                AUC 0.686 [0.39,0.97]  PR AUC 0.219 [0.08,0.58]  synergies in top 35: 4 of 6
+  topology-only alone                            AUC 0.734 [0.44,0.98]  PR AUC 0.499 [0.15,0.87]  synergies in top 35: 4 of 6
+  topo-and-link alone                            AUC 0.823 [0.60,0.97]  PR AUC 0.252 [0.12,0.65]  synergies in top 35: 5 of 6
+  rank-mean of the three strategies              AUC 0.782 [0.52,0.96]  PR AUC 0.386 [0.11,0.77]  synergies in top 35: 4 of 6
+  rank-mean of 3 strategies + 3 vote fractions   AUC 0.917 [0.84,0.98]  PR AUC 0.306 [0.17,0.68]  synergies in top 35: 5 of 6

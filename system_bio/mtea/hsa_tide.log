@@ -1,0 +1,4 @@
+tide PI3Ki_MEKi_vsPI3Ki p<0.025: 14 53s
+tide PI3Ki_MEKi_vsMEKi p<0.025: 92 53s
+tide PI3Ki_TAKi_vsPI3Ki p<0.025: 16 47s
+tide PI3Ki_TAKi_vsTAKi p<0.025: 69 36s

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="generator" content="r-universe/pandoc">
+      
+      
+      <title>A brief introduction to edgeR</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" data-external="1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" data-external="1">
+      <link rel="stylesheet" href="https://r-universe.dev/static/article-styles.css?nocache=1" data-external="1">
+   </head>
+   <body>
+      <div class="container" id="topcontainer">
+         <script>if (window.self != window.top) try {document.getElementById('topcontainer').className = "container-fluid article-in-iframe"; } catch(e) {}</script>
+
+         <div class="frontmatter">
+         <h1 class="title">A brief introduction to edgeR</h1>
+         </div>
+
+                  <div class="row">
+            <div class="col-xl-10"><div id="what-is-it" class="section level1">
+<h1>What is it?</h1>
+<p>edgeR is a package for differential analyses of read count data from
+sequencing technologies such as RNA-seq, ChIP-seq, ATAC-seq, BS-seq and
+CUT&amp;RUN. It has particularly strong capabilities for expression
+analyses of RNA-seq data, including gene expression, transcript
+expression and tests for differential splicing.</p>
+<p>edgeR implements novel statistical methods based on the negative
+binomial distribution as a model for count variability, including
+empirical Bayes methods, exact tests, and generalized linear models. The
+package is especially suitable for analysing designed experiments with
+multiple experimental factors but possibly small numbers of replicates.
+It has unique abilities to model transcript specific variation even in
+small samples, a capability essential for prioritizing genes or
+transcripts that have consistent effects across replicates.</p>
+</div>
+<div id="how-to-get-help" class="section level1">
+<h1>How to get help</h1>
+<p>The edgeR User’s Guide is available by</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(edgeR)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">edgeRUsersGuide</span>()</span></code></pre></div>
+<p>or alternatively from the <a href="https://doi.org/doi:10.18129/B9.bioc.edgeR">edgeR landing
+page</a>.</p>
+<p>Documentation for specific functions is available through the usual R
+help system, e.g., <code>?glmFit</code>. Further questions about the
+package should be directed to the <a href="https://support.bioconductor.org">Bioconductor support
+site</a>.</p>
+</div>
+<div id="further-reading" class="section level1">
+<h1>Further reading</h1>
+<p>Baldoni PL#, Chen L#, Li M, Chen Y, Smyth GK (2025). Dividing out
+quantification uncertainty enables assessment of differential transcript
+usage with limma and edgeR. <em>Nucleic Acids Research</em>. <a href="https://doi.org/10.1093/nar/gkaf1305">doi:10.1093/nar/gkaf1305</a></p>
+<p>Chen Y, Chen L, Lun ATL, Baldoni PL, Smyth GK (2025). edgeR v4:
+powerful differential analysis of sequencing data with expanded
+functionality and improved support for small counts and larger datasets.
+<em>Nucleic Acids Research</em> 53(2), gkaf018. <a href="https://doi.org/10.1093/nar/gkaf018">doi:10.1093/nar/gkaf018</a>.</p>
+<p>Baldoni PL#, Chen Y#, Hediyeh-zadeh S, Liao Y, Dong X, Ritchie ME,
+Shi W, Smyth GK (2024). Dividing out quantification uncertainty allows
+efficient assessment of differential transcript expression with edgeR.
+<em>Nucleic Acids Research</em> 52(3), e13. <a href="https://doi.org/10.1093/nar/gkad1167">doi:10.1093/nar/gkad1167</a></p>
+<p>Chen Y, Pal B, Visvader JE, Smyth GK (2017). Differential methylation
+analysis of reduced representation bisulfite sequencing experiments
+using edgeR. <em>F1000Research</em> 6, 2055. <a href="https://doi.org/10.12688/f1000research.13196.2">doi:10.12688/f1000research.13196.2</a></p>
+<p>Chen Y, Lun ATL, Smyth GK (2016). From reads to genes to pathways:
+differential expression analysis of RNA-Seq experiments using Rsubread
+and the edgeR quasi-likelihood pipeline. <em>F1000Research</em> 5, 1438.
+<a href="https://doi.org/10.12688/f1000research.8987.2">doi:10.12688/f1000research.8987.2</a></p>
+<p>McCarthy DJ#, Chen Y#, Smyth GK (2012). Differential expression
+analysis of multifactor RNA-Seq experiments with respect to biological
+variation. <em>Nucleic Acids Research</em> 40, 4288-4297. <a href="https://doi.org/10.1093/nar/gks042">doi:10.1093/nar/gks042</a></p>
+<p>Robinson MD#, McCarthy DJ#, Smyth GK (2010). edgeR: a Bioconductor
+package for differential expression analysis of digital gene expression
+data. <em>Bioinformatics</em> 26, 139-140. <a href="https://doi.org/10.1093/bioinformatics/btp616">doi:10.1093/bioinformatics/btp616</a></p>
+</div></div>
+            <div class="d-none d-xl-block col-xl-2 bd-toc">
+               <ul class="section-nav">
+                  <li class="toc-entry"><ul>
+<li><a href="#what-is-it" id="toc-what-is-it">What is it?</a></li>
+<li><a href="#how-to-get-help" id="toc-how-to-get-help">How to get
+help</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+reading</a></li>
+</ul></li>
+               </ul>
+            </div>
+         </div>
+               </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js" data-external="1"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" data-external="1"></script>
+      <script src="https://r-universe.dev/static/article.js" data-external="1"></script>
+
+      <!-- Mathjax -->
+      <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" data-external="1"></script> -->
+      <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.0.0/tex-mml-chtml.min.js" data-external="1"></script>
+   </body>
+</html>

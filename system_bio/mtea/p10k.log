@@ -1,0 +1,17 @@
+tidee PI103: 143 tasks, p<0.025: 8, 65s
+tidee PD0325901: 143 tasks, p<0.025: 13, 61s
+tidee 5Z: 143 tasks, p<0.025: 10, 68s
+tidee PI103+5Z: 143 tasks, p<0.025: 5, 70s
+tidee PI103+PD: 143 tasks, p<0.025: 16, 70s
+model loaded 35s: 13085 reactions
+tide PI103: 187 tasks, p<0.025: 44, 241s
+tide PD0325901: 187 tasks, p<0.025: 16, 235s
+tide 5Z: 187 tasks, p<0.025: 22, 233s
+tide PI103+5Z: 187 tasks, p<0.025: 29, 231s
+tide PI103+PD: 187 tasks, p<0.025: 34, 230s
+model loaded 35s: 13085 reactions
+tide PI103: 187 tasks, p<0.025: 37, 164s
+tide PD0325901: 187 tasks, p<0.025: 29, 161s
+tide 5Z: 187 tasks, p<0.025: 14, 166s
+tide PI103+5Z: 187 tasks, p<0.025: 40, 186s
+tide PI103+PD: 187 tasks, p<0.025: 48, 185s

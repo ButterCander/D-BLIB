@@ -1,0 +1,4 @@
+NEW link-only (108 models): rule 0.700, vote 0.790, 2-score consensus 0.757
+PUBLISHED link-only (450 models): rule 0.686, vote 0.831, 2-score consensus 0.827
+  published consensus with the vote subsampled to 36 models (rule kept at full size): 0.711 +/- 0.052
+  published consensus with the vote subsampled to 108 models (rule kept at full size): 0.763 +/- 0.050

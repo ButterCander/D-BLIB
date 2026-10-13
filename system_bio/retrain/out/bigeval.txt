@@ -1,0 +1,12 @@
+== calibrated ensembles by seed batch, rule computed against the pooled random-model ensemble
+  seeds 12-23    models  36 | rule 0.703 | vote 0.734 | 2-score consensus 0.689
+  seeds 24-47    models  72 | rule 0.685 | vote 0.793 | 2-score consensus 0.735
+  seeds 48-71    models  72 | rule 0.749 | vote 0.872 | 2-score consensus 0.881
+  seeds 100-111  models  36 | rule 0.689 | vote 0.651 | 2-score consensus 0.663
+  seeds 112-123  models  36 | rule 0.672 | vote 0.646 | 2-score consensus 0.711
+  seeds 124-135  models  36 | rule 0.561 | vote 0.715 | 2-score consensus 0.677
+  spread between batches (sd): rule 0.057, vote 0.079, consensus 0.073
+
+== POOLED link-only: 288 calibrated models, 216 random models
+  rule 0.698 | vote 0.855 | 2-score consensus 0.810 (PR 0.256, top-35 4/6)
+  published tables (450 models): rule 0.686 | vote 0.831 | 2-score consensus 0.827

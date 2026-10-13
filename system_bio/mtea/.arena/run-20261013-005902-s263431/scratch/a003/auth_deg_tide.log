@@ -1,0 +1,7 @@
+PI3Ki       model genes among authors' DEGs:  180 | r(authors' score, score from authors' DEG list) = 0.948 | max |diff| 0.94 | exact matches (|diff|<1e-6): 37/187
+MEKi        model genes among authors' DEGs:  369 | r(authors' score, score from authors' DEG list) = 0.916 | max |diff| 0.85 | exact matches (|diff|<1e-6): 37/187
+   largest diffs: [('X69', 'Synthesis of creatine from a', np.float64(0.85), np.float64(0.0)), ('X140', 'Mevalonate synthesis', np.float64(0.84), np.float64(0.0)), ('X75', 'Conversion of aspartate to b', np.float64(-0.64), np.float64(0.0))]
+TAKi        model genes among authors' DEGs:  261 | r(authors' score, score from authors' DEG list) = 0.842 | max |diff| 0.94 | exact matches (|diff|<1e-6): 31/187
+PI3Ki-TAKi  model genes among authors' DEGs:  274 | r(authors' score, score from authors' DEG list) = 0.930 | max |diff| 0.99 | exact matches (|diff|<1e-6): 35/187
+PI3Ki-MEKi  model genes among authors' DEGs:  464 | r(authors' score, score from authors' DEG list) = 0.944 | max |diff| 0.75 | exact matches (|diff|<1e-6): 35/187
+done

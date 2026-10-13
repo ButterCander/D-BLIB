@@ -1,0 +1,36 @@
+574 samples, 214 unique drug pairs, 36 drugs, 86% of samples share their pair with another cell line
+
+drugs without target info: []
+== random: mean +/- sd over 5 repeats of 5-fold, nested-tuned   (Pearson r | AUC)
+features                                         Ridge                             SVR                              RF
+Boolean                 0.408+/-0.013 | 0.691+/-0.007  0.386+/-0.011 | 0.680+/-0.007  0.406+/-0.002 | 0.680+/-0.005
+drug+cell               0.488+/-0.011 | 0.754+/-0.004  0.527+/-0.015 | 0.795+/-0.003  0.453+/-0.011 | 0.735+/-0.009
+target+cell             0.478+/-0.010 | 0.754+/-0.003  0.512+/-0.012 | 0.789+/-0.004  0.452+/-0.012 | 0.727+/-0.003
+Boolean+target+cell     0.474+/-0.008 | 0.751+/-0.003  0.488+/-0.013 | 0.758+/-0.008  0.461+/-0.005 | 0.710+/-0.005
+Boolean+drug+cell       0.465+/-0.020 | 0.744+/-0.007  0.494+/-0.010 | 0.763+/-0.008  0.464+/-0.007 | 0.714+/-0.006
+
+== pair: mean +/- sd over 5 repeats of 5-fold, nested-tuned   (Pearson r | AUC)
+features                                         Ridge                             SVR                              RF
+Boolean                 0.399+/-0.025 | 0.686+/-0.008  0.393+/-0.010 | 0.678+/-0.008  0.394+/-0.013 | 0.674+/-0.005
+drug+cell               0.485+/-0.014 | 0.742+/-0.008  0.503+/-0.017 | 0.755+/-0.012  0.421+/-0.019 | 0.717+/-0.013
+target+cell             0.461+/-0.019 | 0.740+/-0.005  0.459+/-0.015 | 0.747+/-0.010  0.422+/-0.025 | 0.705+/-0.014
+Boolean+target+cell     0.461+/-0.022 | 0.739+/-0.008  0.498+/-0.016 | 0.757+/-0.007  0.434+/-0.028 | 0.697+/-0.006
+Boolean+drug+cell       0.475+/-0.019 | 0.737+/-0.007  0.491+/-0.017 | 0.759+/-0.009  0.436+/-0.028 | 0.699+/-0.007
+
+== paired differences, pair-grouped CV, repeat-averaged predictions; [95% CI, resampling drug pairs]
+SVR drug+cell  vs  RF Boolean (paper)                      dr=+0.112 [+0.041,+0.182]   dAUC=+0.082 [+0.034,+0.129]
+Ridge drug+cell  vs  RF Boolean (paper)                    dr=+0.088 [+0.011,+0.164]   dAUC=+0.066 [+0.017,+0.114]
+SVR target+cell  vs  RF Boolean (paper)                    dr=+0.071 [+0.003,+0.137]   dAUC=+0.076 [+0.030,+0.121]
+SVR Boolean+drug+cell  vs  SVR drug+cell                   dr=-0.009 [-0.046,+0.030]   dAUC=+0.006 [-0.013,+0.028]
+Ridge Boolean+drug+cell  vs  Ridge drug+cell               dr=-0.003 [-0.026,+0.017]   dAUC=-0.001 [-0.013,+0.011]
+Ensemble(SVR drug+cell, RF Boolean)  vs  SVR drug+cell     dr=-0.012 [-0.043,+0.019]   dAUC=-0.010 [-0.030,+0.011]
+
+== per cell line, pair-grouped CV (Pearson r | AUC)
+cell line       RF Boolean (paper)         SVR drug+cell     SVR Boolean+drug+cell
+BT-549               0.071 | 0.596         0.364 | 0.722         0.342 | 0.759
+MCF7                 0.476 | 0.681         0.627 | 0.836         0.594 | 0.833
+MDA-MB-231           0.479 | 0.703         0.565 | 0.782         0.572 | 0.811
+MDA-MB-468           0.215 | 0.663         0.413 | 0.742         0.369 | 0.737
+T-47D                0.303 | 0.588         0.377 | 0.653         0.417 | 0.663
+
+figures: fig/fig1_models.png fig/fig2_deltas.png

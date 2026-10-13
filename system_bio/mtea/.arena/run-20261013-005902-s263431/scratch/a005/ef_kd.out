@@ -1,0 +1,8 @@
+reactions with GPR: 8091 of 13085
+reference expression (median of control reactions): 1912.0
+medium components without exchange: []
+vmax=1.0 floor=0.05 base=0.0559 | RRM1+RRM2:+0.0% | TYMS:+0.0% | DHODH:+0.0% | PHGDH:+0.0% | HMGCR:+0.0% | GAPDH:+0.0% | ASNS:+0.0%
+vmax=3.0 floor=0.05 base=0.1606 | RRM1+RRM2:+0.0% | TYMS:+0.0% | DHODH:+0.0% | PHGDH:+0.0% | HMGCR:+0.0% | GAPDH:+0.0% | ASNS:+0.0%
+vmax=3.0 floor=0.2 base=0.2815 | RRM1+RRM2:+0.0% | TYMS:+0.0% | DHODH:+0.0% | PHGDH:+0.0% | HMGCR:+0.0% | GAPDH:+0.0% | ASNS:+0.0%
+vmax=10.0 floor=0.05 base=0.4631 | RRM1+RRM2:-0.0% | TYMS:-0.0% | DHODH:-0.0% | PHGDH:-0.0% | HMGCR:-0.0% | GAPDH:-0.0% | ASNS:-0.0%
+200 random genes x0.5: -0.0%

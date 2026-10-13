@@ -1,0 +1,20 @@
+574 samples, 214 unique drug pairs, 36 drugs, 86% of samples share their pair with another cell line
+
+== CV: paper-style (random)   (Pearson r / AUC, out-of-fold pooled)
+features                         RF     ExtraTrees         HistGB          Ridge            SVR
+Boolean(117)           0.403/0.681   0.418/0.678   0.409/0.675   0.407/0.685   0.357/0.671
+drug+cell              0.428/0.723   0.458/0.716   0.515/0.764   0.495/0.757   0.541/0.794
+Boolean+drug+cell      0.442/0.703   0.494/0.728   0.481/0.725   0.480/0.750   0.490/0.762
+
+== CV: pair-grouped   (Pearson r / AUC, out-of-fold pooled)
+features                         RF     ExtraTrees         HistGB          Ridge            SVR
+Boolean(117)           0.392/0.667   0.401/0.670   0.406/0.665   0.412/0.685   0.358/0.666
+drug+cell              0.379/0.692   0.432/0.684   0.458/0.728   0.471/0.731   0.499/0.751
+Boolean+drug+cell      0.404/0.682   0.471/0.710   0.449/0.712   0.474/0.731   0.486/0.747
+
+== CV: leave-cell-line-out   (Pearson r / AUC, out-of-fold pooled)
+features                         RF     ExtraTrees         HistGB          Ridge            SVR
+Boolean(117)          -0.131/0.500  -0.134/0.475  -0.076/0.490  -0.009/0.461  -0.193/0.426
+drug+cell              0.280/0.644   0.275/0.659   0.405/0.738   0.343/0.726   0.413/0.756
+Boolean+drug+cell     -0.053/0.527   0.221/0.639   0.039/0.539   0.104/0.560   0.023/0.529
+

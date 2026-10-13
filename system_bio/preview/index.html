@@ -1,0 +1,299 @@
+<!doctype html><meta charset=utf-8><style>body{margin:0;background:#888}section{width:1920px;height:1080px;box-sizing:border-box;position:relative;overflow:hidden;margin:0 0 40px 0}
+x-shape{display:block}p,h1,h2,h3,ul{margin:0}ul{padding-left:36px}table{border-collapse:collapse}td,th{padding:10px 14px}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"><section id="cover" style="background:#13243A;color:#F7F6F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#F5A25D">Systems Biology · Midterm presentation</p>
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="font-size:104px;font-weight:600;line-height:1.08;color:#F7F6F2">Logical models for cancer drug-synergy prediction</h1>
+<p style="font-size:40px;line-height:1.35;color:#B9C5D6;width:1300px">Flobak et al. (2023), Frontiers in Systems Biology, and what happens when I test it</p>
+</div>
+<p style="font-size:32px;color:#B9C5D6">[Your name] · October 14, 2026</p>
+</section>
+<section id="background" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">Background</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Too many drug pairs to test</h2>
+</div>
+<div style="display:flex;gap:48px;flex:1">
+<div style="width:620px;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:40px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px">
+<p style="font-size:120px;font-weight:700;line-height:1;color:#0072B2">~200</p>
+<p style="font-size:30px;color:#4A5568">approved cancer drugs</p>
+<x-shape kind="arrow-down" style="width:48px;height:64px;background:#8A94A3"></x-shape>
+<p style="font-size:112px;font-weight:700;line-height:1;color:#D55E00">&gt;10,000</p>
+<p style="font-size:30px;color:#4A5568">possible drug pairs</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:32px">
+<div style="width:190px;flex:none"><p style="font-size:24px;font-weight:600;letter-spacing:3px;color:#B34A00">PROBLEM</p></div>
+<div style="flex:1"><p style="font-size:34px;line-height:1.3;color:#13243A">Testing every drug pair experimentally is not feasible</p></div>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:32px">
+<div style="width:190px;flex:none"><p style="font-size:24px;font-weight:600;letter-spacing:3px;color:#B34A00">GAP</p></div>
+<div style="flex:1"><p style="font-size:34px;line-height:1.3;color:#13243A">Logical models explain mechanisms, but need heavy manual tuning</p></div>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;align-items:center;gap:32px">
+<div style="width:190px;flex:none"><p style="font-size:24px;font-weight:600;letter-spacing:3px;color:#0072B2">AIM</p></div>
+<div style="flex:1"><p style="font-size:34px;line-height:1.3;color:#13243A">Calibrate the model automatically with a genetic algorithm, then predict synergy</p></div>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">Flobak et al., Frontiers in Systems Biology, 2023</p>
+</section>
+<section id="method" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">Method</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">A calibrated logical model simulates each drug pair</h2>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+<div style="display:flex;gap:20px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<p style="width:48px;height:48px;border-radius:50%;background:#0072B2;color:#FFFFFF;font-size:28px;font-weight:600;line-height:48px;text-align:center">1</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.15;color:#13243A">CASCADE 2.0</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">144 nodes, 367 edges; signaling network of AGS gastric cancer cells</p>
+</div>
+<div style="width:40px;display:flex;align-items:center"><x-shape kind="arrow-right" style="width:40px;height:32px;background:#8A94A3"></x-shape></div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<p style="width:48px;height:48px;border-radius:50%;background:#0072B2;color:#FFFFFF;font-size:28px;font-weight:600;line-height:48px;text-align:center">2</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.15;color:#13243A">Calibrate</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Genetic algorithm tunes logic rules to match 24 measured node states</p>
+</div>
+<div style="width:40px;display:flex;align-items:center"><x-shape kind="arrow-right" style="width:40px;height:32px;background:#8A94A3"></x-shape></div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<p style="width:48px;height:48px;border-radius:50%;background:#0072B2;color:#FFFFFF;font-size:28px;font-weight:600;line-height:48px;text-align:center">3</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.15;color:#13243A">Ensemble</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Hundreds of calibrated models instead of one</p>
+</div>
+<div style="width:40px;display:flex;align-items:center"><x-shape kind="arrow-right" style="width:40px;height:32px;background:#8A94A3"></x-shape></div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<p style="width:48px;height:48px;border-radius:50%;background:#0072B2;color:#FFFFFF;font-size:28px;font-weight:600;line-height:48px;text-align:center">4</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.15;color:#13243A">Simulate drugs</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Drug target node fixed OFF; growth read from survival and death nodes</p>
+</div>
+<div style="width:40px;display:flex;align-items:center"><x-shape kind="arrow-right" style="width:40px;height:32px;background:#8A94A3"></x-shape></div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<p style="width:48px;height:48px;border-radius:50%;background:#0072B2;color:#FFFFFF;font-size:28px;font-weight:600;line-height:48px;text-align:center">5</p>
+<h3 style="font-size:32px;font-weight:600;line-height:1.15;color:#13243A">Score synergy</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Bliss: synergy if growth(a,b) &lt; growth(a) × growth(b)</p>
+</div>
+</div>
+<div style="background:#13243A;border-radius:16px;padding:32px 40px">
+<p style="font-size:32px;line-height:1.35;color:#F7F6F2"><b>Output:</b> a ranked list of 153 drug pairs, compared with the 6 pairs observed as synergistic</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">Flobak et al., Frontiers in Systems Biology, 2023</p>
+</section>
+<section id="results" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">Paper results</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Reported performance and a mouse confirmation</h2>
+</div>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:3;display:grid;grid-template-columns:repeat(2, 1fr);grid-template-rows:repeat(2, 1fr);gap:32px">
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+<p style="font-size:96px;font-weight:700;line-height:1;color:#0072B2">0.69</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">ROC AUC on 153 pairs (random: 0.50)</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+<p style="font-size:96px;font-weight:700;line-height:1;color:#0072B2">0.18</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">PR AUC (random: 0.04)</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+<p style="font-size:96px;font-weight:700;line-height:1;color:#13243A">6/153</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">pairs observed synergistic (4%)</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+<p style="font-size:96px;font-weight:700;line-height:1;color:#13243A">4 of 6</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">synergies found by testing only the top 35 pairs</p>
+</div>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:32px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;color:#0072B2">IN VIVO CHECK</p>
+<h3 style="font-size:36px;font-weight:600;line-height:1.15;color:#13243A">TAK1 + PI3K inhibition</h3>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">Synergy confirmed in cells and in mouse xenografts (n = 30)</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;color:#B34A00">STATED LIMITS</p>
+<ul style="font-size:28px;line-height:1.35;color:#13243A">
+<li>Wrong network edges quickly degrade predictions</li>
+<li>Only 24 of 144 nodes have calibration data</li>
+</ul>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">Flobak et al., Frontiers in Systems Biology, 2023</p>
+</section>
+<section id="repro" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">My reproduction</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Reproduction: the interval is wide</h2>
+</div>
+<p style="font-size:32px;line-height:1.35;color:#13243A">Paper's rule (random minus calibrated score): AUC 0.69 (reported 0.69), 4 of 6 synergies in the top 35 (reported 4 of 6). The 95% interval is 0.39–0.97.</p>
+<img src="ags_A_auc_ci.png" alt="Dot plot of ROC AUC with 95 percent bootstrap intervals for the paper's rule on three calibration strategies: parameters only 0.69 (0.39 to 0.97), topology only 0.73 (0.44 to 0.97), topology plus parameters 0.82 (0.58 to 0.97). The parameters-only and topology-only intervals include chance." style="width:1200px;height:447px;object-fit:contain">
+<p style="font-size:24px;line-height:1.35;color:#4A5568">Same rule on CASCADE 1.0: AUC 0.97 (reported 0.97). Rows are the paper's three calibration strategies.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="ensemble" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">My analysis</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Ensembles carry the signal</h2>
+</div>
+<p style="font-size:32px;line-height:1.35;color:#13243A">A single model scores AUC 0.49, no better than chance. Ensemble AUC grows with size and reaches 0.83 at 450 models; 17% of predictions are missing.</p>
+<img src="ags_B_ensemble.png" alt="Left: histogram of AUC for 450 single models, centered near 0.49, with the full ensemble at 0.83. Right: ensemble AUC rises from 0.54 at 10 models to 0.82 at 350 models and 0.83 at all 450." style="width:1300px;height:515px;object-fit:contain">
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="consensus" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#0072B2">My analysis</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Can consensus scores overcome the limits?</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+<img src="ags_C_consensus.png" alt="Dot plots of ROC AUC and PR AUC with 95 percent bootstrap intervals. Paper rule, parameters only: AUC 0.69. Paper rule, topology plus parameters: 0.82. Vote fraction, parameters only: 0.83. Consensus of six scores: AUC 0.92 and PR AUC 0.31, with the narrowest AUC interval. A trivial rule that the pair contains PI gives AUC 0.79." style="width:1100px;height:450px;object-fit:contain">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;line-height:1.25;color:#13243A">Consensus of 3 paper-rule and 3 vote scores: AUC 0.92</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Interval 0.83–0.98 resampling pairs, 0.68–1.00 resampling drugs</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;line-height:1.25;color:#13243A">Not a lucky pick</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Mixed subsets reach a median AUC 0.88; family-wise permutation p = 0.002</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;line-height:1.25;color:#13243A">Separates the PI pairs</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">AUC 1.00 among the 17 PI pairs (4 vs 13)</p>
+</div>
+<p style="font-size:28px;font-weight:600;line-height:1.3;color:#B34A00">Chosen after trying several scores. A new run with other software and fewer models gave AUC 0.75; the parameters-only part replicated.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="takeaways" style="background:#13243A;color:#F7F6F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#F5A25D">Takeaways · my interest: cancer drug discovery</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#F7F6F2">What this means for my research</h2>
+</div>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:1;background:#1D3452;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;font-weight:700;color:#F5A25D">1</p>
+<h3 style="font-size:40px;font-weight:600;line-height:1.15;color:#F7F6F2">Use logical models to generate hypotheses</h3>
+<p style="font-size:30px;line-height:1.4;color:#B9C5D6">They show why a pair may work. Experiments such as TAK1 + PI3K can then test it.</p>
+</div>
+<div style="flex:1;background:#1D3452;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;font-weight:700;color:#F5A25D">2</p>
+<h3 style="font-size:40px;font-weight:600;line-height:1.15;color:#F7F6F2">Combine scores, then test the selection</h3>
+<p style="font-size:30px;line-height:1.4;color:#B9C5D6">Consensus reached AUC 0.92 on the published tables and 0.75 in an independent re-run. With 6 positives I report intervals, a drug-hub baseline and a re-simulation.</p>
+</div>
+<div style="flex:1;background:#1D3452;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;font-weight:700;color:#F5A25D">3</p>
+<h3 style="font-size:40px;font-weight:600;line-height:1.15;color:#F7F6F2">Next: larger multi-cell-line screens</h3>
+<p style="font-size:30px;line-height:1.4;color:#B9C5D6">Test model ensembles with drug-level features on bigger combination data.</p>
+</div>
+</div>
+<p style="font-size:44px;font-weight:600;color:#F5A25D">Thank you · Questions?</p>
+</section>
+<section id="bk_pi" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">The six observed synergies</h2>
+</div>
+<table style="font-size:30px;color:#13243A">
+<tr><th style="width:16%;text-align:left">Pair</th><th style="width:18%;text-align:left">Contains PI</th><th style="width:22%;text-align:left">Rank: paper rule</th><th style="width:22%;text-align:left">Rank: vote fraction</th><th style="width:22%;text-align:left">Rank: consensus</th></tr>
+<tr><td>D1~PI</td><td>yes</td><td>6</td><td>26</td><td>2</td></tr>
+<tr><td>G2~PI</td><td>yes</td><td>5</td><td>39</td><td>7</td></tr>
+<tr><td>PD~PI</td><td>yes</td><td>7</td><td>12</td><td>9</td></tr>
+<tr><td>AK~BI</td><td>no</td><td>135</td><td>21</td><td>13</td></tr>
+<tr><td>5Z~PI</td><td>yes</td><td>15</td><td>47</td><td>18</td></tr>
+<tr><td>BI~D1</td><td>no</td><td>130</td><td>25</td><td>45</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">Rank among 153 pairs (1 = top), parameters-only models. PI = PI-103 (PI3K inhibitor), 5Z = 5Z-7-oxozeaenol (TAK1 inhibitor). The paper rule misses the two non-PI synergies; vote fractions find them. The mouse-validated pair 5Z~PI ranks 15.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="bk_tuning" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Tuning the combination weight overfits</h2>
+</div>
+<table style="font-size:30px;color:#13243A">
+<tr><th style="width:34%;text-align:left">Calibration strategy</th><th style="width:22%;text-align:left">Paper rule</th><th style="width:22%;text-align:left">Best weight, same data</th><th style="width:22%;text-align:left">Leave one positive out</th></tr>
+<tr><td>Parameters only</td><td>0.69</td><td>0.84</td><td>0.70</td></tr>
+<tr><td>Topology only</td><td>0.73</td><td>0.77</td><td>0.54</td></tr>
+<tr><td>Topology + parameters</td><td>0.82</td><td>0.82</td><td>0.55</td></tr>
+</table>
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;font-weight:600;line-height:1.3;color:#13243A">Neither score alone predicts (AUC 0.31 calibrated, 0.21 random); the contrast between them carries the signal.</p>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">ROC AUC, ensemble excess scores. The weight is tuned on five positives and scored on the sixth. Parameters only: the contrast beats the calibrated score alone by +0.37 AUC (95% interval +0.07 to +0.70).</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="bk_calibration" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">How much does calibration contribute?</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:72px;font-weight:700;line-height:1;color:#0072B2">0.92</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">Consensus AUC. Random-model votes in place of calibrated votes give 0.92 too</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:72px;font-weight:700;line-height:1;color:#0072B2">0.79–0.85</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">Rank correlation between calibrated and random-model vote fractions</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:72px;font-weight:700;line-height:1;color:#0072B2">+0.37</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5568">AUC gained by the contrast over the calibrated score alone (interval +0.07 to +0.70, parameters only)</p>
+</div>
+</div>
+<div style="background:#13243A;border-radius:16px;padding:32px 40px">
+<p style="font-size:34px;line-height:1.35;color:#F7F6F2">Network topology drives the votes; calibration acts through its contrast with random models.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of the published result tables, github.com/druglogics/ags-paper</p>
+</section>
+<section id="bk_replication" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">An independent re-simulation</h2>
+</div>
+<table style="font-size:30px;color:#13243A">
+<tr><th style="width:40%;text-align:left">ROC AUC</th><th style="width:20%;text-align:left">Published</th><th style="width:20%;text-align:left">New run</th><th style="width:20%;text-align:left">Published, size-matched</th></tr>
+<tr><td>Vote fraction, parameters only</td><td>0.83</td><td>0.79</td><td>0.71</td></tr>
+<tr><td>Paper rule, parameters only</td><td>0.69</td><td>0.70</td><td>n/a</td></tr>
+<tr><td>Two-score consensus, parameters only</td><td>0.83</td><td>0.76</td><td>0.76</td></tr>
+<tr><td>Paper rule, topology only</td><td>0.73</td><td>0.48</td><td>n/a</td></tr>
+<tr><td>Paper rule, topology + parameters</td><td>0.82</td><td>0.65</td><td>n/a</td></tr>
+<tr><td>Consensus of six scores</td><td>0.92</td><td>0.75</td><td>n/a</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">Published: 450 models per strategy (Java pipeline). New run: 108 models per strategy, pyDrugLogics (Python), same network and training data. Size-matched: published vote subsampled to 108 models. Parameters-only results match; topology strategies do not, and the software may be the reason.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis; ensembles re-trained with pyDrugLogics on the CASCADE 2.0 inputs of druglogics-synergy</p>
+</section>
+<section id="bk_breast" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">A breast-cancer model shows the same pattern</h2>
+</div>
+<table style="font-size:30px;color:#13243A">
+<tr><th style="width:56%;text-align:left">Features and model</th><th style="width:22%;text-align:left">Pearson r</th><th style="width:22%;text-align:left">AUC</th></tr>
+<tr><td>Boolean-simulation features, random forest (published approach)</td><td>0.39</td><td>0.67</td></tr>
+<tr><td>Drug identity + cell line, SVR</td><td>0.50</td><td>0.76</td></tr>
+<tr><td>Boolean + drug identity + cell line, SVR</td><td>0.49</td><td>0.76</td></tr>
+</table>
+<div style="background:#FFFFFF;border:1px solid #DDE2E8;border-radius:16px;padding:32px 40px;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:34px;font-weight:600;line-height:1.3;color:#13243A">Adding Boolean features to drug identity: AUC +0.006 (95% interval −0.013 to +0.028)</p>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">574 drug-pair × cell-line samples, 5 breast-cancer lines; new drug pairs held out, nested cross-validation, 5 repeats.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">My analysis of data from Taoma et al. (2024, 2025), Boolean models of breast-cancer signaling</p>
+</section>
+<section id="bk_limits" style="background:#F7F6F2;color:#13243A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#6B7685">Backup</p>
+<h2 style="font-size:60px;font-weight:600;line-height:1.1;color:#13243A">Limits I could not address</h2>
+</div>
+<table style="font-size:30px;color:#13243A">
+<tr><th style="width:40%;text-align:left">Limit</th><th style="width:60%;text-align:left">What it would need</th></tr>
+<tr><td>Only 24 of 144 nodes calibrated</td><td>New measurements, then a re-run of the genetic algorithm</td></tr>
+<tr><td>Wrong edges degrade predictions</td><td>A better curated network</td></tr>
+<tr><td>One cell line (AGS)</td><td>Models and screens for other cell lines</td></tr>
+<tr><td>Six positive pairs</td><td>Larger synergy screens</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">What I could do on a laptop: re-score the published predictions, quantify uncertainty and test simple baselines.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#6B7685">Flobak et al., Frontiers in Systems Biology, 2023, and my analysis</p>
+</section>

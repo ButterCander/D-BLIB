@@ -1,0 +1,36 @@
+gene sets: 120 task sets, 75 essential sets; genes 16932
+
+[A] consistency of contrasts and conversions
+  AB-A  (PI3Ki+MEKi vs PI3Ki)        n=16932 max|diff|=2.33e-15 corr=1.000000
+  AB-B  (PI3Ki+MEKi vs MEKi)         n=16932 max|diff|=1.69e-15 corr=1.000000
+  AB-.5A-.5B (dose-scaled)           n=16932 max|diff|=1.78e-15 corr=1.000000
+  AB-A-B (additive)                  n=16932 max|diff|=3.11e-15 corr=1.000000
+  AB2-C (PI3Ki+TAKi vs TAKi)         n=16932 max|diff|=1.33e-15 corr=1.000000
+  BH scipy vs manual: max|diff|=1.11e-16; authors PI3Ki-MEKi q<.05 = 27
+  p convention (authors, PI3Ki-MEKi, 187 tasks): two-sided 2p & q<.05: 27 | tail p used directly & q<.05: 43 | tail p & q<.025: 27
+
+[B] negative control: condition labels shuffled within batch (all drug effects removed)
+   shuffles done: 10/30 (8s)
+   shuffles done: 20/30 (14s)
+   shuffles done: 30/30 (20s)
+  false-positive rate and mean BH rejections per null contrast (150 contrasts; nominal 0.05 / 0):
+   task gene sets (n=120)       parametric, independence             FPR@.05=0.389 FPR@.01=0.282 KS=0.361 meanBH=35.63
+   task gene sets (n=120)       CAMERA-like, estimated rho           FPR@.05=0.037 FPR@.01=0.004 KS=0.017 meanBH=0.02
+   task gene sets (n=120)       gene-label permutation (as MTEApy)   FPR@.05=0.387 FPR@.01=0.279 KS=0.361 meanBH=34.63
+   essential-gene sets (n=75)   parametric, independence             FPR@.05=0.220 FPR@.01=0.118 KS=0.230 meanBH=7.67
+   essential-gene sets (n=75)   CAMERA-like, estimated rho           FPR@.05=0.026 FPR@.01=0.003 KS=0.036 meanBH=0.00
+   essential-gene sets (n=75)   gene-label permutation (as MTEApy)   FPR@.05=0.218 FPR@.01=0.118 KS=0.228 meanBH=7.66
+
+[C] positive control: add a known log2 shift to one task's genes in the 4 samples of one condition
+   delta=0.1 log2: p<.05 detect: indep 0.63 | CAMERA-like 0.23 | permutation 0.63 ; BH q<.05: indep 0.52 | CAMERA-like 0.03 | permutation 0.52
+   delta=0.2 log2: p<.05 detect: indep 0.78 | CAMERA-like 0.57 | permutation 0.80 ; BH q<.05: indep 0.70 | CAMERA-like 0.25 | permutation 0.63
+   delta=0.3 log2: p<.05 detect: indep 0.97 | CAMERA-like 0.80 | permutation 0.97 ; BH q<.05: indep 0.93 | CAMERA-like 0.42 | permutation 0.87
+   delta=0.5 log2: p<.05 detect: indep 0.98 | CAMERA-like 0.95 | permutation 0.98 ; BH q<.05: indep 0.95 | CAMERA-like 0.77 | permutation 0.92
+
+[D] smallest task-score magnitude the HSA contrast (AB vs PI3Ki) could call, by set size
+   set size   6: null SD of mean = 0.264; |score| needed for p<.05 two-sided = 0.601; for p<.001 = 1.376
+   set size  17: null SD of mean = 0.159; |score| needed for p<.05 two-sided = 0.350; for p<.001 = 0.713
+   set size  50: null SD of mean = 0.093; |score| needed for p<.05 two-sided = 0.216; for p<.001 = 0.375
+   authors weak-synergy margins (median) = 0.076-0.081 log2FC
+
+total 50s

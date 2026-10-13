@@ -1,0 +1,220 @@
+===== ppt/slides/slide1.xml
+   Benedicto et al., 2025
+   Systems Biology Midterm
+   Constraint-based modeling of drug-induced metabolic changes in a cancer cell line
+   01
+   Format B · Presentation date 2026-10-14
+   권태민 · 32220304
+===== ppt/slides/slide2.xml
+   Paper: Benedicto, Flobak, Ponce-de-León, Valencia
+   npj Systems Biology and Applications 11:111 (2025)
+   Data: GEO GSE285616 · Code: MTEApy (open source)
+   Outline
+   02
+   Take-home
+   Background
+   Cross-check · Fig. 5
+   Method
+   My re-analysis
+   Questions
+   Result 1 · Fig. 3
+   Assessment
+   Backup · Fig. 1, Fig. 2
+   Result 2 · Fig. 4
+   Relevance
+   Backup · Table 1, terms
+===== ppt/slides/slide3.xml
+   Background
+   03
+   Background
+   Cancer cells rewire metabolism under PI3K, MEK and TAK1 signaling
+   PI3Ki+MEKi and PI3Ki+TAKi inhibit AGS growth synergistically
+   Gap: expression analysis gives broad labels, not metabolic detail
+   Question: which metabolic tasks change, and which only in the combination?
+   The system
+   AGS gastric adenocarcinoma cells
+   PI3K inhibitor PI-103 (PI3Ki)
+   MEK inhibitor PD0325901 (MEKi)
+   TAK1 inhibitor (5Z)-7-oxozeaenol (TAKi)
+   Two combinations: PI3Ki+MEKi, PI3Ki+TAKi
+   Control: DMSO; 4 replicates per condition
+===== ppt/slides/slide4.xml
+   1  RNA-seq and DESeq2
+   6 conditions × 4 replicates
+   log2FC against DMSO control
+   2  Metabolic map
+   Human-GEM and 187 tasks
+   AND = min, OR = absmax
+   Task score = mean log2FC
+   3  Test and rule
+   10,000 permutations, p &lt; 0.025
+   Weak synergy: beyond both single drugs
+   Strong synergy: only the combination
+   Method
+   04
+   Method
+===== ppt/slides/slide5.xml
+   Result 1 · Fig. 3
+   05
+   Result 1
+   Source: Fig. 3, Benedicto et al. 2025 (CC BY-NC-ND 4.0). A tasks · B overlap · C systems · D shared tasks
+   Metabolic tasks are weakened, led by PI3K inhibition
+   77, 66 and 55 significant tasks in PI3Ki, PI3Ki+MEKi and PI3Ki+TAKi
+   About 88% of significant tasks are weakened, not strengthened
+   Asp → Asn synthesis: −5.9 in PI3Ki, weakened in all five conditions
+===== ppt/slides/slide6.xml
+   Result 2 · Fig. 4
+   06
+   Result 2
+   Some tasks are weakened only by the combination
+   49 of 66 PI3Ki+MEKi tasks are classified synergistic (PI3Ki+TAKi: 14 of 55)
+   Weak synergy: the combination is more extreme than both single drugs
+   Strong synergy: only the combination is significant, e.g. spermidine synthesis, CoQ synthesis, thioredoxin reductase
+   Most calls are weak synergy (about 43 of 49)
+   Source: Fig. 4A and 4C, Benedicto et al. 2025 (CC BY-NC-ND 4.0)
+===== ppt/slides/slide7.xml
+   Cross-check · Fig. 5
+   07
+   Cross-check
+   Source: Fig. 5, Benedicto et al. 2025 (CC BY-NC-ND 4.0). A overlap · B score agreement · C TIDE-essential tasks
+   A second method: TIDE-essential
+   245 vs 69 significant task–condition pairs (TIDE vs TIDE-essential)
+   40 shared; Spearman ρ = 0.93 on these shared pairs
+   New in TIDE-essential: β-alanine synthesis, down in both combinations
+===== ppt/slides/slide8.xml
+   My re-analysis
+   08
+   My re-analysis
+   Scores: six tasks × five conditions
+   Counts depend on the permutation null
+   Data: GEO GSE285616; code: MTEApy; pydeseq2 and 1,000 permutations (paper: R DESeq2, 10,000)
+   Scores reproduce; counts depend on method choices
+   DEG counts within about 10% of Fig. 1A
+   Task scores agree: r = 0.994 (30 values)
+   TIDE vs TIDE-essential: ρ 0.91 on shared pairs, 0.61 on all pairs
+===== ppt/slides/slide9.xml
+   Robust
+   Sensitive
+   Not tested
+   Direction: tasks are weakened, most under PI3K inhibition
+   Scores reproduce from public data
+   Asp → Asn (ASNS) is the clearest signal
+   Task counts depend on the permutation null
+   Weak synergy: margin over the best single drug is often below 0.1 log2FC
+   Strong synergy flips near p = 0.025
+   Multiple testing across 187 tasks
+   Interaction term: combination vs single drugs
+   Experimental validation; one cell line, one dose
+   Assessment
+   09
+   Assessment
+   Printed totals in Table 1 do not match their own columns (TAKi 25 vs 24 + 6; MEKi TIDE-essential 15 vs 9 + 7); corrected values are used.
+===== ppt/slides/slide10.xml
+   Relevance
+   Cancer and
+   drug discovery
+   10
+   Combination therapy: a metabolic readout for why PI3K + MEK co-inhibition limits growth more than PI3K + TAK1
+   Candidate vulnerabilities: ODC1 (polyamines), ASNS (asparagine), thioredoxin reductase; hypotheses only
+   Scalable readout: RNA-seq, a public model and open code can be applied to other lines, drugs and doses
+   Next step I would take: multiple-testing control, an interaction model, dose–response data
+===== ppt/slides/slide11.xml
+   Take-home
+   11
+   Scores reproduce from public data; counts and synergy labels depend on method choices.
+   PI3K inhibition weakens biosynthetic tasks.
+   Combination-only changes are candidates, not proofs.
+===== ppt/slides/slide12.xml
+   Thank you
+   12
+   Questions?
+===== ppt/slides/slide13.xml
+   Backup · Fig. 1
+   13
+   Backup
+   Source: Fig. 1, Benedicto et al. 2025 (CC BY-NC-ND 4.0)
+   Gene-level response (Fig. 1)
+   Up-regulated genes outnumber down-regulated in every condition
+   PI3Ki+MEKi has the most DEGs
+   Combination-only DEGs: about 15% (PI3Ki+TAKi), about 25% (PI3Ki+MEKi)
+===== ppt/slides/slide14.xml
+   Backup · Fig. 2
+   14
+   Backup
+   Source: Fig. 2, Benedicto et al. 2025 (CC BY-NC-ND 4.0)
+   Gene-set response (Fig. 2)
+   About 54% of significant GO sets are down, 46% up; PI3Ki combinations lean down
+   Down in all conditions: rRNA processing, tRNA aminoacylation, mitochondrial translation
+   Up in all conditions: MHC antigen presentation
+   Labels stay broad: no pathway-level metabolic detail, hence the model-based step
+   My check: no single mitochondrial ribosomal gene reaches 2-fold, yet the set is strongly down (p about 1e-19)
+===== ppt/slides/slide15.xml
+   Significant tasks
+   TAKi
+   MEKi
+   PI3Ki
+   PI3Ki+MEKi
+   PI3Ki+TAKi
+   TIDE only
+   24
+   10
+   70
+   52
+   49
+   TIDE-essential only
+   8
+   9
+   3
+   4
+   5
+   Shared
+   6
+   7
+   7
+   14
+   6
+   Total TIDE
+   30 *
+   17
+   77
+   66
+   55
+   Total TIDE-essential
+   14
+   16 *
+   10
+   18
+   11
+   Backup · Table 1
+   15
+   Table 1, corrected
+   * The paper prints 25 and 15. Rows add up to 24 + 6 = 30 and 9 + 7 = 16, which matches the text and Fig. 5A (245 and 69 task–condition pairs).
+===== ppt/slides/slide16.xml
+   Term
+   Meaning
+   GPR rule
+   Complex = AND (take min); isozymes = OR (take largest |log2FC|)
+   pFBA
+   Flux balance analysis picking the smallest-total-flux pathway per task
+   FVA
+   Flux range per reaction; 149 of 187 tasks have alternative pathways
+   Permutation null
+   Shuffle gene log2FC 10,000 times; significant if tail fraction &lt; 0.025
+   GI50
+   Dose that halves growth; singles at GI50, combinations at half of each
+   Jaccard index
+   Set overlap: intersection divided by union (0 to 1)
+   Backup · Terms
+   16
+   Terms for questions
+NOTES ppt/notesSlides/notesSlide1.xml Cue: npj Systems Biology and Applications 11:111 (2025). AGS gastric cancer cells, three kinase inhibitors, two combinations. Public data GSE285616 and open-source MTEApy; I re-ran the analysis myself.
+NOTES ppt/notesSlides/notesSlide10.xml Cue: AGS has KRAS G12D and PIK3CA mutations, so both arms are on. ODC1 is the target of DFMO; asparagine synthesis links to asparaginase therapy; thioredoxin to CHK1 inhibitor sensitivity (cited in the paper). All hypotheses, from background knowledge.
+NOTES ppt/notesSlides/notesSlide11.xml Three points: (1) PI3K inhibition weakens most biosynthetic tasks, asparagine synthesis clearest. (2) Combination-only changes such as polyamine and CoQ synthesis are candidates. (3) Scores reproduce; counts and synergy labels depend on method choices.
+NOTES ppt/notesSlides/notesSlide2.xml Optional slide; skip if time is short.
+NOTES ppt/notesSlides/notesSlide3.xml Cue: AGS carries KRAS G12D and PIK3CA mutations, so MAPK and PI3K are both active. Synergy of the pairs was shown for growth in Flobak 2015. GSEA and DEG give broad labels such as amino acid metabolism.
+NOTES ppt/notesSlides/notesSlide4.xml Cue: a task is a defined input to output conversion, e.g. aspartate to asparagine. TIDE averages the reactions of a pFBA reference pathway; TIDE-essential averages genes whose knockout makes the task infeasible. Permutation shuffles gene log2FC values.
+NOTES ppt/notesSlides/notesSlide5.xml Cue: A = significant tasks per condition (down in blue). B = Jaccard overlap, PI3Ki and PI3Ki+MEKi 0.75, MEKi isolated. C = amino acids largest. D = tasks significant in all five; Asp to Asn is ASNS, a single-gene task. Task score = mean log2FC.
+NOTES ppt/notesSlides/notesSlide6.xml Cue: parent and child logic. Weak: combination below the min of both singles. Strong: both singles not significant, combination significant. Strong-synergy scores are small, -0.3 to -0.8, versus -5.9 for Asp to Asn. Combination is half-dose of each drug.
+NOTES ppt/notesSlides/notesSlide7.xml Cue: counts are task-condition pairs, not distinct tasks. rho = 0.93 is computed on pairs already significant in both methods. Single-gene tasks give identical scores. Complementary, not a validation.
+NOTES ppt/notesSlides/notesSlide8.xml Cue: same counts from GEO, pydeseq2 with replicate + condition, apeglm, p &lt; 0.025. Null = shuffle log2FC among model genes only or among all genes; the paper's ordering PI3Ki, PI3Ki+MEKi, PI3Ki+TAKi, TAKi, MEKi appears only with all genes. Trust direction and scores, not exact counts.
+NOTES ppt/notesSlides/notesSlide9.xml Cue: robust = what I could reproduce. Sensitive = what moved when I changed the null or looked at margins (median margin 0.06 to 0.10; 52 to 70 percent of weak calls below 0.1). Not tested = acknowledged by the authors or absent.

@@ -1,0 +1,17 @@
+bibentry(
+  bibtype = "article",
+  author = c(person("Yunshun","Chen"),
+             person("Lizhong","Chen"),
+             person(c("Aaron","T","L"),"Lun"),
+             person("Pedro","Baldoni"),
+             person(c("Gordon","K"),"Smyth")),
+  title = "{edgeR} v4: powerful differential analysis of sequencing data with expanded functionality and improved support for small counts and larger datasets",
+  year = 2025,
+  journal = "Nucleic Acids Research",
+  volume = "53",
+  number = "2",
+  pages = "gkaf018",
+  doi = "10.1093/nar/gkaf018",
+  textVersion = "Chen Y, Chen L, Lun ATL, Baldoni PL, Smyth GK (2025). edgeR v4: powerful differential analysis of sequencing data with expanded functionality and improved support for small counts and larger datasets. Nucleic Acids Research 53(2), gkaf018."
+)
+

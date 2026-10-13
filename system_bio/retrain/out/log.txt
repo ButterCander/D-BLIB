@@ -1,0 +1,7 @@
+balanced ss runs=12: 36 models, train 56s, simulate 79s, fitness mean 0.954 max 0.998
+balanced rand runs=12: 36 models, train 18s, simulate 80s, fitness mean 0.963 max 1.000
+topology ss runs=12: 36 models, train 55s, simulate 70s, fitness mean 0.958 max 0.998
+topology rand runs=12: 36 models, train 26s, simulate 78s, fitness mean 0.968 max 1.000
+mixed ss runs=12: 36 models, train 53s, simulate 79s, fitness mean 0.943 max 0.998
+mixed rand runs=12: 36 models, train 23s, simulate 88s, fitness mean 0.972 max 1.000
+ALL_DONE

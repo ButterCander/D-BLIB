@@ -1,0 +1,12 @@
+MiaPaca2_Fluvastatin_High: model genes 1563, nonzero 1116
+MiaPaca2_Fluvastatin_Low: model genes 1563, nonzero 837
+MiaPaca2_Lovastatin_High: model genes 1563, nonzero 1064
+MiaPaca2_Lovastatin_Low: model genes 1563, nonzero 880
+MiaPaca2_Simvastatin_High: model genes 1563, nonzero 1124
+MiaPaca2_Simvastatin_Low: model genes 1563, nonzero 871
+PANC1_Fluvastatin_High: model genes 1563, nonzero 1009
+PANC1_Fluvastatin_Low: model genes 1563, nonzero 75
+PANC1_Lovastatin_High: model genes 1563, nonzero 753
+PANC1_Lovastatin_Low: model genes 1563, nonzero 51
+PANC1_Simvastatin_High: model genes 1563, nonzero 942
+PANC1_Simvastatin_Low: model genes 1563, nonzero 73

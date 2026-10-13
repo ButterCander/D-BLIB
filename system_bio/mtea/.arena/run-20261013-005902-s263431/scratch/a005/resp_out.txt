@@ -1,0 +1,70 @@
+inducibility (mean program log2FC over MAPK-pathway inhibitor datasets):
+CAPAN2      1.06
+PANC1       0.73
+CFPAC1      0.68
+KP4         0.18
+MIAPACA2    0.16
+ASPC1      -0.10
+SW1990     -0.17
+
+[1] genotype of the 7 lines (damaging mutation = 1; KRAS hotspot allele)
+    line  induction KRAS hotspot  TP53  SMAD4  CDKN2A  ARID1A  KRAS dam
+  CAPAN2       1.06         KRAS     2      0       0       0         0
+   PANC1       0.73         KRAS     2      0       0       0         0
+  CFPAC1       0.68         KRAS     2      0       0       0         0
+     KP4       0.18         KRAS     0      0       0       0         0
+MIAPACA2       0.16         KRAS     2      0       0       2         0
+   ASPC1      -0.10         KRAS     2      2       2       2         0
+  SW1990      -0.17         KRAS     0      0       0       0         0
+
+[2] baseline expression (log2 TPM+1, DepMap) vs inducibility, Spearman across 7 lines (|rho| >= 0.71 flagged; exact p for n=7: 0.76 -> .05)
+                panel   gene   rho     p  median in 55 pancreatic models
+      SREBP machinery INSIG1  0.89 0.007                            5.00
+      SREBP machinery MBTPS1  0.89 0.007                            5.51
+      SREBP machinery   SQLE  0.86 0.014                            5.94
+      SREBP machinery    MVK  0.86 0.014                            3.75
+MAPK output / pathway  SPRY2 -0.86 0.014                            4.28
+      SREBP machinery  HMGCR  0.79 0.036                            5.17
+      SREBP machinery    MVD  0.75 0.052                            5.50
+      SREBP machinery   FDPS  0.75 0.052                            7.78
+        subtype / EMT   ZEB1 -0.75 0.052                            1.09
+        subtype / EMT   TP63 -0.68 0.090                            0.24
+      SREBP machinery   LDLR  0.64 0.119                            6.05
+      SREBP machinery HMGCS1  0.61 0.148                            6.01
+      SREBP machinery    SCD  0.54 0.215                            7.57
+        subtype / EMT   CDH1  0.54 0.215                            6.54
+
+[3] classical-minus-basal score (z over pancreatic models): {'CAPAN2': -0.1, 'PANC1': -0.01, 'CFPAC1': 0.47, 'KP4': 0.02, 'MIAPACA2': -0.58, 'ASPC1': 1.84, 'SW1990': -0.58} | rho = 0.14
+[3b] baseline trunk expression: {'CAPAN2': 6.91, 'PANC1': 5.84, 'CFPAC1': 5.55, 'KP4': 5.54, 'MIAPACA2': 5.11, 'ASPC1': 5.23, 'SW1990': 4.17} | rho = 0.96
+
+[4] CRISPR dependency (Chronos) vs inducibility, a priori genes
+  gene   rho     p  median Chronos
+  KRAS  0.66 0.156           -1.76
+  RAF1  0.37 0.468           -0.39
+  BRAF  0.89 0.019           -0.12
+MAP2K1 -0.60 0.208           -0.13
+ MAPK1  0.49 0.329           -0.30
+ MAPK3 -0.09 0.872           -0.06
+SREBF2 -0.71 0.111            0.02
+  SCAP -0.89 0.019           -1.37
+MBTPS1 -0.94 0.005           -0.71
+MBTPS2 -0.77 0.072           -0.56
+ HMGCR  0.43 0.397           -1.10
+HMGCS1  0.83 0.042           -1.95
+   MVK  0.77 0.072           -0.88
+  FNTA -0.37 0.468           -1.05
+ GGPS1 -0.43 0.397           -1.33
+PIK3CA -0.14 0.787           -0.53
+  AKT1  0.77 0.072           -0.10
+  MTOR  0.37 0.468           -1.08
+   MYC  0.03 0.957           -2.14
+ SHOC2  0.31 0.544           -0.26
+  SOS1  0.26 0.623           -0.17
+
+[5] empirical check of baseline trunk mean vs inducibility
+  observed rho +0.96; random 6-gene sets: fraction with rho >= observed 0.0030; fraction with |rho| >= |observed| 0.0030; 95th pct of |rho| 0.82
+  leave-one-line-out rho: {'CAPAN2': np.float64(0.94), 'PANC1': np.float64(0.94), 'CFPAC1': np.float64(0.94), 'KP4': np.float64(0.94), 'MIAPACA2': np.float64(1.0), 'ASPC1': np.float64(1.0), 'SW1990': np.float64(0.94)}
+
+[6] baseline trunk (mean log2 expression of the 6 trunk genes in the control samples of the same study) vs induction inside each study
+  GSE238198 baseline: {'CAPAN2': np.float64(6.3), 'CFPAC1': np.float64(6.16), 'MiaPaca2': np.float64(5.8), 'PANC1': np.float64(5.82)} | rho vs 24 h induction: 0.4
+  GSE279749 baseline: {'AsPC-1': np.float64(4.08), 'PANC-1': np.float64(3.57), 'SW1990': np.float64(3.01), 'CFPAC-1': np.float64(5.11)} | rho vs 24 h induction: 0.4

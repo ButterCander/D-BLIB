@@ -1,0 +1,5 @@
+model genes 2443 nonzero 1238 tested total 16932
+N=2443 nonzero frac 0.507 authors-scores p<.025: 44 BH: 3 (authors 78 / 59) 26s
+N=3000 nonzero frac 0.413 authors-scores p<.025: 56 BH: 4 (authors 78 / 59) 28s
+N=5000 nonzero frac 0.248 authors-scores p<.025: 78 BH: 53 (authors 78 / 59) 25s
+N=16932 nonzero frac 0.073 authors-scores p<.025: 106 BH: 94 (authors 78 / 59) 39s

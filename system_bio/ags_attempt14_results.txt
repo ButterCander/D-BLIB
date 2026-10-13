@@ -1,0 +1,19 @@
+== E28  Models that reached the fitness target early (generation < 19) vs those that ran to the generation cap (G19)
+  early: 114 models, vote AUC 0.442 | late: 336 models, vote AUC 0.833
+  late models, subsampled to 114: AUC 0.782 +/- 0.047   (early models' AUC sits at the 0% percentile of that distribution)
+  consensus with early-only votes 0.881, late-only votes 0.916, all 0.917
+
+== E29  Split-half by GA run (75 runs vs 75 runs, 3 models each), 300 random splits
+  vote AUC per half: mean 0.783, sd 0.049, range 0.61-0.85
+  consensus AUC per half: mean 0.911, sd 0.011, range 0.87-0.93
+
+== E30  Ensemble size in GA runs (each run contributes 3 models), draws without replacement
+   runs          vote AUC     consensus AUC
+      5     0.537 +/- 0.074     0.887 +/- 0.010
+     10     0.581 +/- 0.077     0.889 +/- 0.014
+     25     0.679 +/- 0.083     0.897 +/- 0.017
+     50     0.744 +/- 0.063     0.906 +/- 0.014
+     75     0.785 +/- 0.046     0.912 +/- 0.009
+    100     0.807 +/- 0.033     0.914 +/- 0.006
+    125     0.816 +/- 0.027     0.915 +/- 0.005
+    150     0.831             0.917

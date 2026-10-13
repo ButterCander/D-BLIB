@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gxl SYSTEM "http://gin.univ-mrs.fr/GINsim/GINML_2_1.dtd">
+<gxl>
+  <graph id="defaultID" class="regulatory" nodeorder="SRC CSK CHUK RAC_f Prosurvival DUSP1 TGFBR2 ILR_f SYK IRAK1 SHC1 JAK_f CBPp300_c SKP2 TP53 SMAD7 SMAD6 DKK_f FOXO_f TCF7_f DKK_g MYC CCND1 EGR1 MMP_f PTEN_g RTPK_f CTNNB1 LEF1 SFRP1 FZD_f CASP8 REL_f NFKB_f DVL_f LRP_f BTRC CK1_f AXIN1 mTORC2_c PDPK1 MEK_f CYCS CASP9 GSK3_f IRS1 MDM2 AKT_f BCL2 RAF_f mTORC1_c RHEB Antisurvival RTPK_g PTEN CASP3 PIK3CA CREBBP PTPN11 KRAS MAP2K4 MAP2K7 MAPK14 JNK_f MAP2K3 ERK_f LIF PPP1CA GAB_f SOS1 PRKCA VAV1 PLCG1 PRKCD RSK_f S6K_f PLK1 ILK SOCS1 DUSP6 STAT3 LIMK2 EP300 STAT1 IKBKB SRF PIAS1 TRAF6 SOCS1_g ISGF3_c STAT2 CFLAR SMAD2 MDM2_g BAX PRKACA TGFB1 MAP3K8 TSC_f SMAD4 BAD MAP3K5 AKT1S1 SKI SMAD3 MAPKAPK2 DUSP1_g MSK_f GRAP2 TAB_f ATF2 SMAD5 SMAD1 FOS JUN MAP3K7 NLK SMAD7_g SMAD6_g AP1_c ACVR1 PTPN6 CDC42 GRB2 TGFBR1 SMURF1 SMURF2 RHOA BMPR2 PARD6A DAAM1 SFRP1_g PPM1A CFL_f PAK1 MAP3K11 MAP3K4 LIMK1 ROCK1 ITCH ARHGAP24 TIAM1 RND3 MAPK8IP3">
+    <node id="SRC" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RTPK_f:SRC:1"/>
+    </node>
+    <node id="CSK" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PRKACA:CSK:1"/>
+    </node>
+    <node id="CHUK" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TRAF6:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="PRKCA:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="PRKCA:CHUK:1 TRAF6:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:CHUK:1 TRAF6:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:CHUK:1 PRKCA:CHUK:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:CHUK:1 PRKCA:CHUK:1 TRAF6:CHUK:1"/>
+    </node>
+    <node id="RAC_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="VAV1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="VAV1:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:RAC_f:1 VAV1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:RAC_f:1 VAV1:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 VAV1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 VAV1:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 mTORC2_c:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 mTORC2_c:RAC_f:1 TIAM1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 mTORC2_c:RAC_f:1 VAV1:RAC_f:1"/>
+      <parameter val="1" idActiveInteractions="DVL_f:RAC_f:1 mTORC2_c:RAC_f:1 VAV1:RAC_f:1 TIAM1:RAC_f:1"/>
+    </node>
+    <node id="Prosurvival" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RSK_f:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:Prosurvival:1 RSK_f:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="MYC:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="MYC:Prosurvival:1 RSK_f:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="MYC:Prosurvival:1 CCND1:Prosurvival:1"/>
+      <parameter val="1" idActiveInteractions="MYC:Prosurvival:1 CCND1:Prosurvival:1 RSK_f:Prosurvival:1"/>
+    </node>
+    <node id="DUSP1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MSK_f:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="DUSP1_g:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="DUSP1_g:DUSP1:1 MSK_f:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1:1 MSK_f:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1:1 DUSP1_g:DUSP1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1:1 DUSP1_g:DUSP1:1 MSK_f:DUSP1:1"/>
+    </node>
+    <node id="TGFBR2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFB1:TGFBR2:1"/>
+    </node>
+    <node id="ILR_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="AP1_c:ILR_f:1"/>
+      <parameter val="1" idActiveInteractions="LIF:ILR_f:1"/>
+      <parameter val="1" idActiveInteractions="LIF:ILR_f:1 AP1_c:ILR_f:1"/>
+    </node>
+    <node id="SYK" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ILR_f:SYK:1"/>
+    </node>
+    <node id="IRAK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ILR_f:IRAK1:1"/>
+    </node>
+    <node id="SHC1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="RTPK_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="RTPK_f:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="ILR_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="ILR_f:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="ILR_f:SHC1:1 RTPK_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="ILR_f:SHC1:1 RTPK_f:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 RTPK_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 RTPK_f:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 ILR_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 ILR_f:SHC1:1 TGFBR1:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 ILR_f:SHC1:1 RTPK_f:SHC1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:SHC1:1 ILR_f:SHC1:1 RTPK_f:SHC1:1 TGFBR1:SHC1:1"/>
+    </node>
+    <node id="JAK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ILR_f:JAK_f:1"/>
+    </node>
+    <node id="CBPp300_c" maxvalue="1">
+      <parameter val="1" idActiveInteractions="EP300:CBPp300_c:1"/>
+      <parameter val="1" idActiveInteractions="CREBBP:CBPp300_c:1"/>
+      <parameter val="1" idActiveInteractions="CREBBP:CBPp300_c:1 EP300:CBPp300_c:1"/>
+    </node>
+    <node id="SKP2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="EP300:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SKP2:1 EP300:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:SKP2:1 EP300:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:SKP2:1 ERK_f:SKP2:1"/>
+      <parameter val="1" idActiveInteractions="CCND1:SKP2:1 ERK_f:SKP2:1 EP300:SKP2:1"/>
+    </node>
+    <node id="TP53" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="EP300:TP53:1"/>
+      <parameter val="1" idActiveInteractions="EP300:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:TP53:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:TP53:1 EP300:TP53:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:TP53:1 EP300:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 EP300:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 EP300:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 PRKCD:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 PRKCD:TP53:1 PIAS1:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 PRKCD:TP53:1 EP300:TP53:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:TP53:1 PRKCD:TP53:1 EP300:TP53:1 PIAS1:TP53:1"/>
+    </node>
+    <node id="SMAD7" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMURF1:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="SMAD7_g:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="SMAD7_g:SMAD7:1 SMURF1:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="EP300:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="EP300:SMAD7:1 SMURF1:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="EP300:SMAD7:1 SMAD7_g:SMAD7:1"/>
+      <parameter val="1" idActiveInteractions="EP300:SMAD7:1 SMAD7_g:SMAD7:1 SMURF1:SMAD7:1"/>
+    </node>
+    <node id="SMAD6" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD6_g:SMAD6:1"/>
+    </node>
+    <node id="DKK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="DKK_g:DKK_f:1"/>
+    </node>
+    <node id="FOXO_f" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="TCF7_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CTNNB1:TCF7_f:1"/>
+    </node>
+    <node id="DKK_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TCF7_f:DKK_g:1"/>
+    </node>
+    <node id="MYC" maxvalue="1">
+      <parameter val="1" idActiveInteractions="STAT3:MYC:1"/>
+      <parameter val="1" idActiveInteractions="PLK1:MYC:1"/>
+      <parameter val="1" idActiveInteractions="PLK1:MYC:1 STAT3:MYC:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:MYC:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:MYC:1 STAT3:MYC:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:MYC:1 PLK1:MYC:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:MYC:1 PLK1:MYC:1 STAT3:MYC:1"/>
+    </node>
+    <node id="CCND1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="STAT3:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:CCND1:1 STAT3:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:CCND1:1 STAT3:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:CCND1:1 RSK_f:CCND1:1"/>
+      <parameter val="1" idActiveInteractions="TCF7_f:CCND1:1 RSK_f:CCND1:1 STAT3:CCND1:1"/>
+    </node>
+    <node id="EGR1" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="MMP_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="STAT3:MMP_f:1"/>
+      <parameter val="1" idActiveInteractions="LEF1:MMP_f:1"/>
+      <parameter val="1" idActiveInteractions="LEF1:MMP_f:1 STAT3:MMP_f:1"/>
+    </node>
+    <node id="PTEN_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="EGR1:PTEN_g:1"/>
+    </node>
+    <node id="RTPK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RTPK_g:RTPK_f:1"/>
+      <parameter val="1" idActiveInteractions="MMP_f:RTPK_f:1"/>
+      <parameter val="1" idActiveInteractions="MMP_f:RTPK_f:1 RTPK_g:RTPK_f:1"/>
+    </node>
+    <node id="CTNNB1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CHUK:CTNNB1:1"/>
+    </node>
+    <node id="LEF1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CTNNB1:LEF1:1"/>
+    </node>
+    <node id="SFRP1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SFRP1_g:SFRP1:1"/>
+    </node>
+    <node id="FZD_f" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="CASP8" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="REL_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MSK_f:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="IKBKB:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="IKBKB:REL_f:1 MSK_f:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:REL_f:1 MSK_f:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:REL_f:1 IKBKB:REL_f:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:REL_f:1 IKBKB:REL_f:1 MSK_f:REL_f:1"/>
+    </node>
+    <node id="NFKB_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="IKBKB:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="IKBKB:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="REL_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="REL_f:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="REL_f:NFKB_f:1 IKBKB:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="REL_f:NFKB_f:1 IKBKB:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 IKBKB:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 IKBKB:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 REL_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 REL_f:NFKB_f:1 MSK_f:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 REL_f:NFKB_f:1 IKBKB:NFKB_f:1"/>
+      <parameter val="1" idActiveInteractions="CHUK:NFKB_f:1 REL_f:NFKB_f:1 IKBKB:NFKB_f:1 MSK_f:NFKB_f:1"/>
+    </node>
+    <node id="DVL_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD1:DVL_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:DVL_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:DVL_f:1 SMAD1:DVL_f:1"/>
+    </node>
+    <node id="LRP_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:LRP_f:1 JNK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:LRP_f:1 JNK_f:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 JNK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 JNK_f:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 MAPK14:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 MAPK14:LRP_f:1 ERK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 MAPK14:LRP_f:1 JNK_f:LRP_f:1"/>
+      <parameter val="1" idActiveInteractions="FZD_f:LRP_f:1 MAPK14:LRP_f:1 JNK_f:LRP_f:1 ERK_f:LRP_f:1"/>
+    </node>
+    <node id="BTRC" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GSK3_f:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="AXIN1:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="AXIN1:BTRC:1 GSK3_f:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="CK1_f:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="CK1_f:BTRC:1 GSK3_f:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="CK1_f:BTRC:1 AXIN1:BTRC:1"/>
+      <parameter val="1" idActiveInteractions="CK1_f:BTRC:1 AXIN1:BTRC:1 GSK3_f:BTRC:1"/>
+    </node>
+    <node id="CK1_f" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="AXIN1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GSK3_f:AXIN1:1"/>
+    </node>
+    <node id="mTORC2_c" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TSC_f:mTORC2_c:1"/>
+      <parameter val="1" idActiveInteractions="PIK3CA:mTORC2_c:1"/>
+      <parameter val="1" idActiveInteractions="PIK3CA:mTORC2_c:1 TSC_f:mTORC2_c:1"/>
+    </node>
+    <node id="PDPK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PIK3CA:PDPK1:1"/>
+    </node>
+    <node id="MEK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP3K8:MEK_f:1"/>
+      <parameter val="1" idActiveInteractions="RAF_f:MEK_f:1"/>
+      <parameter val="1" idActiveInteractions="RAF_f:MEK_f:1 MAP3K8:MEK_f:1"/>
+    </node>
+    <node id="CYCS" maxvalue="1">
+      <parameter val="1" idActiveInteractions="BAX:CYCS:1"/>
+    </node>
+    <node id="CASP9" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PPP1CA:CASP9:1"/>
+      <parameter val="1" idActiveInteractions="CYCS:CASP9:1"/>
+      <parameter val="1" idActiveInteractions="CYCS:CASP9:1 PPP1CA:CASP9:1"/>
+    </node>
+    <node id="GSK3_f" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="IRS1" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="MDM2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="MDM2_g:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="MDM2_g:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="PPP1CA:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="PPP1CA:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="PPP1CA:MDM2:1 MDM2_g:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="PPP1CA:MDM2:1 MDM2_g:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 MDM2_g:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 MDM2_g:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 PPP1CA:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 PPP1CA:MDM2:1 MAPKAPK2:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 PPP1CA:MDM2:1 MDM2_g:MDM2:1"/>
+      <parameter val="1" idActiveInteractions="AKT_f:MDM2:1 PPP1CA:MDM2:1 MDM2_g:MDM2:1 MAPKAPK2:MDM2:1"/>
+    </node>
+    <node id="AKT_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ILK:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:AKT_f:1 ILK:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:AKT_f:1 ILK:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:AKT_f:1 PDPK1:AKT_f:1"/>
+      <parameter val="1" idActiveInteractions="mTORC2_c:AKT_f:1 PDPK1:AKT_f:1 ILK:AKT_f:1"/>
+    </node>
+    <node id="BCL2" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="RAF_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="KRAS:RAF_f:1"/>
+    </node>
+    <node id="mTORC1_c" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RSK_f:mTORC1_c:1"/>
+      <parameter val="1" idActiveInteractions="RHEB:mTORC1_c:1"/>
+      <parameter val="1" idActiveInteractions="RHEB:mTORC1_c:1 RSK_f:mTORC1_c:1"/>
+    </node>
+    <node id="RHEB" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="Antisurvival" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ISGF3_c:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="CASP3:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="CASP3:Antisurvival:1 ISGF3_c:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="FOXO_f:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="FOXO_f:Antisurvival:1 ISGF3_c:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="FOXO_f:Antisurvival:1 CASP3:Antisurvival:1"/>
+      <parameter val="1" idActiveInteractions="FOXO_f:Antisurvival:1 CASP3:Antisurvival:1 ISGF3_c:Antisurvival:1"/>
+    </node>
+    <node id="RTPK_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="FOXO_f:RTPK_g:1"/>
+    </node>
+    <node id="PTEN" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:PTEN:1"/>
+      <parameter val="1" idActiveInteractions="PTEN_g:PTEN:1"/>
+      <parameter val="1" idActiveInteractions="PTEN_g:PTEN:1 ROCK1:PTEN:1"/>
+    </node>
+    <node id="CASP3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CASP9:CASP3:1"/>
+      <parameter val="1" idActiveInteractions="CASP8:CASP3:1"/>
+      <parameter val="1" idActiveInteractions="CASP8:CASP3:1 CASP9:CASP3:1"/>
+    </node>
+    <node id="PIK3CA" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GAB_f:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="KRAS:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="KRAS:PIK3CA:1 GAB_f:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="IRS1:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="IRS1:PIK3CA:1 GAB_f:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="IRS1:PIK3CA:1 KRAS:PIK3CA:1"/>
+      <parameter val="1" idActiveInteractions="IRS1:PIK3CA:1 KRAS:PIK3CA:1 GAB_f:PIK3CA:1"/>
+    </node>
+    <node id="CREBBP" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CHUK:CREBBP:1"/>
+    </node>
+    <node id="PTPN11" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GAB_f:PTPN11:1"/>
+    </node>
+    <node id="KRAS" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SOS1:KRAS:1"/>
+      <parameter val="1" idActiveInteractions="PTPN11:KRAS:1"/>
+      <parameter val="1" idActiveInteractions="PTPN11:KRAS:1 SOS1:KRAS:1"/>
+    </node>
+    <node id="MAP2K4" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K11:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K11:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K4:1 MAP3K11:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K4:1 MAP3K11:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K11:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K11:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K7:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K7:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K7:MAP2K4:1 MAP3K11:MAP2K4:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K4:1 MAP3K7:MAP2K4:1 MAP3K11:MAP2K4:1 MAP3K4:MAP2K4:1"/>
+    </node>
+    <node id="MAP2K7" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAPK8IP3:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K7:1 MAPK8IP3:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K7:1 MAPK8IP3:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K7:1 MAP3K7:MAP2K7:1"/>
+      <parameter val="1" idActiveInteractions="GRAP2:MAP2K7:1 MAP3K7:MAP2K7:1 MAPK8IP3:MAP2K7:1"/>
+    </node>
+    <node id="MAPK14" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP2K3:MAPK14:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:MAPK14:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:MAPK14:1 MAP2K3:MAPK14:1"/>
+    </node>
+    <node id="JNK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PAK1:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K7:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K7:JNK_f:1 PAK1:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:JNK_f:1 PAK1:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:JNK_f:1 MAP2K7:JNK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAP2K4:JNK_f:1 MAP2K7:JNK_f:1 PAK1:JNK_f:1"/>
+    </node>
+    <node id="MAP2K3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP3K7:MAP2K3:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K5:MAP2K3:1"/>
+      <parameter val="1" idActiveInteractions="MAP3K5:MAP2K3:1 MAP3K7:MAP2K3:1"/>
+    </node>
+    <node id="ERK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MEK_f:ERK_f:1"/>
+    </node>
+    <node id="LIF" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RAF_f:LIF:1"/>
+    </node>
+    <node id="PPP1CA" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD7:PPP1CA:1"/>
+    </node>
+    <node id="GAB_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GRB2:GAB_f:1"/>
+    </node>
+    <node id="SOS1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GRB2:SOS1:1"/>
+      <parameter val="1" idActiveInteractions="PLCG1:SOS1:1"/>
+      <parameter val="1" idActiveInteractions="PLCG1:SOS1:1 GRB2:SOS1:1"/>
+    </node>
+    <node id="PRKCA" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PLCG1:PRKCA:1"/>
+    </node>
+    <node id="VAV1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SYK:VAV1:1"/>
+    </node>
+    <node id="PLCG1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SYK:PLCG1:1"/>
+    </node>
+    <node id="PRKCD" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CASP3:PRKCD:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:PRKCD:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:PRKCD:1 CASP3:PRKCD:1"/>
+    </node>
+    <node id="RSK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:RSK_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:RSK_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:RSK_f:1 ERK_f:RSK_f:1"/>
+    </node>
+    <node id="S6K_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="mTORC1_c:S6K_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:S6K_f:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:S6K_f:1 mTORC1_c:S6K_f:1"/>
+    </node>
+    <node id="PLK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAPKAPK2:PLK1:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:PLK1:1"/>
+      <parameter val="1" idActiveInteractions="PDPK1:PLK1:1 MAPKAPK2:PLK1:1"/>
+    </node>
+    <node id="ILK" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PAK1:ILK:1"/>
+    </node>
+    <node id="SOCS1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SOCS1_g:SOCS1:1"/>
+    </node>
+    <node id="DUSP6" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:DUSP6:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:DUSP6:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:DUSP6:1 ERK_f:DUSP6:1"/>
+    </node>
+    <node id="STAT3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 PRKCD:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT3:1 IRAK1:STAT3:1 JAK_f:STAT3:1 mTORC1_c:STAT3:1 MAPK14:STAT3:1 JNK_f:STAT3:1 ERK_f:STAT3:1 PRKCD:STAT3:1"/>
+    </node>
+    <node id="LIMK2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:LIMK2:1"/>
+    </node>
+    <node id="EP300" maxvalue="1">
+      <parameter val="1" idActiveInteractions="AKT_f:EP300:1"/>
+    </node>
+    <node id="STAT1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 MAPK14:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 MAPK14:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="JAK_f:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 MAPK14:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 MAPK14:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 MAPK14:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 MAPK14:STAT1:1 IKBKB:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1"/>
+      <parameter val="1" idActiveInteractions="SRC:STAT1:1 JAK_f:STAT1:1 MAPK14:STAT1:1 PRKCD:STAT1:1 IKBKB:STAT1:1"/>
+    </node>
+    <node id="IKBKB" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP3K7:IKBKB:1"/>
+    </node>
+    <node id="SRF" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CFL_f:SRF:1"/>
+      <parameter val="1" idActiveInteractions="MAPKAPK2:SRF:1"/>
+      <parameter val="1" idActiveInteractions="MAPKAPK2:SRF:1 CFL_f:SRF:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:SRF:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:SRF:1 CFL_f:SRF:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:SRF:1 MAPKAPK2:SRF:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:SRF:1 MAPKAPK2:SRF:1 CFL_f:SRF:1"/>
+    </node>
+    <node id="PIAS1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAPKAPK2:PIAS1:1"/>
+    </node>
+    <node id="TRAF6" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFBR1:TRAF6:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:TRAF6:1"/>
+      <parameter val="1" idActiveInteractions="IRAK1:TRAF6:1 TGFBR1:TRAF6:1"/>
+    </node>
+    <node id="SOCS1_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="STAT1:SOCS1_g:1"/>
+    </node>
+    <node id="ISGF3_c" maxvalue="1">
+      <parameter val="1" idActiveInteractions="STAT2:ISGF3_c:1"/>
+      <parameter val="1" idActiveInteractions="STAT1:ISGF3_c:1"/>
+      <parameter val="1" idActiveInteractions="STAT1:ISGF3_c:1 STAT2:ISGF3_c:1"/>
+    </node>
+    <node id="STAT2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="JAK_f:STAT2:1"/>
+    </node>
+    <node id="CFLAR" maxvalue="1">
+      <parameter val="1" idActiveInteractions="AKT_f:CFLAR:1"/>
+    </node>
+    <node id="SMAD2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 ACVR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 ACVR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ACVR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ACVR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 ACVR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 ACVR1:SMAD2:1 ITCH:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1"/>
+      <parameter val="1" idActiveInteractions="CBPp300_c:SMAD2:1 ERK_f:SMAD2:1 ACVR1:SMAD2:1 TGFBR1:SMAD2:1 ITCH:SMAD2:1"/>
+    </node>
+    <node id="MDM2_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="NFKB_f:MDM2_g:1"/>
+      <parameter val="1" idActiveInteractions="TP53:MDM2_g:1"/>
+      <parameter val="1" idActiveInteractions="TP53:MDM2_g:1 NFKB_f:MDM2_g:1"/>
+    </node>
+    <node id="BAX" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TP53:BAX:1"/>
+    </node>
+    <node id="PRKACA" maxvalue="1">
+      <parameter val="1" idActiveInteractions="FOS:PRKACA:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:PRKACA:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:PRKACA:1 FOS:PRKACA:1"/>
+    </node>
+    <node id="TGFB1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="JUN:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="FOS:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="FOS:TGFB1:1 JUN:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:TGFB1:1 JUN:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:TGFB1:1 FOS:TGFB1:1"/>
+      <parameter val="1" idActiveInteractions="NFKB_f:TGFB1:1 FOS:TGFB1:1 JUN:TGFB1:1"/>
+    </node>
+    <node id="MAP3K8" maxvalue="1">
+      <parameter val="1" idActiveInteractions="IKBKB:MAP3K8:1"/>
+    </node>
+    <node id="TSC_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="GSK3_f:TSC_f:1"/>
+    </node>
+    <node id="SMAD4" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD1:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:SMAD4:1 PIAS1:SMAD4:1 SMAD2:SMAD4:1 SMAD3:SMAD4:1 SMAD5:SMAD4:1 SMAD1:SMAD4:1"/>
+    </node>
+    <node id="BAD" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="MAP3K5" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="AKT1S1" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="SKI" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="SMAD3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:SMAD3:1 ACVR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:SMAD3:1 ACVR1:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 ACVR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 ACVR1:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 JNK_f:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 JNK_f:SMAD3:1 TGFBR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 JNK_f:SMAD3:1 ACVR1:SMAD3:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:SMAD3:1 JNK_f:SMAD3:1 ACVR1:SMAD3:1 TGFBR1:SMAD3:1"/>
+    </node>
+    <node id="MAPKAPK2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAPK14:MAPKAPK2:1"/>
+    </node>
+    <node id="DUSP1_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:DUSP1_g:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1_g:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:DUSP1_g:1 ERK_f:DUSP1_g:1"/>
+    </node>
+    <node id="MSK_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:MSK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:MSK_f:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:MSK_f:1 ERK_f:MSK_f:1"/>
+    </node>
+    <node id="GRAP2" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="TAB_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TRAF6:TAB_f:1"/>
+    </node>
+    <node id="ATF2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ERK_f:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="JNK_f:ATF2:1 ERK_f:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:ATF2:1 ERK_f:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:ATF2:1 JNK_f:ATF2:1"/>
+      <parameter val="1" idActiveInteractions="MAPK14:ATF2:1 JNK_f:ATF2:1 ERK_f:ATF2:1"/>
+    </node>
+    <node id="SMAD5" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD5:1"/>
+    </node>
+    <node id="SMAD1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ACVR1:SMAD1:1"/>
+    </node>
+    <node id="FOS" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SRF:FOS:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:FOS:1"/>
+      <parameter val="1" idActiveInteractions="RSK_f:FOS:1 SRF:FOS:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:FOS:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:FOS:1 SRF:FOS:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:FOS:1 RSK_f:FOS:1"/>
+      <parameter val="1" idActiveInteractions="ERK_f:FOS:1 RSK_f:FOS:1 SRF:FOS:1"/>
+    </node>
+    <node id="JUN" maxvalue="1">
+      <parameter val="1" idActiveInteractions="JNK_f:JUN:1"/>
+    </node>
+    <node id="MAP3K7" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TAB_f:MAP3K7:1"/>
+    </node>
+    <node id="NLK" maxvalue="1">
+      <parameter val="1" idActiveInteractions="MAP3K7:NLK:1"/>
+    </node>
+    <node id="SMAD7_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:SMAD7_g:1 SMAD3:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD7_g:1 SMAD3:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD7_g:1 SMAD4:SMAD7_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD7_g:1 SMAD4:SMAD7_g:1 SMAD3:SMAD7_g:1"/>
+    </node>
+    <node id="SMAD6_g" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD3:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:SMAD6_g:1 SMAD3:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD6_g:1 SMAD3:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD6_g:1 SMAD4:SMAD6_g:1"/>
+      <parameter val="1" idActiveInteractions="SMAD2:SMAD6_g:1 SMAD4:SMAD6_g:1 SMAD3:SMAD6_g:1"/>
+    </node>
+    <node id="AP1_c" maxvalue="1">
+      <parameter val="1" idActiveInteractions="JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="ATF2:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="ATF2:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="ATF2:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="ATF2:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 ATF2:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 ATF2:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD3:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 ATF2:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 ATF2:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 ATF2:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 ATF2:AP1_c:1 JUN:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1"/>
+      <parameter val="1" idActiveInteractions="SMAD4:AP1_c:1 SMAD3:AP1_c:1 ATF2:AP1_c:1 FOS:AP1_c:1 JUN:AP1_c:1"/>
+    </node>
+    <node id="ACVR1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="BMPR2:ACVR1:1"/>
+    </node>
+    <node id="PTPN6" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SRC:PTPN6:1"/>
+    </node>
+    <node id="CDC42" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SRC:CDC42:1"/>
+    </node>
+    <node id="GRB2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SHC1:GRB2:1"/>
+    </node>
+    <node id="TGFBR1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFBR2:TGFBR1:1"/>
+    </node>
+    <node id="SMURF1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD7:SMURF1:1"/>
+    </node>
+    <node id="SMURF2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SMAD7:SMURF2:1"/>
+    </node>
+    <node id="RHOA" maxvalue="1">
+      <parameter val="1" idActiveInteractions="DAAM1:RHOA:1"/>
+    </node>
+    <node id="BMPR2" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="PARD6A" maxvalue="1">
+      <parameter val="1" idActiveInteractions="TGFBR1:PARD6A:1"/>
+      <parameter val="1" idActiveInteractions="TGFBR2:PARD6A:1"/>
+      <parameter val="1" idActiveInteractions="TGFBR2:PARD6A:1 TGFBR1:PARD6A:1"/>
+    </node>
+    <node id="DAAM1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="DVL_f:DAAM1:1"/>
+    </node>
+    <node id="SFRP1_g" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="PPM1A" maxvalue="1">
+      <parameter val="1" idActiveInteractions="PTEN:PPM1A:1"/>
+    </node>
+    <node id="CFL_f" maxvalue="1">
+      <parameter val="1" idActiveInteractions="LIMK1:CFL_f:1"/>
+      <parameter val="1" idActiveInteractions="LIMK2:CFL_f:1"/>
+      <parameter val="1" idActiveInteractions="LIMK2:CFL_f:1 LIMK1:CFL_f:1"/>
+    </node>
+    <node id="PAK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="CDC42:PAK1:1"/>
+      <parameter val="1" idActiveInteractions="RAC_f:PAK1:1"/>
+      <parameter val="1" idActiveInteractions="RAC_f:PAK1:1 CDC42:PAK1:1"/>
+    </node>
+    <node id="MAP3K11" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RAC_f:MAP3K11:1"/>
+    </node>
+    <node id="MAP3K4" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RAC_f:MAP3K4:1"/>
+    </node>
+    <node id="LIMK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:LIMK1:1"/>
+      <parameter val="1" idActiveInteractions="RAC_f:LIMK1:1"/>
+      <parameter val="1" idActiveInteractions="RAC_f:LIMK1:1 ROCK1:LIMK1:1"/>
+    </node>
+    <node id="ROCK1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="RHOA:ROCK1:1"/>
+      <parameter val="1" idActiveInteractions="CASP3:ROCK1:1"/>
+      <parameter val="1" idActiveInteractions="CASP3:ROCK1:1 RHOA:ROCK1:1"/>
+    </node>
+    <node id="ITCH" maxvalue="1">
+      <parameter val="1" idActiveInteractions="JNK_f:ITCH:1"/>
+    </node>
+    <node id="ARHGAP24" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:ARHGAP24:1"/>
+    </node>
+    <node id="TIAM1" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="RND3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:RND3:1"/>
+    </node>
+    <node id="MAPK8IP3" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ROCK1:MAPK8IP3:1"/>
+    </node>
+    <edge id="CSK:SRC:1" from="CSK" to="SRC" sign="negative" minvalue="1"/>
+    <edge id="RTPK_f:SRC:1" from="RTPK_f" to="SRC" sign="positive" minvalue="1"/>
+    <edge id="PRKACA:CSK:1" from="PRKACA" to="CSK" sign="positive" minvalue="1"/>
+    <edge id="AKT_f:CHUK:1" from="AKT_f" to="CHUK" sign="positive" minvalue="1"/>
+    <edge id="PRKCA:CHUK:1" from="PRKCA" to="CHUK" sign="positive" minvalue="1"/>
+    <edge id="TRAF6:CHUK:1" from="TRAF6" to="CHUK" sign="positive" minvalue="1"/>
+    <edge id="DVL_f:RAC_f:1" from="DVL_f" to="RAC_f" sign="positive" minvalue="1"/>
+    <edge id="mTORC2_c:RAC_f:1" from="mTORC2_c" to="RAC_f" sign="positive" minvalue="1"/>
+    <edge id="VAV1:RAC_f:1" from="VAV1" to="RAC_f" sign="positive" minvalue="1"/>
+    <edge id="ARHGAP24:RAC_f:1" from="ARHGAP24" to="RAC_f" sign="negative" minvalue="1"/>
+    <edge id="TIAM1:RAC_f:1" from="TIAM1" to="RAC_f" sign="positive" minvalue="1"/>
+    <edge id="MYC:Prosurvival:1" from="MYC" to="Prosurvival" sign="positive" minvalue="1"/>
+    <edge id="CCND1:Prosurvival:1" from="CCND1" to="Prosurvival" sign="positive" minvalue="1"/>
+    <edge id="RSK_f:Prosurvival:1" from="RSK_f" to="Prosurvival" sign="positive" minvalue="1"/>
+    <edge id="SKP2:DUSP1:1" from="SKP2" to="DUSP1" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:DUSP1:1" from="MAPK14" to="DUSP1" sign="positive" minvalue="1"/>
+    <edge id="DUSP1_g:DUSP1:1" from="DUSP1_g" to="DUSP1" sign="positive" minvalue="1"/>
+    <edge id="MSK_f:DUSP1:1" from="MSK_f" to="DUSP1" sign="positive" minvalue="1"/>
+    <edge id="TGFB1:TGFBR2:1" from="TGFB1" to="TGFBR2" sign="positive" minvalue="1"/>
+    <edge id="SMURF1:TGFBR2:1" from="SMURF1" to="TGFBR2" sign="negative" minvalue="1"/>
+    <edge id="SMURF2:TGFBR2:1" from="SMURF2" to="TGFBR2" sign="negative" minvalue="1"/>
+    <edge id="LIF:ILR_f:1" from="LIF" to="ILR_f" sign="positive" minvalue="1"/>
+    <edge id="AP1_c:ILR_f:1" from="AP1_c" to="ILR_f" sign="positive" minvalue="1"/>
+    <edge id="ILR_f:SYK:1" from="ILR_f" to="SYK" sign="positive" minvalue="1"/>
+    <edge id="ILR_f:IRAK1:1" from="ILR_f" to="IRAK1" sign="positive" minvalue="1"/>
+    <edge id="SOCS1:IRAK1:1" from="SOCS1" to="IRAK1" sign="negative" minvalue="1"/>
+    <edge id="SRC:SHC1:1" from="SRC" to="SHC1" sign="positive" minvalue="1"/>
+    <edge id="ILR_f:SHC1:1" from="ILR_f" to="SHC1" sign="positive" minvalue="1"/>
+    <edge id="RTPK_f:SHC1:1" from="RTPK_f" to="SHC1" sign="positive" minvalue="1"/>
+    <edge id="PTEN:SHC1:1" from="PTEN" to="SHC1" sign="negative" minvalue="1"/>
+    <edge id="TGFBR1:SHC1:1" from="TGFBR1" to="SHC1" sign="positive" minvalue="1"/>
+    <edge id="ILR_f:JAK_f:1" from="ILR_f" to="JAK_f" sign="positive" minvalue="1"/>
+    <edge id="SOCS1:JAK_f:1" from="SOCS1" to="JAK_f" sign="negative" minvalue="1"/>
+    <edge id="PTPN6:JAK_f:1" from="PTPN6" to="JAK_f" sign="negative" minvalue="1"/>
+    <edge id="TP53:CBPp300_c:1" from="TP53" to="CBPp300_c" sign="negative" minvalue="1"/>
+    <edge id="CREBBP:CBPp300_c:1" from="CREBBP" to="CBPp300_c" sign="positive" minvalue="1"/>
+    <edge id="EP300:CBPp300_c:1" from="EP300" to="CBPp300_c" sign="positive" minvalue="1"/>
+    <edge id="CCND1:SKP2:1" from="CCND1" to="SKP2" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:SKP2:1" from="ERK_f" to="SKP2" sign="positive" minvalue="1"/>
+    <edge id="EP300:SKP2:1" from="EP300" to="SKP2" sign="positive" minvalue="1"/>
+    <edge id="MDM2:TP53:1" from="MDM2" to="TP53" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:TP53:1" from="MAPK14" to="TP53" sign="positive" minvalue="1"/>
+    <edge id="PRKCD:TP53:1" from="PRKCD" to="TP53" sign="positive" minvalue="1"/>
+    <edge id="EP300:TP53:1" from="EP300" to="TP53" sign="positive" minvalue="1"/>
+    <edge id="PIAS1:TP53:1" from="PIAS1" to="TP53" sign="positive" minvalue="1"/>
+    <edge id="AXIN1:SMAD7:1" from="AXIN1" to="SMAD7" sign="negative" minvalue="1"/>
+    <edge id="EP300:SMAD7:1" from="EP300" to="SMAD7" sign="positive" minvalue="1"/>
+    <edge id="SMAD7_g:SMAD7:1" from="SMAD7_g" to="SMAD7" sign="positive" minvalue="1"/>
+    <edge id="SMURF1:SMAD7:1" from="SMURF1" to="SMAD7" sign="positive" minvalue="1"/>
+    <edge id="SMURF2:SMAD7:1" from="SMURF2" to="SMAD7" sign="negative" minvalue="1"/>
+    <edge id="ITCH:SMAD7:1" from="ITCH" to="SMAD7" sign="negative" minvalue="1"/>
+    <edge id="SMAD6_g:SMAD6:1" from="SMAD6_g" to="SMAD6" sign="positive" minvalue="1"/>
+    <edge id="DKK_g:DKK_f:1" from="DKK_g" to="DKK_f" sign="positive" minvalue="1"/>
+    <edge id="CK1_f:FOXO_f:1" from="CK1_f" to="FOXO_f" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:FOXO_f:1" from="AKT_f" to="FOXO_f" sign="negative" minvalue="1"/>
+    <edge id="NLK:FOXO_f:1" from="NLK" to="FOXO_f" sign="negative" minvalue="1"/>
+    <edge id="CTNNB1:TCF7_f:1" from="CTNNB1" to="TCF7_f" sign="positive" minvalue="1"/>
+    <edge id="NLK:TCF7_f:1" from="NLK" to="TCF7_f" sign="negative" minvalue="1"/>
+    <edge id="TCF7_f:DKK_g:1" from="TCF7_f" to="DKK_g" sign="positive" minvalue="1"/>
+    <edge id="MYC:DKK_g:1" from="MYC" to="DKK_g" sign="negative" minvalue="1"/>
+    <edge id="TCF7_f:MYC:1" from="TCF7_f" to="MYC" sign="positive" minvalue="1"/>
+    <edge id="GSK3_f:MYC:1" from="GSK3_f" to="MYC" sign="negative" minvalue="1"/>
+    <edge id="PLK1:MYC:1" from="PLK1" to="MYC" sign="positive" minvalue="1"/>
+    <edge id="STAT3:MYC:1" from="STAT3" to="MYC" sign="positive" minvalue="1"/>
+    <edge id="TCF7_f:CCND1:1" from="TCF7_f" to="CCND1" sign="positive" minvalue="1"/>
+    <edge id="RSK_f:CCND1:1" from="RSK_f" to="CCND1" sign="positive" minvalue="1"/>
+    <edge id="STAT3:CCND1:1" from="STAT3" to="CCND1" sign="positive" minvalue="1"/>
+    <edge id="TCF7_f:EGR1:1" from="TCF7_f" to="EGR1" sign="negative" minvalue="1"/>
+    <edge id="LEF1:MMP_f:1" from="LEF1" to="MMP_f" sign="positive" minvalue="1"/>
+    <edge id="STAT3:MMP_f:1" from="STAT3" to="MMP_f" sign="positive" minvalue="1"/>
+    <edge id="EGR1:PTEN_g:1" from="EGR1" to="PTEN_g" sign="positive" minvalue="1"/>
+    <edge id="MMP_f:RTPK_f:1" from="MMP_f" to="RTPK_f" sign="positive" minvalue="1"/>
+    <edge id="MEK_f:RTPK_f:1" from="MEK_f" to="RTPK_f" sign="negative" minvalue="1"/>
+    <edge id="RTPK_g:RTPK_f:1" from="RTPK_g" to="RTPK_f" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:RTPK_f:1" from="MAPK14" to="RTPK_f" sign="negative" minvalue="1"/>
+    <edge id="CHUK:CTNNB1:1" from="CHUK" to="CTNNB1" sign="positive" minvalue="1"/>
+    <edge id="BTRC:CTNNB1:1" from="BTRC" to="CTNNB1" sign="negative" minvalue="1"/>
+    <edge id="CTNNB1:LEF1:1" from="CTNNB1" to="LEF1" sign="positive" minvalue="1"/>
+    <edge id="SFRP1_g:SFRP1:1" from="SFRP1_g" to="SFRP1" sign="positive" minvalue="1"/>
+    <edge id="SFRP1:FZD_f:1" from="SFRP1" to="FZD_f" sign="negative" minvalue="1"/>
+    <edge id="CFLAR:CASP8:1" from="CFLAR" to="CASP8" sign="negative" minvalue="1"/>
+    <edge id="CBPp300_c:REL_f:1" from="CBPp300_c" to="REL_f" sign="positive" minvalue="1"/>
+    <edge id="STAT1:REL_f:1" from="STAT1" to="REL_f" sign="negative" minvalue="1"/>
+    <edge id="IKBKB:REL_f:1" from="IKBKB" to="REL_f" sign="positive" minvalue="1"/>
+    <edge id="MSK_f:REL_f:1" from="MSK_f" to="REL_f" sign="positive" minvalue="1"/>
+    <edge id="CHUK:NFKB_f:1" from="CHUK" to="NFKB_f" sign="positive" minvalue="1"/>
+    <edge id="REL_f:NFKB_f:1" from="REL_f" to="NFKB_f" sign="positive" minvalue="1"/>
+    <edge id="IKBKB:NFKB_f:1" from="IKBKB" to="NFKB_f" sign="positive" minvalue="1"/>
+    <edge id="MSK_f:NFKB_f:1" from="MSK_f" to="NFKB_f" sign="positive" minvalue="1"/>
+    <edge id="FZD_f:DVL_f:1" from="FZD_f" to="DVL_f" sign="positive" minvalue="1"/>
+    <edge id="SMAD1:DVL_f:1" from="SMAD1" to="DVL_f" sign="positive" minvalue="1"/>
+    <edge id="ITCH:DVL_f:1" from="ITCH" to="DVL_f" sign="negative" minvalue="1"/>
+    <edge id="DKK_f:LRP_f:1" from="DKK_f" to="LRP_f" sign="negative" minvalue="1"/>
+    <edge id="FZD_f:LRP_f:1" from="FZD_f" to="LRP_f" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:LRP_f:1" from="MAPK14" to="LRP_f" sign="positive" minvalue="1"/>
+    <edge id="JNK_f:LRP_f:1" from="JNK_f" to="LRP_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:LRP_f:1" from="ERK_f" to="LRP_f" sign="positive" minvalue="1"/>
+    <edge id="LRP_f:BTRC:1" from="LRP_f" to="BTRC" sign="negative" minvalue="1"/>
+    <edge id="CK1_f:BTRC:1" from="CK1_f" to="BTRC" sign="positive" minvalue="1"/>
+    <edge id="AXIN1:BTRC:1" from="AXIN1" to="BTRC" sign="positive" minvalue="1"/>
+    <edge id="GSK3_f:BTRC:1" from="GSK3_f" to="BTRC" sign="positive" minvalue="1"/>
+    <edge id="LRP_f:CK1_f:1" from="LRP_f" to="CK1_f" sign="negative" minvalue="1"/>
+    <edge id="LRP_f:AXIN1:1" from="LRP_f" to="AXIN1" sign="negative" minvalue="1"/>
+    <edge id="GSK3_f:AXIN1:1" from="GSK3_f" to="AXIN1" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:AXIN1:1" from="PPP1CA" to="AXIN1" sign="negative" minvalue="1"/>
+    <edge id="PPM1A:AXIN1:1" from="PPM1A" to="AXIN1" sign="negative" minvalue="1"/>
+    <edge id="PIK3CA:mTORC2_c:1" from="PIK3CA" to="mTORC2_c" sign="positive" minvalue="1"/>
+    <edge id="S6K_f:mTORC2_c:1" from="S6K_f" to="mTORC2_c" sign="negative" minvalue="1"/>
+    <edge id="TSC_f:mTORC2_c:1" from="TSC_f" to="mTORC2_c" sign="positive" minvalue="1"/>
+    <edge id="PTEN:PDPK1:1" from="PTEN" to="PDPK1" sign="negative" minvalue="1"/>
+    <edge id="PIK3CA:PDPK1:1" from="PIK3CA" to="PDPK1" sign="positive" minvalue="1"/>
+    <edge id="RAF_f:MEK_f:1" from="RAF_f" to="MEK_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:MEK_f:1" from="ERK_f" to="MEK_f" sign="negative" minvalue="1"/>
+    <edge id="MAP3K8:MEK_f:1" from="MAP3K8" to="MEK_f" sign="positive" minvalue="1"/>
+    <edge id="BCL2:CYCS:1" from="BCL2" to="CYCS" sign="negative" minvalue="1"/>
+    <edge id="BAX:CYCS:1" from="BAX" to="CYCS" sign="positive" minvalue="1"/>
+    <edge id="CYCS:CASP9:1" from="CYCS" to="CASP9" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:CASP9:1" from="PPP1CA" to="CASP9" sign="positive" minvalue="1"/>
+    <edge id="DVL_f:GSK3_f:1" from="DVL_f" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:GSK3_f:1" from="AKT_f" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:GSK3_f:1" from="MAPK14" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:GSK3_f:1" from="ERK_f" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="RSK_f:GSK3_f:1" from="RSK_f" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="S6K_f:GSK3_f:1" from="S6K_f" to="GSK3_f" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:IRS1:1" from="ERK_f" to="IRS1" sign="negative" minvalue="1"/>
+    <edge id="S6K_f:IRS1:1" from="S6K_f" to="IRS1" sign="negative" minvalue="1"/>
+    <edge id="IKBKB:IRS1:1" from="IKBKB" to="IRS1" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:MDM2:1" from="AKT_f" to="MDM2" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:MDM2:1" from="PPP1CA" to="MDM2" sign="positive" minvalue="1"/>
+    <edge id="S6K_f:MDM2:1" from="S6K_f" to="MDM2" sign="negative" minvalue="1"/>
+    <edge id="MDM2_g:MDM2:1" from="MDM2_g" to="MDM2" sign="positive" minvalue="1"/>
+    <edge id="MAPKAPK2:MDM2:1" from="MAPKAPK2" to="MDM2" sign="positive" minvalue="1"/>
+    <edge id="mTORC2_c:AKT_f:1" from="mTORC2_c" to="AKT_f" sign="positive" minvalue="1"/>
+    <edge id="PDPK1:AKT_f:1" from="PDPK1" to="AKT_f" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:AKT_f:1" from="PPP1CA" to="AKT_f" sign="negative" minvalue="1"/>
+    <edge id="ILK:AKT_f:1" from="ILK" to="AKT_f" sign="positive" minvalue="1"/>
+    <edge id="BAD:BCL2:1" from="BAD" to="BCL2" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:RAF_f:1" from="AKT_f" to="RAF_f" sign="negative" minvalue="1"/>
+    <edge id="RHEB:RAF_f:1" from="RHEB" to="RAF_f" sign="negative" minvalue="1"/>
+    <edge id="KRAS:RAF_f:1" from="KRAS" to="RAF_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:RAF_f:1" from="ERK_f" to="RAF_f" sign="negative" minvalue="1"/>
+    <edge id="RHEB:mTORC1_c:1" from="RHEB" to="mTORC1_c" sign="positive" minvalue="1"/>
+    <edge id="RSK_f:mTORC1_c:1" from="RSK_f" to="mTORC1_c" sign="positive" minvalue="1"/>
+    <edge id="AKT1S1:mTORC1_c:1" from="AKT1S1" to="mTORC1_c" sign="negative" minvalue="1"/>
+    <edge id="TSC_f:RHEB:1" from="TSC_f" to="RHEB" sign="negative" minvalue="1"/>
+    <edge id="FOXO_f:Antisurvival:1" from="FOXO_f" to="Antisurvival" sign="positive" minvalue="1"/>
+    <edge id="CASP3:Antisurvival:1" from="CASP3" to="Antisurvival" sign="positive" minvalue="1"/>
+    <edge id="ISGF3_c:Antisurvival:1" from="ISGF3_c" to="Antisurvival" sign="positive" minvalue="1"/>
+    <edge id="FOXO_f:RTPK_g:1" from="FOXO_f" to="RTPK_g" sign="positive" minvalue="1"/>
+    <edge id="SRC:PTEN:1" from="SRC" to="PTEN" sign="negative" minvalue="1"/>
+    <edge id="CBPp300_c:PTEN:1" from="CBPp300_c" to="PTEN" sign="negative" minvalue="1"/>
+    <edge id="PTEN_g:PTEN:1" from="PTEN_g" to="PTEN" sign="positive" minvalue="1"/>
+    <edge id="GSK3_f:PTEN:1" from="GSK3_f" to="PTEN" sign="negative" minvalue="1"/>
+    <edge id="ROCK1:PTEN:1" from="ROCK1" to="PTEN" sign="positive" minvalue="1"/>
+    <edge id="CASP8:CASP3:1" from="CASP8" to="CASP3" sign="positive" minvalue="1"/>
+    <edge id="CASP9:CASP3:1" from="CASP9" to="CASP3" sign="positive" minvalue="1"/>
+    <edge id="IRS1:PIK3CA:1" from="IRS1" to="PIK3CA" sign="positive" minvalue="1"/>
+    <edge id="KRAS:PIK3CA:1" from="KRAS" to="PIK3CA" sign="positive" minvalue="1"/>
+    <edge id="GAB_f:PIK3CA:1" from="GAB_f" to="PIK3CA" sign="positive" minvalue="1"/>
+    <edge id="CHUK:CREBBP:1" from="CHUK" to="CREBBP" sign="positive" minvalue="1"/>
+    <edge id="GAB_f:PTPN11:1" from="GAB_f" to="PTPN11" sign="positive" minvalue="1"/>
+    <edge id="PTPN11:KRAS:1" from="PTPN11" to="KRAS" sign="positive" minvalue="1"/>
+    <edge id="SOS1:KRAS:1" from="SOS1" to="KRAS" sign="positive" minvalue="1"/>
+    <edge id="GRAP2:MAP2K4:1" from="GRAP2" to="MAP2K4" sign="positive" minvalue="1"/>
+    <edge id="MAP3K7:MAP2K4:1" from="MAP3K7" to="MAP2K4" sign="positive" minvalue="1"/>
+    <edge id="MAP3K11:MAP2K4:1" from="MAP3K11" to="MAP2K4" sign="positive" minvalue="1"/>
+    <edge id="MAP3K4:MAP2K4:1" from="MAP3K4" to="MAP2K4" sign="positive" minvalue="1"/>
+    <edge id="GRAP2:MAP2K7:1" from="GRAP2" to="MAP2K7" sign="positive" minvalue="1"/>
+    <edge id="MAP3K7:MAP2K7:1" from="MAP3K7" to="MAP2K7" sign="positive" minvalue="1"/>
+    <edge id="MAPK8IP3:MAP2K7:1" from="MAPK8IP3" to="MAP2K7" sign="positive" minvalue="1"/>
+    <edge id="DUSP1:MAPK14:1" from="DUSP1" to="MAPK14" sign="negative" minvalue="1"/>
+    <edge id="MAP2K4:MAPK14:1" from="MAP2K4" to="MAPK14" sign="positive" minvalue="1"/>
+    <edge id="MAP2K3:MAPK14:1" from="MAP2K3" to="MAPK14" sign="positive" minvalue="1"/>
+    <edge id="DUSP1:JNK_f:1" from="DUSP1" to="JNK_f" sign="negative" minvalue="1"/>
+    <edge id="MAP2K4:JNK_f:1" from="MAP2K4" to="JNK_f" sign="positive" minvalue="1"/>
+    <edge id="MAP2K7:JNK_f:1" from="MAP2K7" to="JNK_f" sign="positive" minvalue="1"/>
+    <edge id="PAK1:JNK_f:1" from="PAK1" to="JNK_f" sign="positive" minvalue="1"/>
+    <edge id="MAP3K5:MAP2K3:1" from="MAP3K5" to="MAP2K3" sign="positive" minvalue="1"/>
+    <edge id="MAP3K7:MAP2K3:1" from="MAP3K7" to="MAP2K3" sign="positive" minvalue="1"/>
+    <edge id="MEK_f:ERK_f:1" from="MEK_f" to="ERK_f" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:ERK_f:1" from="PPP1CA" to="ERK_f" sign="negative" minvalue="1"/>
+    <edge id="DUSP6:ERK_f:1" from="DUSP6" to="ERK_f" sign="negative" minvalue="1"/>
+    <edge id="RAF_f:LIF:1" from="RAF_f" to="LIF" sign="positive" minvalue="1"/>
+    <edge id="SMAD7:PPP1CA:1" from="SMAD7" to="PPP1CA" sign="positive" minvalue="1"/>
+    <edge id="RTPK_f:PPP1CA:1" from="RTPK_f" to="PPP1CA" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:GAB_f:1" from="ERK_f" to="GAB_f" sign="negative" minvalue="1"/>
+    <edge id="GRB2:GAB_f:1" from="GRB2" to="GAB_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:SOS1:1" from="ERK_f" to="SOS1" sign="negative" minvalue="1"/>
+    <edge id="PLCG1:SOS1:1" from="PLCG1" to="SOS1" sign="positive" minvalue="1"/>
+    <edge id="GRB2:SOS1:1" from="GRB2" to="SOS1" sign="positive" minvalue="1"/>
+    <edge id="PLCG1:PRKCA:1" from="PLCG1" to="PRKCA" sign="positive" minvalue="1"/>
+    <edge id="SYK:VAV1:1" from="SYK" to="VAV1" sign="positive" minvalue="1"/>
+    <edge id="SYK:PLCG1:1" from="SYK" to="PLCG1" sign="positive" minvalue="1"/>
+    <edge id="PDPK1:PRKCD:1" from="PDPK1" to="PRKCD" sign="positive" minvalue="1"/>
+    <edge id="CASP3:PRKCD:1" from="CASP3" to="PRKCD" sign="positive" minvalue="1"/>
+    <edge id="PDPK1:RSK_f:1" from="PDPK1" to="RSK_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:RSK_f:1" from="ERK_f" to="RSK_f" sign="positive" minvalue="1"/>
+    <edge id="PDPK1:S6K_f:1" from="PDPK1" to="S6K_f" sign="positive" minvalue="1"/>
+    <edge id="mTORC1_c:S6K_f:1" from="mTORC1_c" to="S6K_f" sign="positive" minvalue="1"/>
+    <edge id="PDPK1:PLK1:1" from="PDPK1" to="PLK1" sign="positive" minvalue="1"/>
+    <edge id="MAPKAPK2:PLK1:1" from="MAPKAPK2" to="PLK1" sign="positive" minvalue="1"/>
+    <edge id="PAK1:ILK:1" from="PAK1" to="ILK" sign="positive" minvalue="1"/>
+    <edge id="SOCS1_g:SOCS1:1" from="SOCS1_g" to="SOCS1" sign="positive" minvalue="1"/>
+    <edge id="mTORC1_c:DUSP6:1" from="mTORC1_c" to="DUSP6" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:DUSP6:1" from="ERK_f" to="DUSP6" sign="positive" minvalue="1"/>
+    <edge id="SRC:STAT3:1" from="SRC" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="IRAK1:STAT3:1" from="IRAK1" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="JAK_f:STAT3:1" from="JAK_f" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="mTORC1_c:STAT3:1" from="mTORC1_c" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:STAT3:1" from="MAPK14" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="JNK_f:STAT3:1" from="JNK_f" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:STAT3:1" from="ERK_f" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="PPP1CA:STAT3:1" from="PPP1CA" to="STAT3" sign="negative" minvalue="1"/>
+    <edge id="PRKCD:STAT3:1" from="PRKCD" to="STAT3" sign="positive" minvalue="1"/>
+    <edge id="PRKCD:LIMK2:1" from="PRKCD" to="LIMK2" sign="negative" minvalue="1"/>
+    <edge id="ROCK1:LIMK2:1" from="ROCK1" to="LIMK2" sign="positive" minvalue="1"/>
+    <edge id="AKT_f:EP300:1" from="AKT_f" to="EP300" sign="positive" minvalue="1"/>
+    <edge id="PRKCD:EP300:1" from="PRKCD" to="EP300" sign="negative" minvalue="1"/>
+    <edge id="SKI:EP300:1" from="SKI" to="EP300" sign="negative" minvalue="1"/>
+    <edge id="SRC:STAT1:1" from="SRC" to="STAT1" sign="positive" minvalue="1"/>
+    <edge id="JAK_f:STAT1:1" from="JAK_f" to="STAT1" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:STAT1:1" from="MAPK14" to="STAT1" sign="positive" minvalue="1"/>
+    <edge id="PRKCD:STAT1:1" from="PRKCD" to="STAT1" sign="positive" minvalue="1"/>
+    <edge id="IKBKB:STAT1:1" from="IKBKB" to="STAT1" sign="positive" minvalue="1"/>
+    <edge id="PIAS1:STAT1:1" from="PIAS1" to="STAT1" sign="negative" minvalue="1"/>
+    <edge id="TP53:IKBKB:1" from="TP53" to="IKBKB" sign="negative" minvalue="1"/>
+    <edge id="PLK1:IKBKB:1" from="PLK1" to="IKBKB" sign="negative" minvalue="1"/>
+    <edge id="MAP3K7:IKBKB:1" from="MAP3K7" to="IKBKB" sign="positive" minvalue="1"/>
+    <edge id="PPM1A:IKBKB:1" from="PPM1A" to="IKBKB" sign="negative" minvalue="1"/>
+    <edge id="RSK_f:SRF:1" from="RSK_f" to="SRF" sign="positive" minvalue="1"/>
+    <edge id="MAPKAPK2:SRF:1" from="MAPKAPK2" to="SRF" sign="positive" minvalue="1"/>
+    <edge id="CFL_f:SRF:1" from="CFL_f" to="SRF" sign="positive" minvalue="1"/>
+    <edge id="MAPKAPK2:PIAS1:1" from="MAPKAPK2" to="PIAS1" sign="positive" minvalue="1"/>
+    <edge id="IRAK1:TRAF6:1" from="IRAK1" to="TRAF6" sign="positive" minvalue="1"/>
+    <edge id="TGFBR1:TRAF6:1" from="TGFBR1" to="TRAF6" sign="positive" minvalue="1"/>
+    <edge id="STAT1:SOCS1_g:1" from="STAT1" to="SOCS1_g" sign="positive" minvalue="1"/>
+    <edge id="STAT1:ISGF3_c:1" from="STAT1" to="ISGF3_c" sign="positive" minvalue="1"/>
+    <edge id="STAT2:ISGF3_c:1" from="STAT2" to="ISGF3_c" sign="positive" minvalue="1"/>
+    <edge id="JAK_f:STAT2:1" from="JAK_f" to="STAT2" sign="positive" minvalue="1"/>
+    <edge id="AKT_f:CFLAR:1" from="AKT_f" to="CFLAR" sign="positive" minvalue="1"/>
+    <edge id="ITCH:CFLAR:1" from="ITCH" to="CFLAR" sign="negative" minvalue="1"/>
+    <edge id="CBPp300_c:SMAD2:1" from="CBPp300_c" to="SMAD2" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:SMAD2:1" from="ERK_f" to="SMAD2" sign="positive" minvalue="1"/>
+    <edge id="SKI:SMAD2:1" from="SKI" to="SMAD2" sign="negative" minvalue="1"/>
+    <edge id="ACVR1:SMAD2:1" from="ACVR1" to="SMAD2" sign="positive" minvalue="1"/>
+    <edge id="TGFBR1:SMAD2:1" from="TGFBR1" to="SMAD2" sign="positive" minvalue="1"/>
+    <edge id="SMURF2:SMAD2:1" from="SMURF2" to="SMAD2" sign="negative" minvalue="1"/>
+    <edge id="PPM1A:SMAD2:1" from="PPM1A" to="SMAD2" sign="negative" minvalue="1"/>
+    <edge id="ITCH:SMAD2:1" from="ITCH" to="SMAD2" sign="positive" minvalue="1"/>
+    <edge id="TP53:MDM2_g:1" from="TP53" to="MDM2_g" sign="positive" minvalue="1"/>
+    <edge id="NFKB_f:MDM2_g:1" from="NFKB_f" to="MDM2_g" sign="positive" minvalue="1"/>
+    <edge id="TP53:BAX:1" from="TP53" to="BAX" sign="positive" minvalue="1"/>
+    <edge id="NFKB_f:PRKACA:1" from="NFKB_f" to="PRKACA" sign="positive" minvalue="1"/>
+    <edge id="FOS:PRKACA:1" from="FOS" to="PRKACA" sign="positive" minvalue="1"/>
+    <edge id="NFKB_f:TGFB1:1" from="NFKB_f" to="TGFB1" sign="positive" minvalue="1"/>
+    <edge id="FOS:TGFB1:1" from="FOS" to="TGFB1" sign="positive" minvalue="1"/>
+    <edge id="JUN:TGFB1:1" from="JUN" to="TGFB1" sign="positive" minvalue="1"/>
+    <edge id="IKBKB:MAP3K8:1" from="IKBKB" to="MAP3K8" sign="positive" minvalue="1"/>
+    <edge id="GSK3_f:TSC_f:1" from="GSK3_f" to="TSC_f" sign="positive" minvalue="1"/>
+    <edge id="AKT_f:TSC_f:1" from="AKT_f" to="TSC_f" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:TSC_f:1" from="ERK_f" to="TSC_f" sign="negative" minvalue="1"/>
+    <edge id="RSK_f:TSC_f:1" from="RSK_f" to="TSC_f" sign="negative" minvalue="1"/>
+    <edge id="IKBKB:TSC_f:1" from="IKBKB" to="TSC_f" sign="negative" minvalue="1"/>
+    <edge id="SMAD7:SMAD4:1" from="SMAD7" to="SMAD4" sign="negative" minvalue="1"/>
+    <edge id="SMAD6:SMAD4:1" from="SMAD6" to="SMAD4" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:SMAD4:1" from="ERK_f" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="PIAS1:SMAD4:1" from="PIAS1" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="SMAD2:SMAD4:1" from="SMAD2" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="SKI:SMAD4:1" from="SKI" to="SMAD4" sign="negative" minvalue="1"/>
+    <edge id="SMAD3:SMAD4:1" from="SMAD3" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="SMAD5:SMAD4:1" from="SMAD5" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="SMAD1:SMAD4:1" from="SMAD1" to="SMAD4" sign="positive" minvalue="1"/>
+    <edge id="SMURF1:SMAD4:1" from="SMURF1" to="SMAD4" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:BAD:1" from="AKT_f" to="BAD" sign="negative" minvalue="1"/>
+    <edge id="RSK_f:BAD:1" from="RSK_f" to="BAD" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:MAP3K5:1" from="AKT_f" to="MAP3K5" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:AKT1S1:1" from="AKT_f" to="AKT1S1" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:SKI:1" from="AKT_f" to="SKI" sign="negative" minvalue="1"/>
+    <edge id="SMAD7:SMAD3:1" from="SMAD7" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="SMAD6:SMAD3:1" from="SMAD6" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="GSK3_f:SMAD3:1" from="GSK3_f" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="AKT_f:SMAD3:1" from="AKT_f" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:SMAD3:1" from="MAPK14" to="SMAD3" sign="positive" minvalue="1"/>
+    <edge id="JNK_f:SMAD3:1" from="JNK_f" to="SMAD3" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:SMAD3:1" from="ERK_f" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="SKI:SMAD3:1" from="SKI" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="ACVR1:SMAD3:1" from="ACVR1" to="SMAD3" sign="positive" minvalue="1"/>
+    <edge id="TGFBR1:SMAD3:1" from="TGFBR1" to="SMAD3" sign="positive" minvalue="1"/>
+    <edge id="PPM1A:SMAD3:1" from="PPM1A" to="SMAD3" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:MAPKAPK2:1" from="MAPK14" to="MAPKAPK2" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:DUSP1_g:1" from="MAPK14" to="DUSP1_g" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:DUSP1_g:1" from="ERK_f" to="DUSP1_g" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:MSK_f:1" from="MAPK14" to="MSK_f" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:MSK_f:1" from="ERK_f" to="MSK_f" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:GRAP2:1" from="MAPK14" to="GRAP2" sign="negative" minvalue="1"/>
+    <edge id="MAPK14:TAB_f:1" from="MAPK14" to="TAB_f" sign="negative" minvalue="1"/>
+    <edge id="TRAF6:TAB_f:1" from="TRAF6" to="TAB_f" sign="positive" minvalue="1"/>
+    <edge id="MAPK14:ATF2:1" from="MAPK14" to="ATF2" sign="positive" minvalue="1"/>
+    <edge id="JNK_f:ATF2:1" from="JNK_f" to="ATF2" sign="positive" minvalue="1"/>
+    <edge id="ERK_f:ATF2:1" from="ERK_f" to="ATF2" sign="positive" minvalue="1"/>
+    <edge id="SKI:SMAD5:1" from="SKI" to="SMAD5" sign="negative" minvalue="1"/>
+    <edge id="ACVR1:SMAD5:1" from="ACVR1" to="SMAD5" sign="positive" minvalue="1"/>
+    <edge id="SMURF2:SMAD5:1" from="SMURF2" to="SMAD5" sign="negative" minvalue="1"/>
+    <edge id="SMAD6:SMAD1:1" from="SMAD6" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="GSK3_f:SMAD1:1" from="GSK3_f" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:SMAD1:1" from="ERK_f" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="SKI:SMAD1:1" from="SKI" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="ACVR1:SMAD1:1" from="ACVR1" to="SMAD1" sign="positive" minvalue="1"/>
+    <edge id="SMURF1:SMAD1:1" from="SMURF1" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="PPM1A:SMAD1:1" from="PPM1A" to="SMAD1" sign="negative" minvalue="1"/>
+    <edge id="ERK_f:FOS:1" from="ERK_f" to="FOS" sign="positive" minvalue="1"/>
+    <edge id="RSK_f:FOS:1" from="RSK_f" to="FOS" sign="positive" minvalue="1"/>
+    <edge id="SRF:FOS:1" from="SRF" to="FOS" sign="positive" minvalue="1"/>
+    <edge id="GSK3_f:JUN:1" from="GSK3_f" to="JUN" sign="negative" minvalue="1"/>
+    <edge id="JNK_f:JUN:1" from="JNK_f" to="JUN" sign="positive" minvalue="1"/>
+    <edge id="TAB_f:MAP3K7:1" from="TAB_f" to="MAP3K7" sign="positive" minvalue="1"/>
+    <edge id="MAP3K7:NLK:1" from="MAP3K7" to="NLK" sign="positive" minvalue="1"/>
+    <edge id="SMAD2:SMAD7_g:1" from="SMAD2" to="SMAD7_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD4:SMAD7_g:1" from="SMAD4" to="SMAD7_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD3:SMAD7_g:1" from="SMAD3" to="SMAD7_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD2:SMAD6_g:1" from="SMAD2" to="SMAD6_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD4:SMAD6_g:1" from="SMAD4" to="SMAD6_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD3:SMAD6_g:1" from="SMAD3" to="SMAD6_g" sign="positive" minvalue="1"/>
+    <edge id="SMAD4:AP1_c:1" from="SMAD4" to="AP1_c" sign="positive" minvalue="1"/>
+    <edge id="SMAD3:AP1_c:1" from="SMAD3" to="AP1_c" sign="positive" minvalue="1"/>
+    <edge id="ATF2:AP1_c:1" from="ATF2" to="AP1_c" sign="positive" minvalue="1"/>
+    <edge id="FOS:AP1_c:1" from="FOS" to="AP1_c" sign="positive" minvalue="1"/>
+    <edge id="JUN:AP1_c:1" from="JUN" to="AP1_c" sign="positive" minvalue="1"/>
+    <edge id="BMPR2:ACVR1:1" from="BMPR2" to="ACVR1" sign="positive" minvalue="1"/>
+    <edge id="SRC:PTPN6:1" from="SRC" to="PTPN6" sign="positive" minvalue="1"/>
+    <edge id="SRC:CDC42:1" from="SRC" to="CDC42" sign="positive" minvalue="1"/>
+    <edge id="ARHGAP24:CDC42:1" from="ARHGAP24" to="CDC42" sign="negative" minvalue="1"/>
+    <edge id="SHC1:GRB2:1" from="SHC1" to="GRB2" sign="positive" minvalue="1"/>
+    <edge id="TGFBR2:TGFBR1:1" from="TGFBR2" to="TGFBR1" sign="positive" minvalue="1"/>
+    <edge id="SMAD7:TGFBR1:1" from="SMAD7" to="TGFBR1" sign="negative" minvalue="1"/>
+    <edge id="SMAD6:TGFBR1:1" from="SMAD6" to="TGFBR1" sign="negative" minvalue="1"/>
+    <edge id="SMURF1:TGFBR1:1" from="SMURF1" to="TGFBR1" sign="negative" minvalue="1"/>
+    <edge id="SMURF2:TGFBR1:1" from="SMURF2" to="TGFBR1" sign="negative" minvalue="1"/>
+    <edge id="SMAD7:SMURF1:1" from="SMAD7" to="SMURF1" sign="positive" minvalue="1"/>
+    <edge id="SMAD7:SMURF2:1" from="SMAD7" to="SMURF2" sign="positive" minvalue="1"/>
+    <edge id="RAC_f:RHOA:1" from="RAC_f" to="RHOA" sign="negative" minvalue="1"/>
+    <edge id="SMURF1:RHOA:1" from="SMURF1" to="RHOA" sign="negative" minvalue="1"/>
+    <edge id="PARD6A:RHOA:1" from="PARD6A" to="RHOA" sign="negative" minvalue="1"/>
+    <edge id="DAAM1:RHOA:1" from="DAAM1" to="RHOA" sign="positive" minvalue="1"/>
+    <edge id="RND3:RHOA:1" from="RND3" to="RHOA" sign="negative" minvalue="1"/>
+    <edge id="SMURF1:BMPR2:1" from="SMURF1" to="BMPR2" sign="negative" minvalue="1"/>
+    <edge id="SMURF2:BMPR2:1" from="SMURF2" to="BMPR2" sign="negative" minvalue="1"/>
+    <edge id="TGFBR2:PARD6A:1" from="TGFBR2" to="PARD6A" sign="positive" minvalue="1"/>
+    <edge id="TGFBR1:PARD6A:1" from="TGFBR1" to="PARD6A" sign="positive" minvalue="1"/>
+    <edge id="DVL_f:DAAM1:1" from="DVL_f" to="DAAM1" sign="positive" minvalue="1"/>
+    <edge id="MYC:SFRP1_g:1" from="MYC" to="SFRP1_g" sign="negative" minvalue="1"/>
+    <edge id="PTEN:PPM1A:1" from="PTEN" to="PPM1A" sign="positive" minvalue="1"/>
+    <edge id="LIMK2:CFL_f:1" from="LIMK2" to="CFL_f" sign="positive" minvalue="1"/>
+    <edge id="LIMK1:CFL_f:1" from="LIMK1" to="CFL_f" sign="positive" minvalue="1"/>
+    <edge id="RAC_f:PAK1:1" from="RAC_f" to="PAK1" sign="positive" minvalue="1"/>
+    <edge id="CDC42:PAK1:1" from="CDC42" to="PAK1" sign="positive" minvalue="1"/>
+    <edge id="RAC_f:MAP3K11:1" from="RAC_f" to="MAP3K11" sign="positive" minvalue="1"/>
+    <edge id="RAC_f:MAP3K4:1" from="RAC_f" to="MAP3K4" sign="positive" minvalue="1"/>
+    <edge id="RAC_f:LIMK1:1" from="RAC_f" to="LIMK1" sign="positive" minvalue="1"/>
+    <edge id="ROCK1:LIMK1:1" from="ROCK1" to="LIMK1" sign="positive" minvalue="1"/>
+    <edge id="CASP3:ROCK1:1" from="CASP3" to="ROCK1" sign="positive" minvalue="1"/>
+    <edge id="RHOA:ROCK1:1" from="RHOA" to="ROCK1" sign="positive" minvalue="1"/>
+    <edge id="JNK_f:ITCH:1" from="JNK_f" to="ITCH" sign="positive" minvalue="1"/>
+    <edge id="ROCK1:ARHGAP24:1" from="ROCK1" to="ARHGAP24" sign="positive" minvalue="1"/>
+    <edge id="ROCK1:TIAM1:1" from="ROCK1" to="TIAM1" sign="negative" minvalue="1"/>
+    <edge id="ROCK1:RND3:1" from="ROCK1" to="RND3" sign="positive" minvalue="1"/>
+    <edge id="ROCK1:MAPK8IP3:1" from="ROCK1" to="MAPK8IP3" sign="positive" minvalue="1"/>
+  </graph>
+</gxl>

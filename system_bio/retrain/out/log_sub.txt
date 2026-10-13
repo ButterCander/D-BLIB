@@ -1,0 +1,3 @@
+balanced sub12_1 runs=12: 36 models, train 12s, simulate 61s, fitness mean 0.950 max 0.994
+balanced sub12_2 runs=12: 36 models, train 30s, simulate 51s, fitness mean 0.924 max 0.994
+SUB_DONE

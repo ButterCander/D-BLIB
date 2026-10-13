@@ -1,0 +1,17 @@
+== E21  Additive decomposition of each score: score(a,b) = drug_a + drug_b + pair-specific residual (fitted on the scores only, no labels)
+  score                       AUC full   AUC drug main effects  AUC pair-specific residual  share of variance from drugs
+  rule link-only                 0.686                   0.578                       0.673                          0.24
+  vote link-only                 0.831                   0.850                       0.714                          0.56
+  rule topology-only             0.734                   0.629                       0.689                          0.17
+  vote topology-only             0.757                   0.776                       0.523                          0.68
+  rule topo-and-link             0.823                   0.702                       0.777                          0.10
+  vote topo-and-link             0.804                   0.827                       0.579                          0.72
+  consensus                      0.917                   0.864                       0.797                          0.51
+  largest drug main effects in the consensus: D1 (+58), AK (+55), F4 (+51), G2 (+50)
+
+== E22  Learned weights vs equal weights: leave-one-positive-out, held-out positive's percentile among the 147 negatives
+  ridge logistic, C=0.01 : LOPO AUC 0.899  (per held-out positive: 0.82, 0.94, 0.73, 0.96, 0.99, 0.96)
+  ridge logistic, C=0.1  : LOPO AUC 0.901  (per held-out positive: 0.83, 0.94, 0.76, 0.95, 0.97, 0.95)
+  ridge logistic, C=1.0  : LOPO AUC 0.889  (per held-out positive: 0.85, 0.95, 0.75, 0.88, 0.97, 0.93)
+  equal-weight consensus (nothing learned): AUC 0.917  (per positive: 0.91, 0.94, 0.73, 0.96, 0.99, 0.97)
+  label-free first principal component of the six scores: AUC 0.799 (loadings [0.29, 0.45, 0.22, 0.58, 0.17, 0.54])

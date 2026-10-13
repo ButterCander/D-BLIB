@@ -1,0 +1,15 @@
+== A. replication with seeds 48-71 only (24 runs = 72 models each; the other 12 runs of the 36-run batch duplicated earlier seeds and are dropped)
+24 nodes (baseline), seeds 48-71               models  72 | rule 0.815 | vote 0.872 | consensus 0.905 (PR 0.297, top-35 5/6)
+32 nodes (+8 expression nodes), seeds 48-71    models  72 | rule 0.643 | vote 0.625 | consensus 0.747 (PR 0.117, top-35 5/6)
+  difference (32 minus 24 nodes), rule: -0.172  95% [-0.35, -0.02]
+  difference (32 minus 24 nodes), vote: -0.247  95% [-0.43, -0.06]
+  difference (32 minus 24 nodes), cons: -0.158  95% [-0.34, -0.04]
+
+== B. pooled over all non-duplicated seeds (12 + 24 + 24 runs = 180 models each)
+24 nodes (baseline), all distinct seeds        models 180 | rule 0.730 | vote 0.865 | consensus 0.869 (PR 0.321, top-35 5/6)
+32 nodes, all distinct seeds                   models 180 | rule 0.821 | vote 0.820 | consensus 0.896 (PR 0.189, top-35 5/6)
+
+== C. random-node negative controls vs real expression nodes (36 models each, GA seeds 12-23, paired with the first batch)
+24 nodes (baseline)                            models  36 | rule 0.653 | vote 0.734 | consensus 0.702 (PR 0.213, top-35 4/6)
+32 nodes (+8 expression nodes)                 models  36 | rule 0.799 | vote 0.693 | consensus 0.776 (PR 0.165, top-35 5/6)
+24 + 8 RANDOM nodes with random states (ctl1)  models  36 | rule 0.687 | vote 0.612 | consensus 0.681 (PR 0.117, top-35 4/6)

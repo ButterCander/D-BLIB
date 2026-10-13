@@ -1,0 +1,42 @@
+== E17  AUC of each component and of consensus scores built from Bliss only, HSA only, and both
+  rule bliss link-only                 AUC 0.686
+  vote bliss link-only                 AUC 0.831
+  rule bliss topology-only             AUC 0.734
+  vote bliss topology-only             AUC 0.757
+  rule bliss topo-and-link             AUC 0.823
+  vote bliss topo-and-link             AUC 0.804
+  rule hsa link-only                   AUC 0.523
+  vote hsa link-only                   AUC 0.831
+  rule hsa topology-only               AUC 0.298
+  vote hsa topology-only               AUC 0.746
+  rule hsa topo-and-link               AUC 0.740
+  vote hsa topo-and-link               AUC 0.811
+  consensus Bliss (3 rule + 3 vote)    AUC 0.917  PR AUC 0.306  synergies in top 35: 5 of 6
+  consensus HSA (3 rule + 3 vote)      AUC 0.848  PR AUC 0.168  synergies in top 35: 4 of 6
+  consensus Bliss + HSA (12 scores)    AUC 0.912  PR AUC 0.255  synergies in top 35: 5 of 6
+  consensus Bliss rules + HSA votes    AUC 0.916  PR AUC 0.299  synergies in top 35: 5 of 6
+
+  hub-preserving permutation, family of 16 scores (every component and consensus tried):
+  consensus Bliss (3 rule + 3 vote)    AUC 0.917  p (own) 0.0002  family-wise p 0.0022
+  consensus HSA (3 rule + 3 vote)      AUC 0.848  p (own) 0.0040  family-wise p 0.0282
+  consensus Bliss + HSA (12 scores)    AUC 0.912  p (own) 0.0003  family-wise p 0.0026
+  consensus Bliss rules + HSA votes    AUC 0.916  p (own) 0.0003  family-wise p 0.0022
+
+== E18  Top-ranked pairs by the Bliss consensus and rank stability under resampling the 450 link-only models (vote part) 
+  pair     observed  rank  rank 95% range
+  D1~PK          no     1             1-1
+  D1~PI         yes     2             2-3
+  G2~PK          no     3             2-3
+  D1~G2          no     4             4-4
+  AK~PK          no     5             5-5
+  G2~PD          no     6             6-7
+  G2~PI         yes     7             6-7
+  D1~F4          no     8             8-8
+  PD~PI         yes     9             9-9
+  5Z~AK          no    10           10-11
+  D1~P5          no    11           10-11
+  F4~JN          no    12           12-12
+  AK~BI         yes    13           13-13
+  AK~JN          no    14           14-15
+  BI~JN          no    15           14-24
+  observed synergies among the top 15: 4 of 6; non-observed pairs in the top 15 (candidate new combinations): 11

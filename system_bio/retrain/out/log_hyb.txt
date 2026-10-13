@@ -1,0 +1,4 @@
+balanced hyb runs=12: 36 models, train 88s, simulate 63s, fitness mean 0.975 max 0.999
+topology hyb runs=12: 36 models, train 71s, simulate 50s, fitness mean 0.974 max 0.999
+mixed hyb runs=12: 36 models, train 74s, simulate 53s, fitness mean 0.970 max 0.978
+HYB_DONE

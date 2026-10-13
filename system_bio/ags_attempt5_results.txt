@@ -1,0 +1,18 @@
+== E14  Hub-preserving null: relabel the 18 drugs at random (the 6 positives keep their shape: one drug in 4 of them)
+  score                                           AUC   p (hub null)   family-wise p
+  rank-mean paper rule 3 + vote 3               0.917         0.0001          0.0016
+  rank-mean vote, 3 strategies                  0.832         0.0105          0.0322
+  vote fraction, link-only                      0.831         0.0048          0.0329
+  paper rule, topo-and-link                     0.823         0.0034          0.0402
+  vote fraction, topo-and-link                  0.804         0.0203          0.0603
+  rank-mean paper rule, 3 strategies            0.782         0.0088          0.0913
+  vote fraction, topology-only                  0.757         0.0431          0.1396
+  paper rule, topology-only                     0.734         0.0343          0.2000
+  calibrated excess, wrong sign (higher=syn)    0.686         0.0646          0.3677
+  paper rule, link-only                         0.686         0.0732          0.3677
+  (null AUC of a random score under this null: mean 0.500; typical best-of-10 0.813 at the 95th percentile)
+
+== E15  Skill beyond the PI hub for the best consensus (rank-mean paper rule 3 + vote 3)
+  within PI pairs (17 pairs, 4 positives)        AUC 1.00  permutation p=0.000
+  within other pairs (136 pairs, 2 positives)    AUC 0.83  permutation p=0.060
+  ranks of the six synergies among 153: [2, 7, 9, 13, 18, 45]

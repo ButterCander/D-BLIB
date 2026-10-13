@@ -1,0 +1,16 @@
+reactions with GPR: 8091 of 13085
+reference expression (median of control reactions): 1912.0
+medium components without exchange: []
+Vmax=    3 floor=0.01 | control growth 0.062 (zero-growth samples 0/24) | predicted inhibition % PI103   0.0, PD0325901  -0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD   0.0 | Spearman vs measured -0.05, concordant pairs 5/10 (20s)
+Vmax=    3 floor=0.05 | control growth 0.145 (zero-growth samples 0/24) | predicted inhibition % PI103  -2.8, PD0325901 -15.5, 5Z -13.5, PI103+5Z  -6.1, PI103+PD  -3.6 | Spearman vs measured +0.60, concordant pairs 7/10 (20s)
+Vmax=    3 floor=0.20 | control growth 0.264 (zero-growth samples 0/24) | predicted inhibition % PI103  -5.0, PD0325901 -12.3, 5Z  -9.4, PI103+5Z  -8.1, PI103+PD  -6.1 | Spearman vs measured +0.60, concordant pairs 7/10 (21s)
+Vmax=   10 floor=0.01 | control growth 0.206 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901   0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD  -0.0 | Spearman vs measured -1.00, concordant pairs 0/10 (23s)
+Vmax=   10 floor=0.05 | control growth 0.449 (zero-growth samples 0/24) | predicted inhibition % PI103   5.1, PD0325901  -2.3, 5Z  -3.2, PI103+5Z   3.4, PI103+PD   4.0 | Spearman vs measured +0.50, concordant pairs 6/10 (25s)
+Vmax=   10 floor=0.20 | control growth 0.847 (zero-growth samples 0/24) | predicted inhibition % PI103   4.6, PD0325901  -2.8, 5Z  -3.5, PI103+5Z   3.5, PI103+PD   2.8 | Spearman vs measured +0.60, concordant pairs 7/10 (24s)
+Vmax=   30 floor=0.01 | control growth 0.448 (zero-growth samples 0/24) | predicted inhibition % PI103  -1.7, PD0325901  -6.8, 5Z  -5.6, PI103+5Z  -3.0, PI103+PD  -3.5 | Spearman vs measured +0.70, concordant pairs 8/10 (22s)
+Vmax=   30 floor=0.05 | control growth 0.824 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901  -0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD  -0.0 | Spearman vs measured -0.30, concordant pairs 4/10 (21s)
+Vmax=   30 floor=0.20 | control growth 1.218 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901  -0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD  -0.0 | Spearman vs measured -0.40, concordant pairs 3/10 (18s)
+Vmax=  100 floor=0.01 | control growth 0.707 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901  -0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD  -0.0 | Spearman vs measured +0.80, concordant pairs 8/10 (23s)
+Vmax=  100 floor=0.05 | control growth 1.201 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901   0.0, 5Z  -0.0, PI103+5Z  -0.0, PI103+PD  -0.0 | Spearman vs measured -0.10, concordant pairs 5/10 (26s)
+Vmax=  100 floor=0.20 | control growth 1.448 (zero-growth samples 0/24) | predicted inhibition % PI103  -0.0, PD0325901  -0.0, 5Z   0.0, PI103+5Z   0.0, PI103+PD   0.0 | Spearman vs measured +0.70, concordant pairs 8/10 (24s)
+measured inhibition %: {'PI103': 62.5, 'PD0325901': 47.0, '5Z': 59.0, 'PI103+5Z': 92.0, 'PI103+PD': 78.0}

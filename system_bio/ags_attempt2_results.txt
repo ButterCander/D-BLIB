@@ -1,0 +1,18 @@
+== E7  Label-free 'calibration-specific' component: residual of calibrated score after regressing out the random-model score (higher = synergy)
+  link-only      ensemble excess  slope +0.62  residual AUC 0.347 [0.04,0.67]   (calibrated alone 0.686, random alone 0.794)
+  link-only      vote fraction    slope +0.76  residual AUC 0.638 [0.35,0.92]   (calibrated alone 0.831, random alone 0.799)
+  topology-only  ensemble excess  slope +0.41  residual AUC 0.424 [0.15,0.72]   (calibrated alone 0.696, random alone 0.595)
+  topology-only  vote fraction    slope +0.86  residual AUC 0.465 [0.20,0.75]   (calibrated alone 0.757, random alone 0.787)
+  topo-and-link  ensemble excess  slope +0.53  residual AUC 0.432 [0.13,0.78]   (calibrated alone 0.575, random alone 0.596)
+  topo-and-link  vote fraction    slope +0.82  residual AUC 0.494 [0.20,0.81]   (calibrated alone 0.804, random alone 0.796)
+
+== E8  The paper's combination score = calibrated + beta * random-model score (beta = -1 reported); evaluated as the paper does, lower = synergy -> score rand - ss
+  link-only      ensemble excess  rand-ss (paper rule) AUC 0.686 [0.39,0.97] PR 0.219 | best angle in-sample AUC 0.844 | leave-one-positive-out AUC 0.697 | range over angles 0.16-0.84
+  link-only      vote fraction    rand-ss (paper rule) AUC 0.568 [0.28,0.83] PR 0.068 | best angle in-sample AUC 0.833 | leave-one-positive-out AUC 0.723 | range over angles 0.17-0.83
+  link-only      top-35 pairs by paper rule contain 4 of 6 synergies
+  topology-only  ensemble excess  rand-ss (paper rule) AUC 0.734 [0.44,0.98] PR 0.499 | best angle in-sample AUC 0.768 | leave-one-positive-out AUC 0.541 | range over angles 0.23-0.77
+  topology-only  vote fraction    rand-ss (paper rule) AUC 0.550 [0.26,0.82] PR 0.085 | best angle in-sample AUC 0.799 | leave-one-positive-out AUC 0.672 | range over angles 0.20-0.80
+  topology-only  top-35 pairs by paper rule contain 4 of 6 synergies
+  topo-and-link  ensemble excess  rand-ss (paper rule) AUC 0.823 [0.60,0.97] PR 0.252 | best angle in-sample AUC 0.824 | leave-one-positive-out AUC 0.553 | range over angles 0.18-0.82
+  topo-and-link  vote fraction    rand-ss (paper rule) AUC 0.484 [0.17,0.78] PR 0.072 | best angle in-sample AUC 0.822 | leave-one-positive-out AUC 0.820 | range over angles 0.18-0.82
+  topo-and-link  top-35 pairs by paper rule contain 5 of 6 synergies

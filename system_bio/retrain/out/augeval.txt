@@ -1,0 +1,6 @@
+24 nodes (baseline)                models 108, fitness 0.951 | rule AUC 0.700 | vote AUC 0.790 | 2-score consensus AUC 0.757 PR 0.296, top-35 hits 4/6
+32 nodes (+8 from AGS expression)  models 108, fitness 0.903 | rule AUC 0.844 | vote AUC 0.828 | 2-score consensus AUC 0.915 PR 0.232, top-35 hits 6/6
+rank correlation between the two ensembles: rule 0.74, vote 0.84
+  AUC difference (32 minus 24 nodes), rule: +0.144  95% [-0.02, +0.37]
+  AUC difference (32 minus 24 nodes), vote: +0.037  95% [-0.10, +0.23]
+  AUC difference (32 minus 24 nodes), cons: +0.158  95% [-0.04, +0.43]

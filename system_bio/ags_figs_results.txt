@@ -1,0 +1,18 @@
+FIG A
+  Parameters only          AUC 0.686 [0.39,0.97]  PR 0.219 [0.08,0.56]
+  Topology only            AUC 0.734 [0.44,0.97]  PR 0.499 [0.12,0.86]
+  Topology + parameters    AUC 0.823 [0.58,0.97]  PR 0.252 [0.11,0.64]
+FIG B  single-model AUC median 0.486 (min 0.46, max 0.65); ensemble 0.831; missing 17.4%
+  k= 10: 0.543 +/- 0.072
+  k= 25: 0.614 +/- 0.076
+  k= 50: 0.689 +/- 0.070
+  k=100: 0.746 +/- 0.056
+  k=150: 0.773 +/- 0.049
+  k=250: 0.803 +/- 0.036
+  k=350: 0.817 +/- 0.028
+FIG C
+  Paper rule, parameters only            AUC 0.686 [0.39,0.97]  PR AUC 0.219 [0.08,0.56]
+  Paper rule, topology + parameters      AUC 0.823 [0.58,0.97]  PR AUC 0.252 [0.11,0.64]
+  Vote fraction, parameters only         AUC 0.831 [0.76,0.90]  PR AUC 0.118 [0.09,0.23]
+  Consensus of 6 scores                  AUC 0.917 [0.83,0.98]  PR AUC 0.306 [0.16,0.69]
+  trivial 'pair contains PI': AUC 0.789, PR AUC 0.170; chance PR 0.039

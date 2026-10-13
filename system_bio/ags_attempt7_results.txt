@@ -1,0 +1,17 @@
+== Ensemble excess, correct sign (lower = synergy):  AUC of score = -excess
+  link-only      calibrated alone 0.314 | random-model alone 0.206 | paper rule (random - calibrated) 0.686 | rule minus calibrated-alone +0.37 [+0.07,+0.70] | rule minus random-alone +0.48 [+0.15,+0.81] | label-free residual (slope 0.62) 0.653
+  topology-only  calibrated alone 0.304 | random-model alone 0.405 | paper rule (random - calibrated) 0.734 | rule minus calibrated-alone +0.43 [-0.01,+0.83] | rule minus random-alone +0.33 [-0.24,+0.84] | label-free residual (slope 0.41) 0.576
+  topo-and-link  calibrated alone 0.425 | random-model alone 0.404 | paper rule (random - calibrated) 0.823 | rule minus calibrated-alone +0.40 [-0.04,+0.82] | rule minus random-alone +0.42 [-0.02,+0.84] | label-free residual (slope 0.53) 0.568
+
+== Vote fraction (higher = synergy)
+  link-only      calibrated 0.831 | random-model 0.799 | diff +0.032 [-0.01,+0.07] | label-free residual 0.638
+  topology-only  calibrated 0.757 | random-model 0.787 | diff -0.029 [-0.16,+0.11] | label-free residual 0.465
+  topo-and-link  calibrated 0.804 | random-model 0.796 | diff +0.008 [-0.06,+0.08] | label-free residual 0.494
+
+== Ranks (1 = top) of the six synergies under each score; scores = paper rule (random - calibrated excess), calibrated vote fraction, six-score consensus
+  D1~PI   PI=yes paper rule (parameters only)   6  paper rule (topology+parameters)   3  vote fraction (parameters only)  26  consensus   2
+  G2~PI   PI=yes paper rule (parameters only)   5  paper rule (topology+parameters)   4  vote fraction (parameters only)  39  consensus   7
+  PD~PI   PI=yes paper rule (parameters only)   7  paper rule (topology+parameters)  17  vote fraction (parameters only)  12  consensus   9
+  AK~BI   PI=no  paper rule (parameters only) 135  paper rule (topology+parameters)  19  vote fraction (parameters only)  21  consensus  13
+  5Z~PI   PI=yes paper rule (parameters only)  15  paper rule (topology+parameters)  21  vote fraction (parameters only)  47  consensus  18
+  BI~D1   PI=no  paper rule (parameters only) 130  paper rule (topology+parameters) 113  vote fraction (parameters only)  25  consensus  45

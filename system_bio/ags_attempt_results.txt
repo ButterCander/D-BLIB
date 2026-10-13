@@ -1,0 +1,38 @@
+== E1/E2  Does calibration help?  AUC (higher = synergy), Bliss, 150 runs; paired bootstrap CI of calibrated minus random-model score
+  link-only      ensemble excess  calibrated 0.686  random-model 0.794  diff -0.108 [-0.35,+0.04]   |  paper-style combo ss-rand: 0.314 (higher=syn), 0.686 (lower=syn)
+  link-only      vote fraction    calibrated 0.831  random-model 0.799  diff +0.032 [-0.01,+0.07]   |  paper-style combo ss-rand: 0.432 (higher=syn), 0.568 (lower=syn)
+  topology-only  ensemble excess  calibrated 0.696  random-model 0.595  diff +0.101 [-0.04,+0.36]   |  paper-style combo ss-rand: 0.266 (higher=syn), 0.734 (lower=syn)
+  topology-only  vote fraction    calibrated 0.757  random-model 0.787  diff -0.029 [-0.16,+0.11]   |  paper-style combo ss-rand: 0.450 (higher=syn), 0.550 (lower=syn)
+  topo-and-link  ensemble excess  calibrated 0.575  random-model 0.596  diff -0.022 [-0.07,+0.02]   |  paper-style combo ss-rand: 0.177 (higher=syn), 0.823 (lower=syn)
+  topo-and-link  vote fraction    calibrated 0.804  random-model 0.796  diff +0.008 [-0.06,+0.08]   |  paper-style combo ss-rand: 0.516 (higher=syn), 0.484 (lower=syn)
+
+== E3  Missing-aware ensemble scores, link-only, 450 models (17% predictions missing)
+  models with >=80% valid predictions: 254 of 450;  pairs with fewer than 300 valid predictions: 33
+  estimator                                       AUC [95% CI]   PR AUC   split-half reliability (Spearman-Brown)
+  valid-only                               0.831 [0.75,0.90]    0.118                       0.960 +/- 0.012
+  NaN as 0                                 0.829 [0.75,0.90]    0.120                       0.962 +/- 0.011
+  shrunk (prior strength 20)               0.830 [0.75,0.90]    0.118                       0.956 +/- 0.017
+  completeness-weighted                    0.828 [0.75,0.90]    0.116                       0.960 +/- 0.011
+  complete models only (>=80% valid)       0.769 [0.59,0.90]    0.101                       0.950 +/- 0.013
+
+== E4  Tie-breaking the 105 zero-vote pairs and consensus (link-only); paired bootstrap vs plain vote fraction
+  vote fraction (valid-only)           AUC 0.831 [0.75,0.90]  PR AUC 0.118 [0.09,0.23]   vs plain: dAUC [+0.00,+0.00]  dPR [+0.00,+0.00]
+  shrunk vote fraction                 AUC 0.830 [0.75,0.90]  PR AUC 0.118 [0.09,0.23]   vs plain: dAUC [-0.01,+0.00]  dPR [-0.00,+0.00]
+  shrunk vote, ties broken by excess   AUC 0.830 [0.75,0.90]  PR AUC 0.118 [0.09,0.23]   vs plain: dAUC [-0.01,+0.00]  dPR [-0.00,+0.00]
+  rank-mean(vote, excess)              AUC 0.800 [0.58,0.98]  PR AUC 0.280 [0.11,0.71]   vs plain: dAUC [-0.24,+0.15]  dPR [-0.06,+0.57]
+
+== E5  How topology-driven are the predictions?  Spearman correlation across the 153 pairs
+  link-only      calibrated vs random-model: vote fraction rho=0.85, ensemble excess rho=0.71
+  topology-only  calibrated vs random-model: vote fraction rho=0.79, ensemble excess rho=0.64
+  topo-and-link  calibrated vs random-model: vote fraction rho=0.81, ensemble excess rho=0.59
+  link-only vs topology-only: vote fraction rho=0.63, ensemble excess rho=0.37
+  link-only vs topo-and-link: vote fraction rho=0.72, ensemble excess rho=0.62
+  topology-only vs topo-and-link: vote fraction rho=0.69, ensemble excess rho=0.38
+
+== E6  Skill beyond the PI hub: AUC within PI-containing pairs (17 pairs, 4 positives) and within the other 136 pairs (2 positives); permutation p
+  ensemble excess, calibrated (link-only)      within PI pairs AUC 0.58 (p=0.35)   within non-PI pairs AUC 0.96 (p=0.006)
+  vote fraction, calibrated (link-only)        within PI pairs AUC 0.69 (p=0.14)   within non-PI pairs AUC 0.87 (p=0.033)
+  vote fraction, calibrated (topology-only)    within PI pairs AUC 0.50 (p=0.52)   within non-PI pairs AUC 0.87 (p=0.028)
+  vote fraction, calibrated (topo-and-link)    within PI pairs AUC 0.72 (p=0.10)   within non-PI pairs AUC 0.80 (p=0.091)
+  ensemble excess, random models (link-only)   within PI pairs AUC 0.75 (p=0.08)   within non-PI pairs AUC 0.91 (p=0.023)
+  vote fraction, random models (link-only)     within PI pairs AUC 0.54 (p=0.42)   within non-PI pairs AUC 0.87 (p=0.034)

@@ -1,0 +1,7 @@
+balanced rand runs=12: 36 models, train 20s, simulate 273s, fitness mean 0.972 max 1.000
+balanced ss runs=12: 36 models, train 191s, simulate 297s, fitness mean 0.947 max 0.998
+skip rand 112
+balanced ss runs=12: 36 models, train 187s, simulate 288s, fitness mean 0.947 max 0.998
+skip rand 100
+skip ss 100
+BIG2B_DONE

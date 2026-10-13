@@ -1,0 +1,3 @@
+link-only      models 36, fitness mean 0.954 (min 0.915); Spearman(fitness, single-model AUC) = +0.24; ensemble vote AUC all 0.734 | fittest half 0.593 | least-fit half 0.675; fraction of fitness >= 0.99: 19%
+topology-only  models 36, fitness mean 0.958 (min 0.957); Spearman(fitness, single-model AUC) = +0.11; ensemble vote AUC all 0.510 | fittest half 0.408 | least-fit half 0.544; fraction of fitness >= 0.99: 3%
+topo-and-link  models 36, fitness mean 0.943 (min 0.873); Spearman(fitness, single-model AUC) = +0.16; ensemble vote AUC all 0.546 | fittest half 0.581 | least-fit half 0.485; fraction of fitness >= 0.99: 8%

@@ -1,0 +1,6 @@
+== E31  Properties of early-stopped (G<19) vs generation-cap (G19) models, link-only ss
+  early G<19  models 114 | missing 20.3% | synergistic calls per model: mean 4.1 (median 4) | share of calls on PI pairs 1.5% | single-model AUC median 0.486 | models with zero synergy calls 1%
+              ensemble vote AUC 0.442; pairs with any vote 17; positives' votes [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  cap G19     models 336 | missing 16.4% | synergistic calls per model: mean 4.9 (median 5) | share of calls on PI pairs 12.7% | single-model AUC median 0.490 | models with zero synergy calls 3%
+              ensemble vote AUC 0.833; pairs with any vote 44; positives' votes [0.003, 0.058, 0.031, 0.124, 0.03, 0.012]
+  expected AUC for a random subset of 114 models from all 450: 0.758

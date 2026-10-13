@@ -1,0 +1,5 @@
+null seed 1 PI103: padj<.05 genes 0 | TIDE-e p<.025 0/143 | TIDE p<.025 0/187
+null seed 1 PD0325901: padj<.05 genes 0 | TIDE-e p<.025 0/143 | TIDE p<.025 0/187
+null seed 1 5Z: padj<.05 genes 0 | TIDE-e p<.025 0/143 | TIDE p<.025 0/187
+null seed 1 PI103+5Z: padj<.05 genes 0 | TIDE-e p<.025 0/143 | TIDE p<.025 0/187
+null seed 1 PI103+PD: padj<.05 genes 0 | TIDE-e p<.025 0/143 | TIDE p<.025 0/187

@@ -1,0 +1,7 @@
+1. paper rule (AUC, top-35 hits): link-only 0.686, 4/6; topology-only 0.734, 4/6; topo-and-link 0.823, 5/6
+2. vote fraction AUC: link-only 0.831; topology-only 0.757; topo-and-link 0.804
+3. consensus of 6 scores: AUC 0.917, pair-bootstrap 95% 0.83-0.98, PR AUC 0.306, top-35 5/6, top-50 6/6
+4. trivial rule 'pair contains PI': AUC 0.789
+5. consensus within PI pairs AUC 1.00; within other pairs 0.83
+6. drug jackknife of the consensus: min 0.832, median 0.914
+7. hub-preserving permutation: own p 0.0002, best-of-7 family-wise p 0.0012

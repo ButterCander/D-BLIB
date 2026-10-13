@@ -1,0 +1,5 @@
+PI103      symbol-map r=0.949  ID-fix r=0.951
+PD0325901  symbol-map r=0.398  ID-fix r=0.886
+5Z         symbol-map r=0.818  ID-fix r=0.821
+PI103+5Z   symbol-map r=0.944  ID-fix r=0.946
+PI103+PD   symbol-map r=0.781  ID-fix r=0.918

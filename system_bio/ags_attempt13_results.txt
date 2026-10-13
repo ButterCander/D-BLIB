@@ -1,0 +1,24 @@
+== E25a  Aggregation method (same six scores)
+  mean of ranks (used)         AUC 0.917  PR 0.306  top-35 hits 5
+  median of ranks              AUC 0.899  PR 0.206  top-35 hits 5
+  geometric mean of ranks      AUC 0.904  PR 0.295  top-35 hits 5
+  mean of z-scores             AUC 0.888  PR 0.188  top-35 hits 4
+  best (max) rank only         AUC 0.872  PR 0.190  top-35 hits 4
+  worst (min) rank only        AUC 0.595  PR 0.179  top-35 hits 3
+
+== E25b  Weight on the rule block vs the vote block: score = (1-w) * mean rank(vote x3) + w * mean rank(rule x3)
+  w:      0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.7   0.8   0.9   1.0
+  AUC:  0.832 0.851 0.893 0.925 0.926 0.917 0.896 0.866 0.829 0.802 0.782
+
+== E26  Drug-cluster bootstrap (resample the 18 drugs, keep the pairs among resampled drugs): 95% interval of AUC
+  paper rule, parameters only          point 0.686  cluster-bootstrap median 0.717  95% [0.05, 1.00]  (1668 valid resamples)
+  paper rule, topology + parameters    point 0.823  cluster-bootstrap median 0.875  95% [0.20, 0.99]  (1668 valid resamples)
+  vote fraction, parameters only       point 0.831  cluster-bootstrap median 0.837  95% [0.63, 0.97]  (1668 valid resamples)
+  consensus of 6 scores                point 0.917  cluster-bootstrap median 0.933  95% [0.68, 1.00]  (1668 valid resamples)
+
+== E27  Negative control: replace the calibrated vote fractions by random-model vote fractions
+  consensus (3 rule + 3 calibrated votes)    AUC 0.917  PR 0.306  top-35 hits 5
+  3 rule + 3 RANDOM-model votes              AUC 0.922  PR 0.313  top-35 hits 5
+  3 calibrated votes only                    AUC 0.832  PR 0.116  top-35 hits 4
+  3 random-model votes only                  AUC 0.830  PR 0.114  top-35 hits 5
+  3 rule only                                AUC 0.782  PR 0.386  top-35 hits 4

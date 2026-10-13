@@ -1,0 +1,6 @@
+coefficients: ['Intercept', 'batch[T.b2]', 'batch[T.b3]', 'batch[T.b4]', 'condition[T.PI103]', 'condition[T.PD0325901]', 'condition[T.5Z]', 'condition[T.PI103+5Z]', 'condition[T.PI103+PD]']
+PI103: 16932 genes, DEG(|lfc|>=1, padj<.05) = 1573
+PD0325901: 16932 genes, DEG(|lfc|>=1, padj<.05) = 2400
+5Z: 16932 genes, DEG(|lfc|>=1, padj<.05) = 1782
+PI103+5Z: 16932 genes, DEG(|lfc|>=1, padj<.05) = 1986
+PI103+PD: 16932 genes, DEG(|lfc|>=1, padj<.05) = 3105

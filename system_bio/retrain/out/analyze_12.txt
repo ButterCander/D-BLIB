@@ -1,0 +1,15 @@
+153 pairs, 6 observed synergies, 12 GA runs per condition
+
+link-only      models 36, mean fitness calibrated 0.954 / random 0.963, mean missing prediction rate 14.6%
+topology-only  models 36, mean fitness calibrated 0.958 / random 0.968, mean missing prediction rate 26.3%
+topo-and-link  models 36, mean fitness calibrated 0.943 / random 0.972, mean missing prediction rate 23.2%
+
+paper rule AUC:      link-only 0.718  topology-only 0.309  topo-and-link 0.728
+vote fraction AUC:   link-only 0.734  topology-only 0.510  topo-and-link 0.546
+random-model votes:  link-only 0.584  topology-only 0.435  topo-and-link 0.446
+
+CONSENSUS (3 rule + 3 vote, pre-specified): AUC 0.661, PR AUC 0.125, hits top-35 3/6, top-50 3/6
+ranks of the observed synergies: [(4, 'PI-D1'), (10, 'AK-BI'), (23, 'PI-G2'), (58, 'PD-PI'), (90, 'BI-D1'), (135, '5Z-PI')]
+within PI pairs AUC 0.65; within other pairs 0.67; trivial 'contains PI' 0.789
+published tables for comparison: rule {'link-only': 0.686, 'topology-only': 0.734, 'topo-and-link': 0.823}, vote {'link-only': 0.831, 'topology-only': 0.757, 'topo-and-link': 0.804}, consensus 0.917
+rank correlation of my new consensus with the published-table consensus is computed in compare.py

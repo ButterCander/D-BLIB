@@ -1,0 +1,9 @@
+ss/rand ensembles pooled from runs 12,24; hybrid ensembles 12 runs (36 models). 153 pairs, 6 positives
+
+strategy                rule          vote    hyb_excess      hyb_vote  hyb_contrast
+link-only              0.700         0.790         0.309         0.734         0.653
+topology-only          0.480         0.550         0.330         0.444         0.562
+topo-and-link          0.647         0.631         0.416         0.395         0.641
+consensus of paper-rule + vote (6)       AUC 0.745  PR AUC 0.169  top-35 hits 3/6
+consensus of hybrid excess + vote (6)    AUC 0.381  PR AUC 0.041  top-35 hits 1/6
+consensus of all four kinds (12)         AUC 0.633  PR AUC 0.064  top-35 hits 2/6

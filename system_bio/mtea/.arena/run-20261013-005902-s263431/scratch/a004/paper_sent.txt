@@ -1,0 +1,821 @@
+0  3172 npjsba NPJ Systems Biology and Applications NPJ Syst Biol Appl Nature Publishing Group PMC12501097 12501097 12501097 41053076 10.1038/s41540-025-00586-y Constraint based modeling of drug induced metabolic changes in a cancer cell line Benedicto Xavier 1 Flobak Åsmund 2 3 4 Ponce-de-Leon Miguel 1 ✉ Valencia Alfonso 1 5 1 Barcelona Supercomputing Center (BSC), Barcelona, Spain 2 Norwegian University of Science and Technology (NTNU), Trondheim, Norway 3 The Cancer Clinic, St.
+1 Olav’s University Hospital, Trondheim, Norway 4 SINTEF Industry, Trondheim, Norway 5 Catalan Institute for Research and Advanced Studies (ICREA), Barcelona, Spain ✉ Corresponding author.
+2 6 10 2025 11 111 111 8 10 2025 © The Author(s) 2025 Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material.
+3 You do not have permission under this licence to share adapted material derived from this article or parts of it.
+4 The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material.
+5 If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+6 To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ .
+7 Abstract Cancer cells frequently reprogramme their metabolism to support growth and survival, making metabolic pathways attractive targets for therapy.
+8 In this study, we investigated the metabolic effects of three kinase inhibitors and their synergistic combinations in the gastric cancer cell line AGS using genome-scale metabolic models and transcriptomic profiling.
+9 We applied the tasks inferred from the differential expression (TIDE) algorithm to infer pathway activity changes in the different conditions.
+10 We also explored a variant of TIDE that uses task-essential genes to infer metabolic task changes, providing a complementary perspective to the original algorithm.
+11 Our results revealed widespread down-regulation of biosynthetic pathways, particularly in amino acid and nucleotide metabolism.
+12 Combinatorial treatments induced condition-specific metabolic alterations, including strong synergistic effects in the PI3Ki–MEKi condition affecting ornithine and polyamine biosynthesis.
+13 These metabolic shifts provide insight into drug synergy mechanisms and highlight potential therapeutic vulnerabilities.
+14 To support reproducibility, we developed an open-source Python package, MTEApy, implementing both TIDE frameworks.
+15 Subject terms: Cancer, Computational biology and bioinformatics, Molecular biology, Systems biology status released display-pdf yes is-olf no is-manuscript no is-preprint no is-journal-matter no is-scanned no is-retracted no Received 2025 May 2; Accepted 2025 Aug 26; Collection date 2025.
+16 Introduction Cancer comprises a heterogeneous group of diseases driven by diverse genetic and epigenetic alterations that promote malignant phenotypes such as uncontrolled proliferation, resistance to cell death, and immune evasion 1 , 2 .
+17 These alterations frequently disrupt key signalling pathways that regulate proliferation and apoptosis, leading to sustained growth signals and impaired cell death mechanisms 2 .
+18 Signalling deregulation also drives downstream metabolic changes.
+19 Cancer cells reprogramme their metabolism to meet the demands of rapid growth by producing energy and biosynthetic precursors 3 , 4 .
+20 Pathways such as PI3K/AKT/mTOR, MAPK, and TAK1/NF- κ B contribute to this metabolic rewiring and play central roles in oncogenesis 5 , 6 .
+21 High-throughput technologies have transformed our understanding of cancer by providing detailed molecular profiles 7 .
+22 However, the complexity of cancer progression and treatment response remains only partially understood.
+23 Bioinformatic methods—such as differential expression, over-representation, and gene set enrichment analyses—have been widely used to identify changes in gene activity after perturbations 8 , 9 .
+24 While informative, these approaches are typically descriptive and do not simulate underlying cellular dynamics 10 .
+25 Mathematical models can help bridge the gap between molecular interactions and phenotypic outcomes by providing mechanistic insights 11 .
+26 Boolean models of cell signalling have been developed for various cancer types and used to predict cell fate and the effects of perturbations such as drug treatments 12 , 13 .
+27 These models have also been tailored with omic data to improve predictions of treatment outcomes 14 and to identify synergistic drug combinations across different cancers 15 , 16 .
+28 In the context of cancer metabolism, genome-scale metabolic models (GEMs) have been reconstructed for humans 17 – 19 and model organisms such as rats 20 .
+29 Constraint-based methods 21 have enabled the integration of omic data into these models to generate context-specific GEMs (CS-GEM) 22 – 24 .
+30 CS-GEM has been applied to cancer cells 25 to investigate metabolic reprogramming 26 , identify potential therapeutic targets 27 , 28 , and screen for anti-metabolites 29 .
+31 However, the construction of CS-GEM remains challenging due to methodological inconsistencies and a lack of consensus on best practices 30 , 31 .
+32 To address these limitations, alternative approaches such as genetic minimal cut sets 32 have been employed to predict synthetic lethal interactions 33 , 34 .
+33 Additionally, constraint-based algorithms like tasks inferred from differential expression (TIDE) 35 and CellFie 36 have been developed to infer pathway activity directly from gene expression data, without the need to construct a full GEM.
+34 In previous work, Flobak et al.
+35 constructed a Boolean model of signalling in the gastric adenocarcinoma cell line AGS and identified synergistic effects of kinase inhibitor combinations, which were validated in vitro 15 .
+36 Tsirvouli et al.
+37 later expanded on these findings using transcriptomic and phosphoproteomic profiling across time points to dissect the mechanisms of synergy 37 .
+38 This work aimed to characterise the metabolic alterations induced by three kinase inhibitors and their synergistic combinations in AGS cells.
+39 We profiled gene expression changes following drug treatments and used constraint-based modelling to investigate their metabolic effects.
+40 Specifically, we applied the TIDE algorithm 35 to infer changes in metabolic pathway activity and proposed a variant named TIDE-essential, which focuses on essential genes without relying on flux assumptions.
+41 To quantify synergy at the metabolic level, we introduced a scoring scheme that compares the effects of combination treatments with those of individual drugs.
+42 This enabled us to identify metabolic processes specifically altered by drug synergies.
+43 We implemented both TIDE and TIDE-essential in an open-source Python package and command-line tool, MTEApy, to facilitate broader use.
+44 Our approach provides a framework for investigating drug-induced metabolic rewiring and offers insights into the mechanisms of synergy in targeted cancer therapies.
+45 Results AGS cells treated with kinase inhibitors show larger numbers of up-regulated than down-regulated genes Kinase inhibitors are known to down-regulate pathways involved in proliferation and survival while up-regulating stress response and compensatory mechanisms.
+46 Furthermore, combining kinase inhibitors can produce synergistic effects that are absent with individual drugs.
+47 In this study, we investigated the functional impact of synergistic drug combinations on various cellular processes, with a particular emphasis on cellular metabolism.
+48 We performed a transcriptomic analysis of AGS cells treated with the kinase TAK1, MEK, and PI3K inhibitors (TAKi, MEKi, PI3Ki) and two PI3Ki combinations (PI3Ki–TAKi and PI3Ki–MEKi) and without inhibitors (control condition).
+49 We sequenced the transcriptome of AGS cells for the different conditions and identified differentially expressed genes (DEGs) using a standard pipeline with the DESeq2 package 38 (see the “Methods” section).
+50 Results showed that the number of DEGs varied across treatment conditions, with an average of ~2000 DEGs per condition (see Fig.
+51 1 A and B left panels and Supplementary Data 1 ).
+52 We observed a larger number of up-regulated or over-expressed genes (~1200) than down-regulated (~700) across all treatment conditions.
+53 We focused specifically on metabolic genes and found that the patterns remain, suggesting that drugs induce the activity of different metabolic processes (see Fig.
+54 1 A and B, right panels).
+55 The analysis also reveals that MEKi induces the most significant transcriptional changes among individual treatments, followed by TAKi and PI3Ki (see Fig.
+56 1 A).
+57 Regarding the combinatorial treatments, in PI3Ki–TAKi, the number of DEGs is similar to the one observed for TAKi.
+58 Nonetheless, the number of DEGs in PI3Ki–MEKi was mildly higher than those reported in either PI3Ki or MEKi, suggesting a possible synergetic effect (see Fig.
+59 1 A).
+60 Fig.
+61 1 Differential expression analysis on AGS cells after drug perturbations reveals significant shifts.
+62 A Bar chart indicating the number of differentially expressed genes (DEGs) up- and down-regulated per treatment condition for all genes (left panel) and genes within the metabolic model Human-GEM (right panel).
+63 Significance was set using an adjusted p -value of &lt;0.05, and an absolute log-FC &gt; 1.
+64 B Scatter plots showing the distribution of DEGs across treatments for all genes (left panel) and genes within the metabolic model Human-GEM (right panel).
+65 The median is indicated using a red, horizontal line.
+66 C Venn diagrams for up- (left panel) and down-regulated (right panel) DEGs for the TAKi, PI3Ki and PI3Ki–TAKi treatments.
+67 D Venn diagrams for up- (left panel) and down-regulated (right panel) DEGs for the MEKi, PI3Ki and PI3Ki–MEKi treatments.
+68 Darker colours indicate a higher number of DEGs.
+69 We assessed the similarity of up- and down-regulated DEGs across treatment conditions using the Jaccard Index (JI).
+70 Shared DEGs may reflect common transcriptional responses, while combination-specific DEGs may suggest drug-specific mechanisms; in particular, changes only observed in the combinatorial treatments may indicate potential synergistic effects.
+71 The analysis shows that PI3Ki–TAKi predominantly exhibits an additive effect, with only a small proportion (~15%) of unique DEGs not observed in single treatments (see Fig.
+72 1 C and Supplementary Fig.
+73 1 ).
+74 In contrast, PI3Ki–MEKi demonstrates potentially stronger synergistic effects, evidenced by a larger number of DEGs and a higher proportion (~25%) of unique DEGs (see Fig.
+75 1 D and Supplementary Fig.
+76 1 ).
+77 These unique DEGs may represent distinct pathways activated by the combined effect of drugs and thus may provide insight into the mechanisms of synergies.
+78 To explore the functional implications of the observed gene expression changes, we performed a gene set enrichment analysis using the Gene Ontology database (see the “Methods” section for details).
+79 The analysis revealed no strong bias in gene set regulation, with ~55% down-regulated and 45% up-regulated gene sets on average across conditions (Fig.
+80 2 A and B).
+81 An exception was observed for PI3Ki–TAKi, which exhibited a significantly larger proportion of down-regulated gene sets (Fig.
+82 2 A).
+83 Interestingly, this pattern contrasts with the overall gene expression changes, where up-regulated genes predominated across conditions (Fig.
+84 2 A).
+85 Among individual treatments, MEKi induced the most significant perturbation in GO biological processes ( n = 142), followed by TAKi ( n = 74) and PI3Ki ( n = 40), consistent with the trends observed in the differentially expressed genes (DEGs).
+86 Fig.
+87 2 Gene Ontology gene set enrichment analysis summary.
+88 A Bar chart indicating the number of significant gene sets up- and down-regulated per treatment condition.
+89 Significance was set using an adjusted p -value of &lt;0.05, and an absolute normalised enrichment score (NES) &gt; 1.
+90 B Scatter plot showing the distribution of DEGs across treatments for all genes.
+91 The median is indicated using a red, horizontal line.
+92 C and D Heatmaps of the top 15 significant gene sets in terms of significance and NES across all treatment conditions for up- and down-regulated gene sets, respectively.
+93 Bluer colours in the heatmap indicate lower, negative NES values, while redder colours indicate higher, positive NES values.
+94 White cells indicate that the specific gene set in a given condition was not statistically significant.
+95 We first focus on those processes that are found to be significantly affected in all the conditions.
+96 The results show down-regulation of rRNA and ncRNA ribonucleotide biogenesis, rRNA–protein complex organisation, and tRNA aminoacylation, suggesting an overall suppression of protein synthesis and translational machinery in the treated cells; down-regulation of mitochondrial gene expression is also found in all the conditions (see Supplementary Fig.
+97 2A ).
+98 Furthermore, we also observed the up-regulation of processes related to the major histocompatibility complex and the transport of organic hydroxy compounds.
+99 Cells treated with the individual drugs exhibit similar down-regulation patterns, primarily affecting pathways related to DNA processes, keratinocyte development, and apoptosis (see Fig.
+100 2 C).
+101 Regarding the up-regulated process, we observed common pathways including metabolism, immune-related processes (e.g., interferon signalling), and condition-specific changes such as lipid metabolism (TAKi) and nervous system development (PI3Ki).
+102 Notably, TAKi and PI3Ki display more similar patterns to each other than to MEKi (see Fig.
+103 2 D and Supplementary Fig.
+104 2A ).
+105 Additionally, we performed the same analysis using pathway-related gene sets from the Kyoto Encyclopaedia of Genes and Genomes (KEGG) database.
+106 The results were consistent with those obtained using Gene Ontology terms, revealing down-regulation of key processes such as NF- κ B signalling, amino acid biosynthesis, aminoacyl-tRNA synthesis, and ribosome biogenesis (see Supplementary Fig.
+107 2B ).
+108 We selected the 15 most significant altered gene sets observed in the combinatorial treatments and found that almost all are also altered in the individual treatment counterparts.
+109 Nevertheless, we observed some potential synergetic effects in both combinations that include the down-regulation of keratinisation and the regulation of mRNA metabolic process.
+110 Next, we focus on those pathways that are significantly altered in the combinatorial treatments but not in the individual drug treatments (see Supplementary Fig.
+111 3 ).
+112 We identified 55 condition-specific gene set alterations in the PI3Ki–MEKi condition, accounting for ~40% of all gene sets altered in this condition.
+113 For the PI3Ki–TAKi condition, 12 condition-specific gene set alterations were observed, representing around 30% of the significant deregulated gene sets (see Supplementary Fig.
+114 3 ).
+115 We analysed the different gene sets altered in the combinatorial treatments and found that the altered processes represent broad functional categories and do not include specific metabolic processes.
+116 Therefore, we propose using a model-driven inference approach to gain deeper insight into the specific metabolic processes altered by the synergistic effects of the drug combinations.
+117 Kinase inhibitors induce down-regulations in key biosynthetic metabolic pathways Cell growth and proliferation require energy and building blocks that are supplied by different metabolic pathways.
+118 Therefore, drugs that affect cell proliferation are likely to have a downstream inhibitory effect on the activity of various metabolic pathways.
+119 Herein, we used a constraint-based metabolic modelling approach to better understand the changes in metabolic pathway activity following treatment with kinase inhibitors.
+120 Specifically, we used the Task Inferred from Differential Expression (TIDE) framework, proposed by Dougherty et al.
+121 (2021) 35 to find metabolic pathways significantly altered in the different conditions (see the “Methods” section).
+122 We retrieved the most recent version of the genome-scale metabolic reconstruction of human cells, the Human-GEM model 19 .
+123 We also retrieved a list of 195 previously published metabolic tasks 36 , which is already included in the Human-GEM model repository 19 .
+124 We manually curated several tasks that were found to be infeasible with the Human-GEM model, resulting in a final list of 187 consistent tasks.
+125 This curated list was used for the remainder of the analysis (see the “Methods” section and Supplementary Data 2 for details).
+126 We ran TIDE on all the conditions using the Human-GEM model and a list of 189 metabolic tasks.
+127 The results showed that, on average, ~50 metabolic tasks were significantly altered in each treatment condition.
+128 A total of 30, 17, and 77 significant metabolic tasks were identified in the individual treatments TAKi, MEKi, and PI3Ki; whereas 55 and 66 were identified in the combinatorial treatments PI3Ki–TAKi and PI3Ki–MEKi, respectively (see Fig.
+129 3 A and Supplementary Data 3 ).
+130 We observed a trend towards down-regulation of metabolic tasks, with ~5 and ~40 up- and down-regulated metabolic tasks, respectively, on average across all treatment conditions (see Fig.
+131 3 A).
+132 This pattern contrasted with the differential expression results, where we observed more up-regulated DEGs (see Fig.
+133 1 A) and is similar to the trends exhibited by the GSEA results (see Fig.
+134 2 A).
+135 Fig.
+136 3 Significant metabolic shifts were identified in AGS cells after drug treatment.
+137 A Bar chart indicating the number of significant metabolic scores up- and down-regulated per treatment condition.
+138 Significance was set using a p -value of &lt;0.025.
+139 B Jaccard index correlation plots between down- (left panel) and up-regulated (right panel) metabolic tasks across treatment conditions.
+140 Rows and columns were clustered using Ward’s method.
+141 Darker hues indicate higher Jaccard index correlation values.
+142 C Bar chart indicating the proportions of metabolic systems altered in each condition.
+143 D Heatmap of shared metabolic pathways significantly altered across all the treatments.
+144 Darker hues indicate lower, negative metabolic scores.
+145 The metabolic system is indicated on the colour strip to the left of the rows.
+146 We assessed the similarities between treatment conditions using the Jaccard Index for the up and down-regulated metabolic perturbations (see Fig.
+147 3 B).
+148 The highest JI up was reported between the two conditions that identified the most up-regulated perturbations, TAKi and PI3Ki–TAKi, while other conditions had fewer up-regulated perturbations and therefore, lower JI up values.
+149 This result indicates that TAK1 inhibition triggers the up-regulation of some metabolic pathways that are also up-regulated in the combinatorial treatment with PI3Ki.
+150 Regarding down-regulated perturbations, PI3Ki and PI3Ki–MEKi displayed the highest similarity values, followed by PI3Ki and PI3Ki–TAKi.
+151 In general, metabolic changes were mainly observed in pathways related to amino acids, carbohydrates, lipids, and nucleotide metabolism (see Fig.
+152 3 C).
+153 We first analysed pathways affected in all the conditions and found that several metabolic tasks, such as the synthesis and conversion of some amino acids and the production of some nucleotides and deoxynucleotides, were consistently downregulated across all conditions (see Fig.
+154 3 D).
+155 The results also showed that the conversion of aspartate to asparagine and serine synthesis were down-regulated across all treatment conditions.
+156 Notably, we observed that in PI3Ki, or any of its combinations, more amino acid perturbations were identified than in any other single treatment.
+157 Synergistic metabolic shifts in AGS cells were identified following combinatorial drug treatments The TIDE results showed that most of the metabolic changes identified in the individual treatments are also observed in the combinatorial treatments.
+158 However, we also found several examples of metabolic processes exhibiting changes only in the combinatorial treatments.
+159 We focused on these unique metabolic perturbations, since they may represent synergetic effects.
+160 We introduced a simple scoring system to identify the presence of potential weak and strong synergistic effects in the regulation of metabolic pathways.
+161 We considered weak synergies cases where the metabolic score in combinatorial treatments is higher/lower than the maximum/minimum observed in their single-drug conditions.
+162 Conversely, we defined strong synergies as cases where individual drugs show no effect on the expression of metabolic processes, while the combinatorial treatment significantly alters the process.
+163 Noting A and B as two individual treatments, A B as their combination, t as a given metabolic task, and MS( A , t ) as the corresponding metabolic score of task t in the condition A , we defined weak synergies as follows: 1 Up - regulated : M S ( A B , t ) &gt; m a x ( M S ( A , t ) , M S ( B , t ) ) Down - regulated : M S ( A B , t ) &lt; m i n ( M S ( A , t ) , M S ( B , t ) ) and a strong synergy is defined by the following expression: 2 Up - regulated : M S ( A B , t ) &gt; 0 &amp; M S ( A , t ) = 0 &amp; M S ( B , t ) = 0 Down - regulated : M S ( A B , t ) &lt; 0 &amp; M S ( A , t ) = 0 &amp; M S ( B , t ) = 0 In the PI3Ki–TAKi condition, we found that 14 out of 55 significantly altered metabolic processes exhibit some kind of synergistic effect (see Fig.
+164 4 A and Supplementary Data 4 ).
+165 On the other hand, the PI3Ki–MEKi combination exhibited a higher value of synergetic perturbation, including 49 out of 66 significantly affected pathways (see Fig.
+166 4 A).
+167 Interestingly, both non-synergistic and synergistic perturbations observed in the PI3Ki–TAKi and PI3Ki–MEKi treatments show a bias towards down-regulation or inhibition of metabolic processes (see Supplementary Data 3 and 4 ).
+168 In addition, there were no differences reported between non-synergistic and synergistic metabolic scores in PI3Ki–TAKi (Mann–Whitney test p -value = 0.363), but some slightly significant differences were reported between scores in PI3Ki–MEKi ( p -value = 0.043) (see Fig.
+169 4 B).
+170 Most of the synergistic perturbations in PI3Ki–TAKi included pathways related to the lipid ( n = 5) and amino acid ( n = 4) metabolism (see Fig.
+171 4 C and D).
+172 In PI3Ki–MEKi, however, apart from the aforementioned systems ( n = 8 and n = 25, respectively), synergistic perturbations were also observed in the nucleotide ( n = 10) and carbohydrate ( n = 5) metabolism, among others (see Fig.
+173 4 C and D).
+174 Fig.
+175 4 Synergistic effects over AGS metabolism trend towards down-regulation.
+176 A Bar charts indicating the number of significant and synergistic metabolic tasks identified with TIDE in PI3Ki–TAKi and PI3Ki–MEKi.
+177 Synergy type is indicated in blue for down-regulated scores and in red for up-regulated.
+178 Non-synergistic and non-significant results are indicated in grey.
+179 B Distribution of significant metabolic scores between non-synergistic and synergistic metabolic tasks identified with TIDE in PI3Ki–TAKi and PI3Ki–MEKi.
+180 The mean is indicated with a horizontal, red line.
+181 P -values were obtained using a Mann–Whitney test.
+182 C Heatmap of strong synergies for either PI3Ki–TAKi or PI3Ki–MEKi.
+183 Scores for all treatment conditions are shown for comparison.
+184 Coloured bars indicate the metabolic system (leftmost) and the combinatorial treatment to which the synergy belongs.
+185 Panel D shows a heatmap of weak synergies for either PI3Ki–TAKi or PI3Ki–MEKi.
+186 Scores for all treatment conditions are shown for comparison.
+187 Coloured bars indicate the metabolic system (leftmost) and the combinatorial treatment to which the synergy belongs.
+188 Strong synergies regarding the PI3Ki–TAKi treatment involved the down-regulation of the presence of the thioredoxin system through the thioredoxin reductase activity and some alterations in the phenylalanine and tryptophan metabolism.
+189 Pathways related to lysine metabolism and degradation of cis-vaccenic acid were slightly up-regulated in PI3Ki–TAKi (see Fig.
+190 4 C).
+191 Interestingly, all strong synergies involved in PI3Ki–MEKi were found to be down-regulated, and included a wide range of processes from ornithine and aspartate biosynthesis, gluconeogenesis, and deoxynucleotides to ubiquinone 10 (Q10) biosynthesis.
+192 Regarding weak synergies, more perturbations were observed in PI3Ki–MEKi than in PI3Ki–TAKi, and only 2 were identified as up-regulated across treatment conditions.
+193 Interestingly, four weak synergies were common to PI3Ki–TAKi and PI3Ki–MEKi conditions: glycerol-3-phosphate synthesis, hydroxymethylglutaryl-CoA synthesis, and acetone and acetoacetate synthesis.
+194 The TIDE-essential framework identifies new metabolic perturbations and synergistic effects in AGS metabolism In this section, we introduced a variation of the TIDE algorithm, named TIDE-essential, that aims to extend the framework (see the “Methods” section for more details).
+195 In the TIDE algorithm, each metabolic task, defined by a set of input and output metabolites, is first associated with a feasible flux distribution.
+196 Due to the presence of isozymes or alternative pathways, a metabolic task may have multiple flux distributions that fulfil its requirements.
+197 TIDE resolves this by using parsimonious Flux Balance Analysis (pFBA) to compute a single flux distribution that minimises total flux while satisfying the task constraints (see the “Methods” section).
+198 The activity change of the pathway is then estimated by projecting gene expression changes (log-fold changes) onto the flux-carrying reactions of this reference solution.
+199 However, because this flux distribution is computed before integrating gene expression data, it may not reflect the biologically relevant flux patterns under perturbed conditions.
+200 To assess whether the reference flux distributions for each task were unique or potentially variable, we performed flux variability analysis (FVA) across all 187 tasks (see the “Methods” section).
+201 We found that 149 of them exhibit alternative optimal flux distributions (Supplementary Data 5 ), indicating that reliance on a single reference flux may introduce bias in the results.
+202 To address this potential bias, we propose a variation of the TIDE algorithm that does not rely on a precomputed flux distribution.
+203 Instead, it evaluates task activity based solely on the set of essential genes required to perform each metabolic task (Supplementary Fig.
+204 4 ).
+205 These essential genes are identified through in-silico single-gene knockout analysis using flux balance analysis (FBA), and represent that are necessary, but not necessarily sufficient, to convert the specified input metabolites into the corresponding outputs (see the “Methods” section).
+206 The rationale for focusing on essential genes is that they represent non-redundant components in the metabolic network, making them likely points of regulatory control, and therefore, changes in the expression of such genes are more likely to reflect changes in the capacity to perform a specific task.
+207 After identifying essential genes for each task, we compute the aggregate expression change of these genes and assess its statistical significance using the same empirical null model applied in TIDE.
+208 This essential-gene-based formulation of TIDE complements and extends the analysis of metabolic perturbations for two main reasons: (i) it eliminates the dependency on pFBA-derived flux distributions to identify task-associated reactions and (ii) it operates directly at the gene level, increasing interpretability and relevance in transcriptomics-based analyses.
+209 While this strategy may have lower coverage—since not all tasks have essential genes or have only a few—it offers an alternative perspective that does not rely on a predefined flux solution.
+210 As such, TIDE-essential provides an additional line of evidence for tasks where essential genes are identified, and the two methods can be used together to increase confidence in the inferred metabolic changes.
+211 We applied TIDE-essential to the same set of 187 metabolic tasks and treatment conditions analysed with TIDE.
+212 Across all conditions, TIDE-essential identified 69 significantly altered tasks, of which 40 overlapped with those detected by TIDE (Fig.
+213 5 A).
+214 Moreover, the metabolic scores produced by the two methods were highly correlated (Spearman’s ρ = 0.93; Fig.
+215 5 B), indicating a strong overall agreement.
+216 Despite this consistency, TIDE generally identified a larger number of altered tasks compared to TIDE-essential (see Table 1 , Supplementary Data 6 and Supplementary Fig.
+217 5 ).
+218 For example, under PI3Ki treatment, TIDE identified 77 altered tasks, whereas TIDE-essential identified only 10.
+219 A similar trend was observed across the other treatment conditions.
+220 Importantly, however, TIDE-essential was able to detect both a meaningful subset of overlapping perturbations and a small number of unique task alterations not captured by TIDE.
+221 In the MEKi condition, for instance, TIDE and TIDE-essential shared 7 common altered tasks, while each method uniquely identified 10 and 9 tasks, respectively.
+222 This pattern indicates that TIDE-essential complements TIDE by identifying condition-specific changes that the flux-based variant might miss.
+223 Fig.
+224 5 New metabolic perturbations and synergistic effects in AGS metabolism can be inferred using TIDE-essential.
+225 A Venn diagram showing the overlap of significant metabolic tasks between the TIDE and TIDE-essential framework across treatment conditions.
+226 B Scatter plot of the metabolic scores for the shared tasks between TIDE and TIDE-essential.
+227 The horizontal grey line corresponds to a fitted linear model, with a Spearman rank correlation value of ρ = 0.93 ( p -value &lt; 1 −10 ).
+228 C Heatmap of all significant tasks identified by TIDE-essential in PI3Ki–TAKi and PI3Ki–MEKi.
+229 Redder hues indicate higher, positive metabolic scores, and bluer ones indicate lower, negative values.
+230 The metabolic subsystem is indicated on the colour strips on the left of the rows.
+231 A brief description of whether a metabolic task is newly identified (green hues) or shared with TIDE (orange hues), and whether a synergy effect is newly identified or re-classified from TIDE for PI3Ki–TAKi and PI3Ki–MEKi is indicated on the colour strips to the left of the rows.
+232 Table 1 Tasks detected by TIDE and TIDE-essential in each condition Altered tasks Treatment TAKi MEKi PI3Ki PI3Ki–MEKi PI3Ki–TAKi Unique TIDE 24 10 70 52 49 Unique TIDE-essential 8 9 3 4 5 Common 6 7 7 14 6 Total TIDE 25 17 77 66 55 Total TIDE-essential 14 15 10 18 11 Total 38 26 80 70 60 TIDE-essential identified 11 and 18 down-regulated metabolic tasks in the PI3Ki–TAKi and PI3Ki–MEKi combination treatments, respectively, revealing the same trend toward down-regulation, in line with previous observations (Fig.
+233 5 C).
+234 Notably, in the PI3Ki–TAKi condition, TIDE-essential detected five metabolic tasks not reported by TIDE, including three associated with strong synergy (Fig.
+235 5 C).
+236 Among these, beta-alanine synthesis was down-regulated, while glycan degradation was broadly up-regulated.
+237 In contrast, homocysteine synthesis was up-regulated and cysteine synthesis down-regulated, though neither was linked to synergistic effects (Fig.
+238 5 C and Supplementary Data 6 ).
+239 In the PI3Ki–MEKi condition, TIDE-essential uncovered four new perturbations, two of which displayed strong synergy, namely, the down-regulation of beta-alanine synthesis and a phosphatidylinositol conversion (Fig.
+240 5 C).
+241 Furthermore, glycan degradation was up-regulated and gamma-linolenate degradation was down-regulated, although these changes were not classified as synergistic.
+242 Discussion In this study, we explored the functional and metabolic effects of individual kinase inhibitors and their synergistic combinations in a cancer cell line.
+243 We observed a general trend of gene overexpression across all treatment conditions.
+244 Although individual gene expression levels showed an overall trend of overexpression, pathway-level analysis revealed the opposite effect, suggesting that transcriptional changes may be part of a broader regulatory compensation mechanism.
+245 This underscores the importance of integrating gene-level data with pathway and metabolic models to reveal biologically meaningful responses.
+246 GSEA results showed that several gene sets related to metabolic processes were down-regulated after treating the cells.
+247 However, these results lacked pathway-level resolution, making it difficult to infer precise functional consequences.
+248 For instance, the gene set associated with amino acid metabolism identified in GSEA does not specify which particular amino acids are affected, nor does it clarify whether the altered pathway relates to biosynthesis or degradation.
+249 Similar results were found for other functional categories, such as lipid and nucleotide metabolism.
+250 We also repeated the analysis using pathway-specific gene sets from the KEGG database and found similar results.
+251 Although GSEA remains a widely used and powerful tool for enrichment analysis, its application in metabolic studies can be constrained by the granularity of the gene sets.
+252 Even with curated, metabolism-specific gene sets, GSEA does not incorporate biochemical constraints such as reaction stoichiometry, isoenzyme usage, or multi-subunit enzyme complexes.
+253 In contrast, model-based approaches like TIDE and TIDE-essential leverage genome-scale metabolic models and their gene–protein-reaction rules to capture these mechanistic dependencies and physicochemical constraints, enabling a more functionally grounded inference of metabolic activity.
+254 We emphasise that this is not an inherent limitation of the GSEA algorithm, but rather a result of its design, which operates solely at the level of gene sets without incorporating the biochemical and structural constraints.
+255 This distinction is particularly relevant when analysing gene expression of metabolic processes, where model-based approaches provide complementary insights that extend beyond what can be inferred from gene-level enrichment alone.
+256 We integrated the differential gene expression results into the genome-scale metabolic model of human cells using the TIDE algorithm to identify metabolic pathways altered under different treatment conditions.
+257 The results revealed significant down-regulation of several metabolic pathways, particularly those involved in nucleotide synthesis, amino acid metabolism, and lipid biosynthesis.
+258 We also developed TIDE-essential, a variant of TIDE that uses only task-essential genes and bypasses the need for flux distributions when estimating pathway activity.
+259 The comparison of the approaches showed that TIDE consistently detects more altered tasks (e.g., 77 vs.
+260 10 for PI3Ki), reflecting its higher sensitivity.
+261 However, TIDE-essential captures a meaningful subset of overlapping perturbations (e.g., 7 shared tasks for PI3Ki) and identifies additional unique ones (e.g., 9 unique tasks for MEKi).
+262 These findings indicate that the two algorithms are complementary and that TIDE-essential can broaden the coverage of detectable perturbations, especially in cases where flux-based approaches may be limited or less interpretable at the gene level.
+263 Importantly, focusing on genes that are essential for metabolic tasks further increases confidence that their dysregulation would lead to functional consequences at the cellular level.
+264 Using these complementary model-based approaches, we identified several metabolic pathways that may be affected by drug treatments and combinations at the metabolic level.
+265 In particular, nucleotide synthesis pathways (including IMP, GTP, and dATP) were down-regulated across all treatment conditions, with the most pronounced effects observed in the PI3Ki–MEKi combination.
+266 A reduced supply of DNA and RNA building blocks is likely linked to the decreased cell proliferation observed in AGS cells.
+267 These findings are consistent with previous studies reporting diminished nucleotide biosynthesis and down-regulation of aminoacyl-tRNA synthetase enzymes under similar conditions 37 .
+268 In general, we found that treatments involving PI3Ki consistently exhibited a stronger inhibition of metabolic pathways than the other conditions, especially regarding amino acid metabolism.
+269 These results are in agreement with previous studies highlighting the central role of the PI3K/AKT/mTORC1 pathway in cancer metabolism 5 .
+270 Notably, the conversion of aspartate to asparagine was found to be the top down-regulated metabolic task across all treatment conditions, with the most pronounced effect observed in cells treated with PI3Ki.
+271 The PI3K/AKT/mTORC1 signalling pathway is known to positively regulate asparagine production 39 , which aligns with our observation of enhanced down-regulation in conditions involving PI3Ki and its combinations.
+272 Furthermore, the inhibition of asparagine synthetase has been shown to enhance sensitivity to metabolic stress 39 , which may contribute to the observed reduction in AGS cell proliferation.
+273 With the introduction of a methodology to identify the presence of synergies in metabolic pathways, we have obtained relevant results related to the synergistic effects of drug combinations in cellular metabolism.
+274 The results indicated that the PI3Ki–MEKi combination had a more pronounced synergistic effect on metabolic pathways compared to the PI3Ki–TAKi combination, as evidenced by a greater number of synergistic alterations, particularly in pathways involving cofactors and vitamins.
+275 This aligns with in-vitro assays indicating that the PI3Ki–MEKi combination is more effective in reducing cell proliferation than the PI3Ki–TAKi combination 15 .
+276 The strong synergistic effect observed in PI3Ki–MEKi is likely due to the inhibition of pathways not altered by the individual drugs.
+277 For instance, we found that the synthesis of spermidine is only observed down-regulated in PI3Ki–MEKi.
+278 Polyamines are essential for DNA stability, cell proliferation, and stress resistance 40 , and their depletion has been linked to increased DNA damage and apoptosis 41 – 43 .
+279 We also found that ubiquinone (CoQ) synthesis was strongly down-regulated in PI3Ki–MEKi, specifically through reduced expression of coenzyme Q3 methyltransferase (COQ3).
+280 COQ3 expression has recently been reported to be associated with worse patient survival in oesophageal adenocarcinoma 44 , thus a down-regulation in this metabolic pathway could potentially hinder cancer progression in AGS cells as well.
+281 The PI3Ki-TAKi condition exhibited less synergetic effects in the metabolic pathways than PI3Ki–MEKi.
+282 Nevertheless, we found that PI3Ki-TAKi induced a down-regulation in the thioredoxin pathway, suggesting a strong synergistic effect.
+283 Thioredoxin protein levels are implicated in tumour growth and apoptosis inhibition 45 , and recently, thioredoxin has been proposed as a therapeutic target in lung cancer for its ability to increase sensitivity to CHK1 inhibitors 46 .
+284 We also identified a down-regulation in the synthesis of quinolinate from tryptophan, a pathway that has been associated with cell death and cell cycle arrest in colorectal cancer models 47 .
+285 This study lays the foundation for further exploration of transcriptionally driven metabolic changes in cancer cells through the integration of constraint-based modelling and transcriptomics.
+286 Nonetheless, several methodological limitations should be acknowledged.
+287 First, all kinase inhibitor treatments were applied at fixed concentrations (GI 50 ), which standardises toxicity levels across drugs and facilitates comparison of their metabolic effects.
+288 However, this design does not fully capture the nonlinear, dose-dependent nature of transcriptomic and metabolic regulation.
+289 Incorporating a range of drug concentrations or full dose–response curves in future studies could provide a more comprehensive view of how these pathways are perturbed under different levels of inhibition.
+290 Second, we used a simplified statistical model in DESeq2 with treatment condition as a categorical variable.
+291 While this choice aligns with the experimental design—using GI 50 concentrations for single drugs and half-dose combinations to maintain equitoxicity—it limits the incorporation of interaction terms that are typically used to model synergistic effects.
+292 Adding such terms would complicate the interpretation of log fold-changes, particularly for combinatorial treatments.
+293 Future studies with expanded experimental designs could explore interaction effects more explicitly and allow for more robust modelling of drug synergy at the transcriptomic and metabolic levels.
+294 By integrating transcriptomic data using TIDE and TIDE-essential, we provide a systematic framework for uncovering metabolic responses to drug treatments by leveraging the use of GSMMs.
+295 We identified specific pathways down-regulated exclusively by synergistic combinations by analysing metabolic alterations induced by single drugs and synergistic combinations.
+296 These findings offer insight into the molecular basis of drug synergies and reveal metabolic vulnerabilities that could be exploited as novel therapeutic targets.
+297 While our results suggest meaningful biological consequences at the metabolic level and provide new grounds for future work, the experimental validation of the results is beyond the scope of this study.
+298 Finally, to enhance reproducibility and facilitate adoption, we have implemented the TIDE and TIDE-essential algorithms in the open-source Python package MTEApy, offering an accessible tool for the metabolic modelling community.
+299 This framework readily applies to other cancer types and drug combinations, supporting broader applications in precision oncology.
+300 Methods Experimental setup Cell culture and drug treatments AGS (human gastric adenocarcinoma, ATCC, Rockville, MD) were grown in Ham’s F12 medium (Invitrogen, Carlsbad, CA) supplemented with 5% foetal calf serum (FCS; Euroclone, Devon, UK) and 10 U/ml penicillin–streptomycin (Invitrogen).
+301 AGS cells were seeded in six-well plates and treated after 24 h with kinase inhibitors (5Z)-7-oxozeaenol (TAKi), PD0325901 (MEKi), and PI103 (PI3Ki), individually or in combination, for another 24 h.
+302 Chemical inhibitors (5Z)-7-oxozeaenol, PD0325901, and PI-103 (all Merck) were dissolved in DMSO at stock concentrations of 20 mM.
+303 Each drug treatment was administered at concentrations previously reported to reduce growth by 50% (GI 50 concentrations) after 48 h compared to the vehicle control, dimethyl sulfoxide (DMSO) 15 .
+304 Cells were also treated using the combination of these drugs (i.e., PI3Ki–TAKi and PI3Ki–MEKi) that were experimentally confirmed to be synergistic in AGS cells 15 .
+305 For the combinatorial treatments, the half concentrations of GI 50 were used for each drug (see Table 2 ).
+306 Table 2 Description of the kinase inhibitor used Compound Short name Target GI 50 (5Z)-7-oxozeaenol TAKi TAK1 0.500 μM PD0325901 MEKi MAP2K1/2 0.035 μM PI103 PI3Ki PI3KCA 0.700 μM RNA sequencing After treatment, cells were lysed in RNA lysis buffer (Qiagen RLT Plus) and stored at −80 °C.
+307 RNA extraction was performed using the AllPrep DNA/RNA/miRNA Universal Kit (Qiagen).
+308 RNA concentration and integrity were assessed using the Qubit RNA HS Assay and Agilent Bioanalyzer, respectively.
+309 Libraries were prepared with the Illumina Stranded mRNA Prep Ligation Kit, purified with AMPure XP beads, quantified via qPCR, and validated on a Bioanalyzer.
+310 Sequencing (2 × 64 bp) was performed on an Illumina HiSeq2000 platform.
+311 For each treatment condition and the control, four replicates were performed.
+312 Bioinformatic analysis RNA-Seq data processing and quantification FASTQ files were generated with bcl2fastq (v2.20), quality-checked with fastqc (v0.12.1), and preprocessed using fastp (v0.20.1).
+313 Transcript abundances were estimated using Salmon (v1.10.3) with the reference Human genome GRCh38.
+314 Quality control summaries were generated using MultiQC (v1.23), and gene-level counts were computed using the tximport R package (v1.32.0).
+315 Differential expression analysis Differential expression analysis (DEA) was performed using the DESeq2 framework (version 1.40.0) 38 .
+316 A model was fitted for each gene using a categorical variable with different levels as the treatment conditions, and adjusting for the replicate number.
+317 The DMSO samples were used as the baseline for all pair-wise contrasts.
+318 The Benjamini–Hochberg correction for multiple hypothesis testing was applied alongside a log-FC shrinkage using the apeglm normalisation method 48 .
+319 Differentially expressed genes were defined using an absolute log-FC threshold of 1 and an adjusted p -value of &lt;0.05.
+320 Gene set enrichment analysis Gene set enrichment analysis (GSEA) using Gene Ontology (GO) and Kyoto Encyclopaedia of Genes and Genomes (KEGG) terms was performed using the ClusterProfiler library (version 4.10.0) in R, using the log-FC ranking of all genes in the study.
+321 Significant gene sets were defined using a p -value threshold of &lt;0.05 and an absolute normalised enrichment score (NES) &gt; 1.
+322 Redundancy in GO GSEA results was managed using the simplify function from the ClusterProfiler library using a similarity cutoff of 0.75.
+323 GSEA results were visualised using enrichplot (version 1.24.2).
+324 Constraint-based modelling Constraint-based modelling is a family of computational methods that formulate constraints as equations to define the feasible states of a metabolic system or flux space.
+325 A metabolic network can be represented using the stoichiometric matrix N of m × r , where m corresponds to the number of metabolites ( M ) and r the number of reactions ( R ).
+326 The fundamental constraints used to define the flux space are the mass balance constraint: 3 N ⋅ v → = 0 the thermodynamic constraints on irreversible reactions 4 v i ≥ 0 ∀ i ∈ Irrev and the capacity constraints which limit the total flux through each reaction: 5 α i ≤ v i ≤ β i When applied to boundary reactions, the capacity constraints define the metabolites produced/consumed by the system 49 .
+327 By boundary reaction, we mean reactions representing sources/sinks that consume/produce a single metabolite.
+328 Boundary reactions are referred to as exchange reactions, and are defined over each metabolite present in the environment.
+329 Boundary reactions are used to define growth conditions as well as to set sources and sinks to internal metabolites that correspond to a known dead-end or gap metabolites 50 .
+330 Flux balance analysis Flux balance analysis (FBA) is a constraint-based approach for finding flux distributions that maximise the flux through the biomass reactions 51 .
+331 FBA is formulated as a linear programme using the mass balance constraint ( 3 ), the thermodynamic constraint ( 4 ) and the boundary constraint ( 5 ).
+332 The resulting linear optimisation problem of FBA is the following: 6 Maximize : Z = v biomass s .
+333 t .
+334 N ⋅ v → = 0 β i ≤ v i ≤ β i Parsimonious flux balance analysis Parsimonious flux balance analysis (pFBA) is a constraint-based approach for finding flux distributions that minimise the total flux, and it is usually applied to generate solutions without inconsistent thermodynamic loops 52 .
+335 To formulate pFBA, reversible reactions must be split into irreversible reactions in opposite directions to guarantee non-negative fluxes and set Z* which usually correspond to the optimal value found by FBA (see Eq.
+336 ( 6 )).
+337 After converting the network into an irreversible pFBA is formulated as follows: 7 Minimize : Z = ∑ i v i s .
+338 t .
+339 N ⋅ v → = 0 0 ≤ v i ≤ β i c ⊤ v = Z * Modelling metabolic tasks A metabolic task usually corresponds to a pathway leading to the production of metabolite P from metabolite S.
+340 In general, producing a metabolite P from a precursor S usually requires cofactors such as ATP, NADH and/or NADPH as well as the balancing of protons, water, etc.
+341 More formally, a metabolic task t is defined as a set of input metabolites M in t and a set of output metabolites M out t 17 .
+342 To implement a metabolic task t , all the exchange reactions of the model are first set to zero, and then source and sink boundary reactions are added for the set of inputs and outputs, respectively.
+343 Then, each input metabolite i is associated with a source reaction b i i n ∀ i ∈ M i n , and each output metabolite j with a sink b j out ∀ j ∈ M out .
+344 Sources and sinks are then bound according to the definition of the task (see Table 3 for an example).
+345 Table 3 Example of a metabolic task corresponding to ATP regeneration in aerobic conditions (glycolysis + krebs cycle) Metabolites Type Lower bound Upper bound Glucose Input 1 1 Oxygen Input 6 6 Pi Input 30 32 ADP Input 30 32 H + Input 30 32 ATP Output 30 32 H 2 O Output 36 38 CO 2 Output 6 6 Finally, to calculate the flux distribution for the task t , parsimonious flux balance analysis ( 7 ) is applied to find the feasible solution that minimises the sum over the total fluxes.
+346 This solution is usually used as the flux distribution for a task, and it is used to infer the active or flux-carrying reactions on the pathways.
+347 Mapping gene expression into reaction using gene–protein-reaction rules Gene–protein-reaction (GPR) rules are a key component of genome-scale metabolic models, enabling the integration of gene expression data with reaction activity 30 .
+348 GPRs are represented as logical expressions that combine gene identifiers using the AND operator for protein complexes and the OR operator for isoenzymes.
+349 These rules allow mapping gene expression values or fold-changes to metabolic reactions.
+350 GPR evaluation is performed recursively by traversing the expression tree, where leaf nodes represent gene identifiers and internal nodes represent logical operators.
+351 Below is the pseudo-code for the EvaluateGPR function, which determines whether a reaction is active, given a specific set of expressed genes.
+352 Algorithm 1 Evaluation of a GPR rule of a reaction using gene expression values 1: function EVALUATEGPR(expr, values_dict, or_func) 2: if expr is a GPR object then 3: return EVALUATEGPR(expr.body, values_dict, or_func) 4: else if expr is a gene name (Name) then 5: if expr.id not in values_dict then 6: return 0 7: else 8: return values_dict[expr.id] 9: end if 10: else if expr is a boolean operation (BoolOp) then 11: if expr.op is OR then 12: if or_func = “max” then 13: return max i EVALUATEGPR(expr.values[ i ], values_dict, or_func) 14: else if or_func = “sum” then 15: return ∑ i EVALUATEGPR(expr.values[ i ], values_dict, or_func) 16: else 17: raise UnsupportedGPROperator 18: end if 19: else if expr.op is AND then 20: return min i EVALUATEGPR(expr.values[ i ], values_dict, or_func) 21: else 22: raise TypeError(“unsupported operation”) 23: end if 24: else 25: return 0 26: end if 27: end function This algorithm evaluates gene–protein-reaction (GPR) expressions based on the activity values of individual genes provided in a dictionary (values_dict).
+353 If the mapped gene values are continuous (e.g.
+354 gene expression or log-fold change values), the AND and OR operators are replaced by MIN and MAX/SUM , respectively.
+355 For the application of the mapping for the TIDE algorithm, we used the absolute maximum instead of the maximum since log-fold changes can have negative values, as described and the original paper 35 .
+356 In-silico gene knock-outs In-silico gene knock-outs simulate the deletion of genes by constraining the associated reactions in a genome-scale metabolic model.
+357 Since genes are mapped to reactions via GPR associations, a gene deletion translates into setting the flux of all reactions catalysed exclusively by the corresponding gene product(s) to zero.
+358 In the context of FBA, this is implemented by modifying the flux bounds of the affected reactions: for each reaction i associated with the knocked-out gene, we set α i = β i = 0, effectively removing the reaction from the feasible flux space.
+359 The modified model is then solved using FBA ( 6 ) to determine how the gene deletion affects the optimal objective value, i.e.
+360 the biomass production.
+361 A significant reduction or complete loss of biomass flux indicates that the deleted gene is essential under the given environmental conditions.
+362 This approach allows for the systematic prediction of gene essentiality and the identification of potential drug targets or synthetic lethal gene pairs in silico.
+363 To predict the set of essential genes of a metabolic task, we just tested for the feasibility of the problem after inactivating the reaction related to the gene being knocked; if the problem is infeasible, the tested gene is defined as essential for the task.
+364 Flux variability analysis Flux variability analysis (FVA) was used to identify the minimum and maximum flux values each reaction can carry while satisfying the constraints of the FBA problem (Eq.
+365 ( 6 )).
+366 For each reaction in the model, FVA solves two linear programmes, one minimising and one maximising the flux, under the same conditions 53 .
+367 We applied FVA individually for each metabolic task to assess the flexibility of the network in supporting specific functions.
+368 Tasks inferred from differential expression To investigate changes in metabolic pathway activity, we applied the tasks inferred from differential expression (TIDE) algorithm 35 .
+369 We used the manually curated list of 187 metabolic tasks and their reference flux distributions.
+370 Log-fold change (log-FC) values from differential gene expression analysis were mapped onto the flux-carrying reactions associated with each task via their gene–protein-reaction (GPR) rules.
+371 In this mapping, each gene was substituted with its corresponding log-FC value.
+372 GPR rules were evaluated by interpreting logical AND and OR operators as the min and absmax functions, respectively, and resolving the resulting expression recursively.
+373 Genes with non-significant adjusted p -values were masked by setting their log-FC values to zero before evaluation.
+374 The statistical significance of the resulting task scores was assessed through 10,000 permutations.
+375 A task was considered significantly altered if its associated p -value was below 0.025, reflecting a two-sided testing strategy.
+376 TIDE essential genes To extend and complement the original TIDE framework, we developed an approach focused on the identification of essential genes required for the execution of curated metabolic tasks.
+377 For each task t , we performed an in silico gene knockout screening across all genes in the metabolic model.
+378 Specifically, for each gene g , the procedure consisted of the following steps: (1) identifying the set of reactions deactivated by the knockout of g ; (2) constraining the flux of these reactions to zero; and (3) computing the flux distribution for task t using parsimonious flux balance analysis (see Eq.
+379 ( 7 )).
+380 If the optimisation problem became infeasible, gene g was classified as essential for task t .
+381 This procedure was repeated for all genes and tasks, resulting in a gene-task matrix representing the essential genes for each metabolic task.
+382 The metabolic score of a task t was computed as the average log-fold change (log-FC) of the essential genes associated with that task.
+383 As in the original TIDE framework, log-FC values with non-significant adjusted p -values were masked to zero before evaluation, and statistical significance was assessed using 10,000 permutations.
+384 A two-sided testing approach was applied, with a significance threshold of p &lt; 0.025.
+385 Genome scale-metabolic model We retrieved the genome-scale metabolic model Human-GEM version 1.18 from the official repository ( https://github.com/SysBioChalmers/Human-GEM ).
+386 The model accounts for 2897 genes, 11,364 metabolic reactions, 1721 exchange fluxes, and 8499 metabolites and is the most comprehensive description of human metabolism 19 .
+387 We used the list of selected metabolic tasks previously published by Richelle et al.
+388 2021 36 , which includes 195 metabolic tasks associated with 7 metabolic systems (energy, nucleotide, carbohydrate, amino acid, lipid, vitamin &amp; cofactor, and glycan metabolism).
+389 Although this list of tasks was defined for the Recon 2.2 model 18 , the Human-GEM repository already includes a translated version of these metabolic tasks.
+390 A preliminary analysis showed that 9 tasks were inconsistently defined due to incorrect mapping of metabolite identifiers between metabolic Recon2.2 and the Human-GEM.
+391 Additionally, we identified 18 tasks that resulted in infeasible problems due to issues with the bounds of the inputs and/or outputs.
+392 Inconsistent tasks were manually curated by correcting metabolite identifiers.
+393 To curate infeasible tasks, we manually adjusted upper and lower bounds for the input and/or output metabolites, or by updating the compartments of some metabolites.
+394 After the curation process, 19 metabolic tasks were reconciled to the Human-GEM model, whereas 8 tasks remained either inconsistent (1) or infeasible (7).
+395 A summary of the curation processes and the curated list of tasks are provided in Supplementary Data 2 .
+396 Computational tools All statistical analyses were conducted using R (version 4.4.1).
+397 Figures were generated using the following R libraries: tidyplots (version 0.1.2), ggcorrplot (version 0.1.4.1), ggVennDiagram (version 1.5.2), and pheatmap (version 1.0.12).
+398 TIDE and TIDE-essential algorithms were implemented in an open-source Python package and command-line tool, MTEApy, built on top of the COBRAPY 54 library.
+399 The source code is available at: https://github.com/bsc-life/mteapy .
+400 Supplementary information Supplementary Information Supplementary Data 1 Supplementary Data 2 Supplementary Data 3 Supplementary Data 4 Supplementary Data 5 Supplementary Data 6 Acknowledgements This work was supported by the HEALED project (PID2022-141809OB-I00), funded by MICIU/AEI/10.13039/501100011033 and by ERDF/EU; by the Horizon 2020 project CREXDATA (grant agreement No.
+401 101092749); and by the Research Council of Norway (RCN) under the framework of the European Research Area (ERA) PerMed program, ONCOLOGICS (grant agreement No.
+402 329059).
+403 Author contributions Conceptualisation: X.B., M.P., Å.F., and A.V.; methodology: X.B., Å.F., and M.P.; experimental analysis: Å.F.; software: X.B.
+404 and M.P.; in-silico experiments: X.B.; results analysis: X.B.
+405 and M.P.; writing—original draft preparation: X.B.
+406 and M.P.; writing—review and editing: X.B., M.P., Å.F., and A.V.; visualisation: X.B.; supervision: M.P.
+407 and A.V.
+408 All authors have read and agreed to the published version of the manuscript.
+409 Data availability The raw RNA sequencing data from AGS cells used in this study have been deposited in the GEO repository under accession number https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285616 .
+410 Competing interests The authors declare no competing interests.
+411 Footnotes Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+412 Supplementary information The online version contains supplementary material available at 10.1038/s41540-025-00586-y.
+413 References 1.
+414 Bray, F.
+415 et al.
+416 Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries.
+417 CA: Cancer J.
+418 Clin.
+419 74 , 229–263 (2024).
+420 2.
+421 Hanahan, D.
+422 &amp; Weinberg, R.
+423 A.
+424 Hallmarks of cancer: the next generation.
+425 Cell 144 , 646–674 (2011).
+426 3.
+427 Vander Heiden, M.
+428 G., Cantley, L.
+429 C.
+430 &amp; Thompson, C.
+431 B.
+432 Understanding the Warburg effect: the metabolic requirements of cell proliferation.
+433 Science 324 , 1029–1033 (2009).
+434 4.
+435 Vander Heiden, M.
+436 G.
+437 &amp; DeBerardinis, R.
+438 J.
+439 Understanding the intersections between metabolism and cancer biology.
+440 Cell 168 , 657–669 (2017).
+441 5.
+442 Hoxhaj, G.
+443 &amp; Manning, B.
+444 D.
+445 The PI3K-AKT network at the interface of oncogenic signalling and cancer metabolism.
+446 Nat., Rev.
+447 Cancer 20 , 74–88 (2020).
+448 6.
+449 Pavlova, N.
+450 N., Zhu, J.
+451 &amp; Thompson, C.
+452 B.
+453 The hallmarks of cancer metabolism: still emerging.
+454 Cell Metab.
+455 34 , 355–377 (2022).
+456 7.
+457 Collins, F.
+458 S.
+459 &amp; Varmus, H.
+460 A new initiative on precision medicine.
+461 N.
+462 Engl.
+463 J.
+464 Med.
+465 372 , 793–795 (2015).
+466 8.
+467 Slonim, D.
+468 K.
+469 From patterns to pathways: gene expression data analysis comes of age.
+470 Nat.
+471 Genet.
+472 32 , 502–508 (2002).
+473 9.
+474 Geistlinger, L.
+475 et al.
+476 Toward a gold standard for benchmarking gene set enrichment analysis.
+477 Brief.
+478 Bioinforma.
+479 22 , 545–556 (2021).
+480 10.
+481 Niarakis, A.
+482 &amp; Helikar, T.
+483 A practical guide to mechanistic systems modeling in biology using a logic-based approach.
+484 Brief.
+485 Bioinform.
+486 22 , bbaa236 (2021).
+487 11.
+488 Gherman, I.
+489 M.
+490 et al.
+491 Bridging the gap between mechanistic biological models and machine learning surrogates.
+492 PLoS Comput.
+493 Biol.
+494 19 , e1010988 (2023).
+495 12.
+496 Calzone, L.
+497 et al.
+498 Mathematical modelling of cell-fate decision in response to death receptor engagement.
+499 PLoS Comput.
+500 Biol.
+501 6 , e1000702 (2010).
+502 13.
+503 Montagud, A.
+504 et al.
+505 Conceptual and computational framework for logical modelling of biological networks deregulated in diseases.
+506 Brief.
+507 Bioinform.
+508 20 , 1238–1249 (2017).
+509 14.
+510 Montagud, A.
+511 et al.
+512 Patient-specific Boolean models of signalling networks guide personalised treatments.
+513 eLife 11 , e72626 (2022).
+514 15.
+515 Flobak, Å et al.
+516 Discovery of drug synergies in gastric cancer cells predicted by logical modeling.
+517 PLoS Comput.
+518 Biol.
+519 11 , e1004426 (2015).
+520 16.
+521 Taoma, K., Ruengjitchatchawalya, M., Liangruksa, M.
+522 &amp; Laomettachit, T.
+523 Boolean modeling of breast cancer signaling pathways uncovers mechanisms of drug synergy.
+524 PLoS ONE 19 , e0298788 (2024).
+525 17.
+526 Thiele, I.
+527 et al.
+528 A community-driven global reconstruction of human metabolism.
+529 Nat.
+530 Biotechnol.
+531 31 , 419–425 (2013).
+532 18.
+533 Swainston, N.
+534 et al.
+535 Recon 2.2: from reconstruction to model of human metabolism.
+536 Metabolomics 12 , 109 (2016).
+537 19.
+538 Robinson, J.
+539 L.
+540 et al.
+541 An atlas of human metabolism.
+542 Sci.
+543 Signal.
+544 13 , eaaz1482 (2020).
+545 20.
+546 Blais, E.
+547 M.
+548 et al.
+549 Reconciled rat and human metabolic networks for comparative toxicogenomics and biomarker predictions.
+550 Nat.
+551 Commun.
+552 8 , 14250 (2017).
+553 21.
+554 Becker, S.
+555 A.
+556 et al.
+557 Quantitative prediction of cellular metabolism with constraint-based models: the cobra toolbox.
+558 Nat.
+559 Protoc.
+560 2 , 727–738 (2007).
+561 22.
+562 Shlomi, T., Cabili, M.
+563 N., Herrgård, M.
+564 J., Palsson, B.
+565 Ø.
+566 &amp; Ruppin, E.
+567 Network-based prediction of human tissue-specific metabolism.
+568 Nat.
+569 Biotechnol.
+570 26 , 1003–1010 (2008).
+571 23.
+572 Wang, Y., Eddy, J.
+573 A.
+574 &amp; Price, N.
+575 D.
+576 Reconstruction of genome-scale metabolic models for 126 human tissues using mcadre.
+577 BMC Syst.
+578 Biol.
+579 6 , 1–16 (2012).
+580 24.
+581 Richelle, A., Chiang, A.
+582 W., Kuo, C.-C.
+583 &amp; Lewis, N.
+584 E.
+585 Increasing consensus of context-specific metabolic models by integrating data-inferred cell functions.
+586 PLoS Comput.
+587 Biol.
+588 15 , e1006867 (2019).
+589 25.
+590 Granata, I., Manipur, I., Giordano, M., Maddalena, L.
+591 &amp; Guarracino, M.
+592 R.
+593 Tumormet: a repository of tumor metabolic networks derived from context-specific genome-scale metabolic models.
+594 Sci.
+595 Data 9 , 607 (2022).
+596 26.
+597 Cho, J.
+598 S., Gu, C., Han, T.
+599 H., Ryu, J.
+600 Y.
+601 &amp; Lee, S.
+602 Y.
+603 Reconstruction of context-specific genome-scale metabolic models using multiomics data to study metabolic rewiring.
+604 Curr.
+605 Opin.
+606 Syst.
+607 Biol.
+608 15 , 1–11 (2019).
+609 27.
+610 Yizhak, K., Gabay, O., Cohen, H.
+611 &amp; Ruppin, E.
+612 Model-based identification of drug targets that revert disrupted metabolism and its application to ageing.
+613 Nat.
+614 Commun.
+615 4 , 2632 (2013).
+616 28.
+617 Robinson, J.
+618 L.
+619 &amp; Nielsen, J.
+620 Anticancer drug discovery through genome-scale metabolic modeling.
+621 Curr.
+622 Opin.
+623 Syst.
+624 Biol.
+625 4 , 1–8 (2017).
+626 29.
+627 Agren, R.
+628 et al.
+629 Identification of anticancer drugs for hepatocellular carcinoma through personalized genome-scale metabolic modeling.
+630 Mol.
+631 Syst.
+632 Biol.
+633 10 , 721 (2014).
+634 30.
+635 Ponce-de León, M., Apaolaza, I., Valencia, A.
+636 &amp; Planes, F.
+637 J.
+638 On the inconsistent treatment of gene–protein-reaction rules in context-specific metabolic models.
+639 Bioinformatics 36 , 1986–1988 (2019).
+640 31.
+641 Opdam, S.
+642 et al.
+643 A systematic evaluation of methods for tailoring genome-scale metabolic models.
+644 Cell Syst.
+645 4 , 318–329 (2017).
+646 32.
+647 Apaolaza, I.
+648 et al.
+649 An in-silico approach to predict and exploit synthetic lethality in cancer metabolism.
+650 Nat.
+651 Commun.
+652 8 , 459 (2017).
+653 33.
+654 Valcárcel, L.
+655 V.
+656 et al.
+657 An automated network-based tool to search for metabolic vulnerabilities in cancer.
+658 Nat.
+659 Commun.
+660 15 , 8685 (2024).
+661 34.
+662 Barrena, N., Valcárcel, L.
+663 V., Olaverri-Mendizabal, D., Apaolaza, I.
+664 &amp; Planes, F.
+665 J.
+666 Synthetic lethality in large-scale integrated metabolic and regulatory network models of human cells.
+667 npj Syst.
+668 Biol.
+669 Appl.
+670 9 , 32 (2023).
+671 35.
+672 Dougherty, B.
+673 V.
+674 et al.
+675 Identifying functional metabolic shifts in heart failure with the integration of omics data and a heart-specific, genome-scale model.
+676 Cell Rep.
+677 34 , 108836 (2021).
+678 36.
+679 Richelle, A.
+680 et al.
+681 Model-based assessment of mammalian cell metabolic functionalities using omics data.
+682 Cell Rep.
+683 Methods 1 , 100040 (2021).
+684 37.
+685 Tsirvouli, E.
+686 et al.
+687 Deciphering molecular mechanisms of synergistic growth reduction in kinase inhibitor combinations 10.1101/2024.03.12.584561 (2024).
+688 38.
+689 Love, M.
+690 I., Huber, W.
+691 &amp; Anders, S.
+692 Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.
+693 Genome Biol.
+694 15 , 550 (2014).
+695 39.
+696 Shen, X.
+697 et al.
+698 Asparagine, colorectal cancer, and the role of sex, genes, microbes, and diet: A narrative review.
+699 Front.
+700 Mol.
+701 Biosci.
+702 9 , https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2022.958666/full (2022).
+703 40.
+704 Pegg, A.
+705 E.
+706 Functions of polyamines in mammals.
+707 J.
+708 Biol.
+709 Chem.
+710 291 , 14904–14912 (2016).
+711 41.
+712 Jang, W.-J.
+713 et al.
+714 Multi-omics analysis reveals that ornithine decarboxylase contributes to erlotinib resistance in pancreatic cancer cells.
+715 Oncotarget 8 , 92727–92742 (2017).
+716 42.
+717 Chai, X.
+718 et al.
+719 The rational discovery of multipurpose inhibitors of the ornithine decarboxylase.
+720 FASEB J.
+721 34 , 10907–12921 (2020).
+722 43.
+723 Zhang, J.
+724 et al.
+725 Ornithine and breast cancer: a matched case-control study.
+726 Sci.
+727 Rep.
+728 10 , 15502 (2020).
+729 44.
+730 King, R.
+731 J., Qiu, F., Yu, F.
+732 &amp; Singh, P.
+733 K.
+734 Metabolic and immunological subtypes of esophageal cancer reveal potential therapeutic opportunities.
+735 Front.
+736 Cell Dev.
+737 Biol.
+738 9 , https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2021.667852/full (2021).
+739 45.
+740 Karlenius, T.
+741 C.
+742 &amp; Tonissen, K.
+743 F.
+744 Thioredoxin and cancer: a role for thioredoxin in all states of tumor oxygenation.
+745 Cancers 2 , 209 (2010).
+746 46.
+747 Prasad, C.
+748 B.
+749 et al.
+750 The thioredoxin system determines CHK1 inhibitor sensitivity via redox-mediated regulation of ribonucleotide reductase activity.
+751 Nat.
+752 Commun.
+753 15 , 4667 (2024).
+754 47.
+755 Venkateswaran, N.
+756 et al.
+757 MYC promotes tryptophan uptake and metabolism by the kynurenine pathway in colon cancer.
+758 Genes Dev.
+759 33 , 1236 (2019).
+760 48.
+761 Zhu, A., Ibrahim, J.
+762 G.
+763 &amp; Love, M.
+764 I.
+765 Heavy-tailed prior distributions for sequence count data: removing the noise and preserving large differences.
+766 Bioinformatics 35 , 2084–2092 (2019).
+767 49.
+768 Varma, A.
+769 &amp; Palsson, B.
+770 O.
+771 Metabolic flux balancing: basic concepts, scientific and practical use.
+772 Nat.
+773 Biotechnol.
+774 12 , 994–998 (1994).
+775 50.
+776 Ponce-de-Leon, M.
+777 et al.
+778 Solving gap metabolites and blocked reactions in genome-scale models: application to the metabolic network of Blattabacterium cuenoti .
+779 BMC Syst.
+780 Biol.
+781 7 , 114 (2013).
+782 51.
+783 Orth, J.
+784 D., Thiele, I.
+785 &amp; Palsson, B.
+786 O.
+787 What is flux balance analysis?
+788 Nat.
+789 Biotechnol.
+790 28 , 245–248 (2010).
+791 52.
+792 Lewis, N.
+793 E.
+794 et al.
+795 Omic data from evolved E.
+796 coli are consistent with computed optimal growth from genome-scale models.
+797 Mol.
+798 Syst.
+799 Biol.
+800 6 , 390 (2010).
+801 53.
+802 Mahadevan, R.
+803 &amp; Schilling, C.
+804 H.
+805 The effects of alternate optimal solutions in constraint-based genome-scale metabolic models.
+806 Metab.
+807 Eng.
+808 5 , 264–276 (2003).
+809 54.
+810 Ebrahim, A., Lerman, J.
+811 A., Palsson, B.
+812 O.
+813 &amp; Hyduke, D.
+814 R.
+815 COBRApy: constraints-based reconstruction and analysis for python.
+816 BMC Syst.
+817 Biol.
+818 7 , 74 (2013).
+819 Associated Data Supplementary Materials Supplementary Information Supplementary Data 1 Supplementary Data 2 Supplementary Data 3 Supplementary Data 4 Supplementary Data 5 Supplementary Data 6 Data Availability Statement The raw RNA sequencing data from AGS cells used in this study have been deposited in the GEO repository under accession number https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285616 .
+820 

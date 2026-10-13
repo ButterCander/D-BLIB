@@ -1,0 +1,6 @@
+all 24 nodes         paper rule AUC 0.718 | vote fraction AUC 0.734
+12 nodes, subset 1   paper rule AUC 0.630 | vote fraction AUC 0.578
+12 nodes, subset 2   paper rule AUC 0.534 | vote fraction AUC 0.618
+  rank correlation of vote fractions, all 24 nodes vs 12 nodes, subset 1: 0.66; paper-rule scores: 0.49
+  rank correlation of vote fractions, all 24 nodes vs 12 nodes, subset 2: 0.72; paper-rule scores: 0.58
+  rank correlation of vote fractions, 12 nodes, subset 1 vs 12 nodes, subset 2: 0.66; paper-rule scores: 0.44

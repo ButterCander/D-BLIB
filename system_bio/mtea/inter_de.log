@@ -1,0 +1,5 @@
+coefficients: ['Intercept', 'batch[T.b2]', 'batch[T.b3]', 'batch[T.b4]', 'condition[T.PI103]', 'condition[T.PD0325901]', 'condition[T.5Z]', 'condition[T.PI103+5Z]', 'condition[T.PI103+PD]']
+PI3Ki_MEKi_add genes 16932 padj<.05: 4298 |lfc|>=.5 & padj<.05: 2555
+PI3Ki_MEKi_dose genes 16932 padj<.05: 4443 |lfc|>=.5 & padj<.05: 1317
+PI3Ki_TAKi_add genes 16932 padj<.05: 4317 |lfc|>=.5 & padj<.05: 2627
+PI3Ki_TAKi_dose genes 16932 padj<.05: 1258 |lfc|>=.5 & padj<.05: 375

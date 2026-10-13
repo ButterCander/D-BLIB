@@ -1,0 +1,5 @@
+Model rows 2105 ['ModelID', 'PatientID', 'CellLineName', 'StrippedCellLineName', 'DepmapModelType', 'OncotreeLineage', 'OncotreePrimaryDisease', 'OncotreeSubtype', 'OncotreeCode', 'PatientSubtypeFeatures', 'RRID', 'Age']
+AGS rows: [{'ModelID': 'ACH-000880', 'CellLineName': 'AGS', 'OncotreeLineage': 'Esophagus/Stomach', 'OncotreePrimaryDisease': 'Esophagogastric Adenocarcinoma'}]
+  rows 400 (42s)
+  rows 800 (61s)
+done rows 1178 gastric kept 69 AGS in kept: True 81s

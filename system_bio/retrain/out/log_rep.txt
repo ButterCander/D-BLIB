@@ -1,0 +1,3 @@
+skip ss 36
+balanced aug runs=36: 108 models, train 273s, simulate 349s, fitness mean 0.905 max 0.937
+balanced ctl1 runs=12: 36 models, train 100s, simulate 184s, fitness mean 0.890 max 0.937

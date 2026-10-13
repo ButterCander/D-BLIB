@@ -1,0 +1,14 @@
+450 models, 17% predictions missing, models predicting >=1 synergy: 97%
+full ensemble vote fraction: AUC 0.831, pairs with 0 votes 105
+resampling MODELS (pairs fixed): AUC mean 0.807, sd 0.033, 95% [0.75,0.85]
+split-half Spearman of pair rankings (225 vs 225 models): 0.923; Spearman-Brown for 450: 0.960
+   50 models: AUC 0.680 +/- 0.074
+  150 models: AUC 0.766 +/- 0.052
+  450 models: AUC 0.809 +/- 0.033
+single models: AUC median 0.486, max 0.650; ensemble 0.831
+
+== label-free consensus across the three calibration strategies (pre-specified, evaluated once)
+link-only vote fraction (reference)        AUC 0.831  PR AUC 0.118   vs link-only vote: dAUC +0.000 CI [+0.00,+0.00]
+mean vote fraction of 3 strategies         AUC 0.819  PR AUC 0.110   vs link-only vote: dAUC -0.012 CI [-0.06,+0.04]
+rank-mean of 3 strategies' vote fractions  AUC 0.832  PR AUC 0.116   vs link-only vote: dAUC +0.001 CI [-0.07,+0.06]
+rank-mean of 3 vote + 3 ensemble excess    AUC 0.826  PR AUC 0.470   vs link-only vote: dAUC -0.005 CI [-0.32,+0.20]

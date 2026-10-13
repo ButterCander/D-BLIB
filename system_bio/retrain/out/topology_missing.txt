@@ -1,0 +1,3 @@
+link-only      models 108, per-model missing rate: median 12%, share of models with >50% missing 0%; vote AUC all 0.790 | most complete half 0.726 | least complete half 0.654
+topology-only  models 108, per-model missing rate: median 24%, share of models with >50% missing 1%; vote AUC all 0.550 | most complete half 0.571 | least complete half 0.484
+topo-and-link  models 108, per-model missing rate: median 23%, share of models with >50% missing 5%; vote AUC all 0.631 | most complete half 0.586 | least complete half 0.548

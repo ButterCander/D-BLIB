@@ -1,0 +1,38 @@
+153 pairs, 6 observed synergies; random-model AUC = 0.50, PR AUC baseline = 0.039
+
+== link-only, bliss, 150 evolution runs
+  ensemble excess (ss)             AUC 0.686 [0.37,0.98]  PR AUC 0.275 [0.09,0.72]  perm p=0.065
+  ensemble excess ss-rand          AUC 0.314 [0.03,0.61]  PR AUC 0.043 [0.03,0.13]  perm p=0.932
+  model vote fraction (ss)         AUC 0.831 [0.76,0.90]  PR AUC 0.118 [0.09,0.23]  perm p=0.000
+  vote fraction ss-rand            AUC 0.432 [0.15,0.72]  PR AUC 0.077 [0.03,0.31]  perm p=0.717
+  vote log2 fold-change ss/rand    AUC 0.442 [0.18,0.72]  PR AUC 0.064 [0.03,0.21]  perm p=0.665
+== link-only, hsa, 150 evolution runs
+  ensemble excess (ss)             AUC 0.269 [0.12,0.46]  PR AUC 0.028 [0.03,0.04]  perm p=0.985
+  ensemble excess ss-rand          AUC 0.477 [0.21,0.75]  PR AUC 0.050 [0.03,0.12]  perm p=0.568
+  model vote fraction (ss)         AUC 0.831 [0.76,0.90]  PR AUC 0.118 [0.09,0.22]  perm p=0.000
+  vote fraction ss-rand            AUC 0.304 [0.12,0.58]  PR AUC 0.059 [0.03,0.27]  perm p=0.960
+  vote log2 fold-change ss/rand    AUC 0.312 [0.14,0.57]  PR AUC 0.040 [0.03,0.14]  perm p=0.954
+== topology-only, bliss, 150 evolution runs
+  ensemble excess (ss)             AUC 0.696 [0.39,0.99]  PR AUC 0.373 [0.11,0.84]  perm p=0.048
+  ensemble excess ss-rand          AUC 0.266 [0.03,0.56]  PR AUC 0.039 [0.03,0.14]  perm p=0.978
+  model vote fraction (ss)         AUC 0.757 [0.62,0.87]  PR AUC 0.091 [0.07,0.17]  perm p=0.010
+  vote fraction ss-rand            AUC 0.450 [0.17,0.73]  PR AUC 0.054 [0.03,0.16]  perm p=0.671
+  vote log2 fold-change ss/rand    AUC 0.433 [0.18,0.72]  PR AUC 0.116 [0.03,0.52]  perm p=0.715
+== topology-only, hsa, 150 evolution runs
+  ensemble excess (ss)             AUC 0.344 [0.14,0.57]  PR AUC 0.032 [0.03,0.06]  perm p=0.892
+  ensemble excess ss-rand          AUC 0.702 [0.49,0.87]  PR AUC 0.092 [0.05,0.26]  perm p=0.044
+  model vote fraction (ss)         AUC 0.746 [0.61,0.86]  PR AUC 0.088 [0.06,0.17]  perm p=0.015
+  vote fraction ss-rand            AUC 0.442 [0.17,0.73]  PR AUC 0.051 [0.03,0.15]  perm p=0.705
+  vote log2 fold-change ss/rand    AUC 0.387 [0.18,0.60]  PR AUC 0.036 [0.03,0.07]  perm p=0.835
+== topo-and-link, bliss, 150 evolution runs
+  ensemble excess (ss)             AUC 0.575 [0.26,0.88]  PR AUC 0.297 [0.07,0.79]  perm p=0.270
+  ensemble excess ss-rand          AUC 0.177 [0.03,0.42]  PR AUC 0.027 [0.03,0.06]  perm p=0.996
+  model vote fraction (ss)         AUC 0.804 [0.73,0.87]  PR AUC 0.102 [0.08,0.19]  perm p=0.003
+  vote fraction ss-rand            AUC 0.516 [0.21,0.82]  PR AUC 0.249 [0.03,0.61]  perm p=0.450
+  vote log2 fold-change ss/rand    AUC 0.506 [0.26,0.76]  PR AUC 0.054 [0.03,0.13]  perm p=0.477
+== topo-and-link, hsa, 150 evolution runs
+  ensemble excess (ss)             AUC 0.276 [0.11,0.52]  PR AUC 0.030 [0.03,0.06]  perm p=0.976
+  ensemble excess ss-rand          AUC 0.260 [0.01,0.57]  PR AUC 0.035 [0.03,0.12]  perm p=0.981
+  model vote fraction (ss)         AUC 0.811 [0.73,0.88]  PR AUC 0.105 [0.09,0.20]  perm p=0.003
+  vote fraction ss-rand            AUC 0.517 [0.21,0.83]  PR AUC 0.257 [0.03,0.63]  perm p=0.446
+  vote log2 fold-change ss/rand    AUC 0.500 [0.26,0.76]  PR AUC 0.053 [0.03,0.13]  perm p=0.486

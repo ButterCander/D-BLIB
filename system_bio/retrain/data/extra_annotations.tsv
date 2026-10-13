@@ -1,0 +1,9 @@
+node	state	AGS_nTPM	rule (source: Human Protein Atlas v25.1 cell line RNA)
+PTEN_g	1	18.3	gene node expressed (nTPM>=15) -> ON
+LEF1	0	0.0	not expressed (nTPM<1) -> OFF
+SFRP1	0	0.0	not expressed (nTPM<1) -> OFF
+MDM2_g	1	92.7	gene node expressed (nTPM>=15) -> ON
+DUSP1_g	1	18.9	gene node expressed (nTPM>=15) -> ON
+GRAP2	0	0.0	not expressed (nTPM<1) -> OFF
+SMAD7_g	1	17.1	gene node expressed (nTPM>=15) -> ON
+SFRP1_g	0	0.0	not expressed (nTPM<1) -> OFF
